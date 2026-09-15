@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Zenith asset tracing and recovery support for commonly lost or stolen assets.">
+<title>Asset Tracing & Recovery | Zenith Hackers Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#020811;--panel:rgba(4,18,31,.88);--line:#174361;--blue:#0798ff;--cyan:#20c7ff;--text:#f4f8ff;--muted:#b2c3d4;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#020811;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 50% 10%,rgba(0,153,255,.15),transparent 32%),#020811}
+a{text-decoration:none;color:inherit}.wrap{width:min(94%,1280px);margin:auto}
+header{position:fixed;top:0;left:0;right:0;height:68px;z-index:50;background:rgba(1,7,14,.76);backdrop-filter:blur(16px);border-bottom:1px solid rgba(32,199,255,.18)}
+.head{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.shield{width:35px;height:40px;display:grid;place-items:center;color:#fff;font-weight:800;border:2px solid var(--blue);clip-path:polygon(50% 0,100% 15%,90% 78%,50% 100%,10% 78%,0 15%);box-shadow:0 0 18px rgba(0,153,255,.35)}.logo b{letter-spacing:.24em;font-size:16px}.logo small{display:block;color:var(--cyan);font-size:7px;letter-spacing:.18em}nav{display:flex;gap:24px;align-items:center;font-size:13px;color:#d0dceb}nav a:hover{color:var(--cyan)}.cta{padding:9px 16px;border:1px solid var(--blue);border-radius:7px}
+.hero{min-height:620px;padding-top:68px;position:relative;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(1,7,14,.80),rgba(1,7,14,.48) 48%,rgba(1,7,14,.18)),linear-gradient(0deg,rgba(2,8,17,.78),rgba(2,8,17,.05) 55%),url("assets/asset-tracing-hero.jpg?v=20260915") center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 50%,rgba(0,178,255,.14),transparent 27%);pointer-events:none}.hero-content{position:relative;z-index:2}.eyebrow{font-size:12px;color:var(--cyan);font-weight:800;letter-spacing:.2em}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.02;max-width:720px;margin:13px 0 17px}.hero h1 span{color:var(--blue)}.hero p{font-size:20px;max-width:700px;color:#d4e2ef}.note{margin-top:24px;display:inline-block;border:1px solid rgba(32,199,255,.38);background:rgba(2,15,27,.7);padding:10px 14px;border-radius:7px;font-size:14px;color:#d4e4f2}
+section{padding:70px 0}.intro{background:linear-gradient(rgba(2,8,17,.88),rgba(2,8,17,.95)),url("assets/asset-tracing-office.jpg?v=20260915") center/cover fixed}.intro-grid{display:grid;grid-template-columns:1fr 340px;gap:38px;align-items:center}.intro h2{font-size:44px;line-height:1.1;margin:8px 0 14px}.intro p{font-size:17px;color:var(--muted)}.side-image{min-height:300px;border:1px solid #1a5578;border-radius:10px;background:url("assets/asset-tracing-office.jpg?v=20260915") center/cover;box-shadow:0 20px 55px rgba(0,0,0,.35)}
+.assets{background:linear-gradient(180deg,#020811,#04111d);border-top:1px solid #0c2b42}.assets h2{font-size:42px;margin:8px 0}.lead{font-size:17px;color:var(--muted);max-width:850px}.table-wrap{margin-top:30px;border:1px solid #16415d;border-radius:10px;overflow:auto;background:rgba(3,15,26,.88);box-shadow:0 25px 70px rgba(0,0,0,.25)}table{width:100%;border-collapse:collapse;min-width:850px}th,td{text-align:left;padding:19px 20px;border-bottom:1px solid #11334b;font-size:15px;vertical-align:top}th{font-size:13px;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;background:#061726}td:first-child{width:65px;color:#52c9ff;font-weight:800}td:nth-child(2){font-weight:700;color:#edf6ff;width:270px}td:nth-child(3){color:#bfd0df}.asset-icon{font-size:18px;margin-right:7px}
+.legal{background:linear-gradient(90deg,rgba(2,8,17,.88),rgba(4,17,29,.78)),url("assets/asset-tracing-security.jpg?v=20260915") center/cover}.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.box{padding:25px;border:1px solid #16415d;border-radius:9px;background:rgba(4,17,29,.82)}.box h3{margin:0 0 12px;font-size:22px}.box p,.box li{font-size:15px;color:var(--muted)}
+.contact{border-top:1px solid #0b2c42}.contact h2{font-size:38px}.buttons{display:flex;gap:10px}.btn{padding:11px 19px;border-radius:22px;border:1px solid var(--blue);font-size:14px;font-weight:800}.primary{background:linear-gradient(90deg,#078cff,#13b3ff)}.ghost{background:rgba(4,18,31,.7)}footer{padding:25px 0;border-top:1px solid #0b2c42;color:#8196aa;font-size:9px}.foot{display:flex;justify-content:space-between;align-items:center}.whatsapp{position:fixed;right:20px;bottom:20px;width:49px;height:49px;border-radius:50%;background:#19d56d;color:#fff;display:grid;place-items:center;font-size:23px;z-index:60;box-shadow:0 10px 30px rgba(25,213,109,.3)}
+@media(max-width:850px){nav{display:none}.intro-grid,.legal-grid{grid-template-columns:1fr}.side-image{min-height:240px}.hero{min-height:670px}.hero p{font-size:15px}th,td{font-size:12px;padding:14px}.foot{flex-direction:column;gap:10px;align-items:flex-start}}
+
+.visual-break{min-height:420px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(1,7,14,.80),rgba(1,7,14,.30)),url("assets/asset-tracing-office.jpg?v=20260915") center/cover no-repeat;border-top:1px solid #123b55;border-bottom:1px solid #123b55}
+.visual-copy{max-width:900px}.visual-copy h2{font-size:clamp(34px,5vw,58px);line-height:1.08;margin:10px 0 15px}.visual-copy p{font-size:18px;color:#d2e1ed;max-width:760px}
+@media(max-width:850px){.hero h1{font-size:44px}.hero p{font-size:17px}.intro h2,.assets h2{font-size:34px}.intro p,.lead,.box p,.box li{font-size:15px}.visual-break{min-height:360px}.visual-copy p{font-size:16px}}
+
+.live-chat-launcher{position:fixed;right:20px;bottom:84px;z-index:89;display:flex;align-items:center;gap:8px;background:#078cff;color:#fff;border:1px solid #38c6ff;border-radius:26px;padding:11px 16px;font-size:12px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,140,255,.28)}
+.live-chat-launcher:hover{transform:translateY(-2px);filter:brightness(1.08)}
+@media(max-width:600px){.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{right:16px;bottom:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap head"><a class="logo" href="index.html"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="index.html#contact" class="cta">Get Started →</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrap hero-content"><span class="eyebrow">ASSET TRACING • INVESTIGATION • RECOVERY SUPPORT</span><h1>Track What Was Lost.<br><span>Find the Right Trail.</span></h1><p>Zenith can help investigate commonly lost or stolen assets using lawful, authorized tracing methods and available records. In suitable cases, this may support recovery efforts — but recovery is never guaranteed.</p><div class="note">ETHICAL • LEGAL • AUTHORIZED — Every investigation must have a lawful basis and defined scope.</div></div></section>
+<section class="intro"><div class="wrap intro-grid"><div><span class="eyebrow">WHAT WE CAN TRACE</span><h2>Top 10 commonly lost or stolen assets</h2><p>The table below shows examples of assets that may leave useful digital, registration, transaction, ownership, or tracking records. Which methods are available depends on the asset, jurisdiction, documentation, provider, and the authority available to Zenith.</p><p>For financial and digital assets, analysis may identify transaction paths or service endpoints. For physical assets, records such as serial numbers, registration details, telematics, or approved tracking services may provide investigative leads.</p></div><div class="side-image"></div></div></section>
+<section class="assets"><div class="wrap"><span class="eyebrow">TOP 10</span><h2>Common tracing methods</h2><p class="lead">These are investigative avenues, not promises of recovery. Zenith will only use methods that are lawful and appropriately authorized.</p><div class="table-wrap"><table><thead><tr><th>#</th><th>Asset</th><th>Common tracing methods</th></tr></thead><tbody>
+<tr><td>01</td><td><span class="asset-icon">₿</span>Cryptocurrency</td><td>Blockchain transactions, wallet addresses, transaction hashes, exchange/service endpoints.</td></tr>
+<tr><td>02</td><td><span class="asset-icon">📱</span>Mobile phones</td><td>IMEI/serial number, Find My/Find My Device, carrier records, account activity.</td></tr>
+<tr><td>03</td><td><span class="asset-icon">🚗</span>Vehicles</td><td>Registration/VIN, GPS/telematics, number plate, recovery databases.</td></tr>
+<tr><td>04</td><td><span class="asset-icon">💻</span>Laptops & computers</td><td>Serial number, device-management systems, account activity, tracking software.</td></tr>
+<tr><td>05</td><td><span class="asset-icon">📦</span>Packages & shipments</td><td>Tracking numbers, carrier records, delivery scans, proof of delivery.</td></tr>
+<tr><td>06</td><td><span class="asset-icon">🚲</span>Bicycles & e-bikes</td><td>Serial numbers, registration databases, GPS/Bluetooth trackers, identifying marks.</td></tr>
+<tr><td>07</td><td><span class="asset-icon">🎧</span>Electronics</td><td>Serial numbers, IMEI/device identifiers, registered accounts and ownership records.</td></tr>
+<tr><td>08</td><td><span class="asset-icon">🛠️</span>Tools & business equipment</td><td>Serial numbers, asset registers, GPS/Bluetooth tags, ownership markings.</td></tr>
+<tr><td>09</td><td><span class="asset-icon">🏗️</span>Machinery & commercial equipment</td><td>VIN/serial numbers, telematics, asset-management records and ownership documentation.</td></tr>
+<tr><td>10</td><td><span class="asset-icon">💳</span>Digital/financial assets</td><td>Transaction records, payment references, bank/exchange records and blockchain analysis where applicable.</td></tr>
+</tbody></table></div></div></section>
+<section class="legal"><div class="wrap legal-grid"><div class="box"><h3>What Zenith may need</h3><ul><li>Proof of ownership or a lawful connection to the asset.</li><li>Serial number, VIN, IMEI, wallet address, transaction hash, tracking number, or other available identifier.</li><li>Relevant dates, locations, account details, and supporting records.</li><li>Authorization to conduct the investigation and contact appropriate providers or authorities where required.</li></ul></div><div class="box"><h3>What “possibly recover” means</h3><p>Tracing can produce a lead, identify a transaction path, locate a registered record, or establish evidence that assists a lawful recovery process. Some assets cannot be located or recovered, records may be unavailable, and third-party cooperation or legal process may be required.</p><p><strong>No recovery result is guaranteed.</strong> Zenith should communicate findings, limitations, and next steps based on the evidence available.</p></div></div></section>
+<section class="visual-break" aria-label="Zenith investigation visual">
+  <div class="wrap visual-copy">
+    <span class="eyebrow">INVESTIGATION • EVIDENCE • TRACE</span>
+    <h2>Follow the evidence. Document the trail.</h2>
+    <p>Every case is assessed on the identifiers, records, authority and lawful options available. A useful lead can support a recovery process, but no outcome is guaranteed.</p>
+  </div>
+</section>
+<section class="contact"><div class="wrap"><span class="eyebrow">START AN AUTHORIZED CASE</span><h2>Have a lost or stolen asset to investigate?</h2><p class="lead">Prepare the identifiers and ownership documentation you have, then contact Zenith to discuss whether an authorized tracing investigation is appropriate.</p><div class="buttons"><a class="btn primary" href="index.html#contact">Contact Zenith →</a><a class="btn ghost" href="https://wa.me/447552486027" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
+</main><footer><div class="wrap foot"><span>© 2025 Zenith Hackers Intelligence. Ethical • Legal • Secure.</span><a href="index.html">Return to Zenith Home →</a></div></footer>
+
+<a class="whatsapp" href="https://wa.me/447552486027?text=Hello%20Zenith%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20security%20matter." target="_blank" rel="noopener" aria-label="WhatsApp">◔<span>WhatsApp</span></a>
+
+<a class="live-chat-launcher" href="#live-chat" aria-label="Live Chat">💬 LIVE CHAT</a>
+<div id="live-chat" aria-hidden="true"></div>
+<!-- TAWK_WIDGET_SNIPPET: Paste your free Tawk.to widget code immediately below this comment. -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aa9c6ceae02e734472156f2/1k2jj16dt';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body></html>

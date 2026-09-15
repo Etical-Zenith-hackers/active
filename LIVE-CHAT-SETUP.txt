@@ -1,0 +1,21 @@
+FREE LIVE CHAT SETUP — ZENITH
+
+Recommended service: Tawk.to. Its current website states that its live chat is free,
+and its official help center says to paste the widget code before </body>.
+
+1. The supplied Tawk.to widget code is already installed in the site files.
+2. Create/select the Zenith property.
+3. Open Administration -> Channels -> Chat Widget.
+4. Upload the updated site to GitHub Pages.
+5. In BOTH:
+     index.html
+     asset-recovery.html
+   find:
+     <!-- TAWK_WIDGET_SNIPPET: ... -->
+   and paste the complete Tawk widget code immediately underneath it.
+6. Upload the files to GitHub Pages.
+
+The Zenith floating WhatsApp button is already installed on ALL pages.
+The live-chat launcher is also present on ALL pages; the actual real-time chat
+connection requires the Tawk.to property/widget code because it is unique to your
+account. No fake chat endpoint has been inserted.

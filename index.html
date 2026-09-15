@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zenith Hackers Intelligence — professional, ethical, legal and secure cybersecurity services.">
+  <title>Zenith Hackers Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#020811;--panel:#061423;--panel2:#081b2d;--line:#123653;--blue:#0798ff;--cyan:#20c7ff;--text:#f4f8ff;--muted:#9fb2c7;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.65;
+background:linear-gradient(rgba(1,7,14,.82),rgba(1,7,14,.90)),url("assets/asset-tracing-security.jpg") center top/cover fixed no-repeat,var(--bg)}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 75% 10%,rgba(0,147,255,.12),transparent 28%),radial-gradient(circle at 10% 55%,rgba(0,117,255,.08),transparent 25%),#020811}
+    a{text-decoration:none;color:inherit}.wrap{width:min(92%,var(--max));margin:auto}
+    header{position:fixed;top:0;left:0;right:0;height:64px;z-index:50;background:rgba(1,7,14,.78);backdrop-filter:blur(15px);border-bottom:1px solid rgba(32,199,255,.12)}
+    .head{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.shield{width:34px;height:38px;display:grid;place-items:center;color:#fff;font-weight:800;border:2px solid var(--blue);clip-path:polygon(50% 0,100% 15%,90% 78%,50% 100%,10% 78%,0 15%);box-shadow:0 0 18px rgba(0,153,255,.35)}
+    .logo b{letter-spacing:.25em;font-size:18px}.logo small{display:block;color:var(--cyan);font-size:6px;letter-spacing:.18em}
+    nav{display:flex;align-items:center;gap:29px;font-size:13px;color:#cbd7e5}nav a:hover{color:#fff}nav a.active{color:var(--cyan)}
+    .cta{padding:9px 17px;border:1px solid var(--blue);border-radius:7px;background:rgba(0,140,255,.08)}
+    .menu{display:none;border:0;background:none;color:#fff;font-size:25px}
+    .hero{min-height:610px;background-color:#03101b;padding-top:64px;position:relative;overflow:hidden;background-image:linear-gradient(90deg,rgba(1,8,16,.88) 0%,rgba(1,8,16,.62) 38%,rgba(1,8,16,.12) 78%,rgba(1,8,16,.38)),url("assets/asset-tracing-hero.jpg");background-size:cover;background-position:center}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:110px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+    .hero-content{position:relative;z-index:2;min-height:545px;display:flex;align-items:center}.copy{max-width:550px}.eyebrow{font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:.22em}.copy h1{font-size:clamp(50px,6vw,78px);line-height:.98;margin:14px 0 18px;letter-spacing:-.04em}.copy h1 span{color:var(--blue)}.copy p{font-size:16px;color:#c3d2e3;max-width:520px}.buttons{display:flex;gap:10px;margin-top:24px}.btn{padding:11px 18px;border-radius:22px;border:1px solid var(--blue);font-size:11px;font-weight:700;display:inline-flex;gap:10px;align-items:center}.primary{background:linear-gradient(100deg,#078cff,#10b7ff)}.ghost{background:rgba(0,0,0,.12)}
+.hero-points{position:absolute;bottom:17px;left:0;right:0;z-index:4;display:flex;gap:32px}.point{display:flex;gap:9px;align-items:center;font-size:11px}.point i{width:23px;height:23px;border:1px solid var(--blue);border-radius:6px;display:grid;place-items:center;color:var(--cyan);font-style:normal}.point small{display:block;color:#91a5bb;font-size:9px}
+section{padding:78px 0}.services{border-top:1px solid #092238;background:linear-gradient(180deg,#03101c,#020811)}.service-grid{display:grid;grid-template-columns:280px 1fr;gap:42px}.service-intro h2,.about h2,.process h2,.success h2,.contact h2{font-size:31px;line-height:1.08;margin:8px 0 12px}.service-intro p,.about p,.process p,.success p,.contact p{font-size:14px;color:var(--muted);max-width:390px}.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{min-height:145px;border:1px solid var(--line);border-radius:6px;padding:17px;background:linear-gradient(145deg,rgba(5,24,40,.9),rgba(3,13,23,.9));transition:.25s}.card:hover{transform:translateY(-4px);border-color:#147cc0;box-shadow:0 12px 35px rgba(0,111,255,.12)}.icon{color:var(--cyan);font-size:20px}.card h3{font-size:14px;line-height:1.25;margin:8px 0}.card p{font-size:10px;margin:0;color:#91a7bc}.arrow{display:block;margin-top:9px;color:#70c9ff}
+.about{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.82),rgba(2,10,18,.78)),url("assets/asset-tracing-office.jpg") center/cover}.about-grid{display:grid;grid-template-columns:360px 1fr 220px;gap:28px;align-items:center}.about-image{height:205px;border-radius:4px;background:url("assets/asset-tracing-office.jpg") center/cover;border:1px solid #16405e;box-shadow:0 0 30px rgba(0,100,180,.1)}.about-copy h2 span{color:var(--blue)}.checks{border-left:1px solid var(--line);padding-left:25px}.check{display:flex;gap:10px;margin:15px 0}.check b{width:25px;height:25px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-size:11px;flex:none}.check strong{display:block;font-size:9px}.check small{font-size:7px;color:var(--muted)}
+.process{background:radial-gradient(circle at 60% 30%,rgba(0,115,255,.08),transparent 30%),#020811;border-top:1px solid #092238}.process-sub{font-size:10px!important}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:40px}.step{position:relative}.step:after{content:"→";position:absolute;top:16px;right:-9px;color:#149fff}.step:last-child:after{display:none}.step-num{width:35px;height:35px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-size:10px;box-shadow:0 0 15px rgba(0,145,255,.2)}.step h3{font-size:13px;margin:9px 0 3px;color:#dceaff}.step p{font-size:10px;margin:0}
+.success{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.96),rgba(3,14,24,.94))}.success-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:35px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.stat{border:1px solid var(--line);border-radius:6px;padding:13px}.stat strong{font-size:22px;color:var(--cyan)}.stat small{display:block;font-size:9px;color:#90a5ba}.quote{border:1px solid var(--line);border-radius:7px;padding:20px;background:#061524}.quote p{color:#dbe7f5;font-size:14px}.stars{color:#ffc329;letter-spacing:3px}
+.contact{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.80),rgba(2,9,16,.70)),url("assets/asset-tracing-security.jpg") center/cover}.contact-grid{display:grid;grid-template-columns:1.1fr 1fr 330px;gap:32px;align-items:start}.contact-info{display:grid;gap:5px;margin-top:20px}.contact-info div{font-size:12px;color:#9eb2c7}.contact-info strong{color:#e7f2ff}.form{border:1px solid #14547d;border-radius:7px;padding:15px;background:rgba(5,20,33,.82)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}.form input,.form textarea,.form select{width:100%;margin-bottom:10px;background:#091c2d;border:1px solid #183c57;border-radius:5px;padding:12px;color:#fff;font-size:12px;outline:none}.form textarea{resize:vertical}.form button{width:100%;border:0;border-radius:20px;padding:12px;background:linear-gradient(90deg,#078cff,#13b3ff);color:#fff;font-size:9px;font-weight:800}
+footer{padding:25px 0;border-top:1px solid #092238;background:#01060c}.foot{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#74899f}.foot nav{font-size:8px;gap:18px}
+.whatsapp{position:fixed;right:20px;bottom:20px;width:47px;height:47px;border-radius:50%;background:#18d26b;display:grid;place-items:center;color:white;font-size:23px;z-index:60;box-shadow:0 8px 28px rgba(24,210,107,.3)}.whatsapp span{position:absolute;right:55px;background:#06121d;border:1px solid #19415d;border-radius:5px;padding:6px 8px;font-size:8px;white-space:nowrap;opacity:0;transition:.2s}.whatsapp:hover span{opacity:1}
+.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+.toast{position:fixed;right:20px;top:80px;background:#061725;border:1px solid #1b6c9c;padding:10px 14px;border-radius:7px;font-size:9px;z-index:80;display:none}.toast.show{display:block}
+@media(max-width:900px){nav{display:none}.menu{display:block}.service-grid,.about-grid,.success-grid,.contact-grid{grid-template-columns:1fr}.service-cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}.about-image{height:260px}.checks{border-left:0;border-top:1px solid var(--line);padding:18px 0}.contact-grid{gap:25px}}
+@media(max-width:600px){.hero{background-position:center top;background-size:auto 610px}.wrap{width:min(92%,var(--max))}.hero{min-height:650px;background-position:65% center}.hero-content{min-height:570px;align-items:center}.copy h1{font-size:45px}.hero-points{position:relative;bottom:auto;padding-bottom:20px;flex-wrap:wrap;gap:13px}.service-cards,.steps,.stats{grid-template-columns:1fr}.buttons{flex-direction:column}.btn{justify-content:center}.form-row{grid-template-columns:1fr}.foot{flex-direction:column;gap:12px;align-items:flex-start}}
+
+  
+.live-chat-launcher{position:fixed;right:20px;bottom:84px;z-index:89;display:flex;align-items:center;gap:8px;background:#078cff;color:#fff;border:1px solid #38c6ff;border-radius:26px;padding:11px 16px;font-size:12px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,140,255,.28)}
+.live-chat-launcher:hover{transform:translateY(-2px);filter:brightness(1.08)}
+@media(max-width:600px){.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{right:16px;bottom:18px}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap head">
+    <a class="logo" href="#home"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a>
+    <button class="menu" aria-label="Menu">☰</button>
+    <nav id="nav"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="#success">Success</a><a href="#contact">Contact</a><a class="cta" href="#contact">Get Started →</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-content">
+    <div class="copy reveal">
+      <span class="eyebrow">ETHICAL ZENITH HACKERS INTELLIGENCE</span>
+      <h1>Professional.<br><span>Ethical.</span> Secure.</h1>
+      <p>Authorized security testing, investigation, forensics, threat modeling, remediation guidance, and verification.</p>
+      <div class="buttons"><a class="btn primary" href="#contact">Get in Touch →</a><a class="btn ghost" href="#guide">▣ Explore the Guide</a></div>
+    </div>
+  </div>
+  <div class="wrap hero-points">
+    <div class="point"><i>♜</i><span><b>Professional</b><small>Certified Experts</small></span></div>
+    <div class="point"><i>◇</i><span><b>Ethical</b><small>Legal & Authorized</small></span></div>
+    <div class="point"><i>⬡</i><span><b>Secure</b><small>Your Trust, Our Priority</small></span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap service-grid">
+    <div class="service-intro reveal"><span class="eyebrow">WHAT WE DO</span><h2>Our Services</h2><p>Comprehensive cybersecurity services to keep your business protected, secure, and one step ahead.</p><a class="btn ghost" href="#contact">View All Services →</a></div>
+    <div class="service-cards">
+      <article class="card reveal"><div class="icon">♧</div><h3>Vulnerability Assessment & Penetration Testing</h3><p>Find and fix weaknesses before attackers do.</p><span class="arrow">→</span></article>
+      <article class="card reveal"><div class="icon">⌁</div><h3>Web Application Security</h3><p>Test web apps, APIs, and infrastructure for real threats.</p><span class="arrow">→</span></article>
+      <article class="card reveal"><div class="icon">⬡</div><h3>Network & Endpoint Testing</h3><p>Secure your network, devices, and cloud systems.</p><span class="arrow">→</span></article>
+      <article class="card reveal"><div class="icon">♙</div><h3>Social Engineering & Configuration Reviews</h3><p>See how your people and settings hold up under pressure.</p><span class="arrow">→</span></article>
+      <article class="card reveal"><div class="icon">♧</div><h3>Forensics & Incident Response</h3><p>Investigate, recover, and stop future attacks.</p><span class="arrow">→</span></article>
+      <article class="card reveal"><div class="icon">⌂</div><h3>Threat Modeling & Consulting</h3><p>Plan ahead. Reduce risk. Build stronger defenses.</p><span class="arrow">→</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-image reveal"></div>
+    <div class="about-copy reveal"><span class="eyebrow">ABOUT ZENITH</span><h2>Inside the World of<br><span>Ethical Zenith Hackers</span></h2><p>When most people hear the word “hacker,” they picture a hooded figure in a dark room breaking into bank accounts. The reality inside a professional white-hat security team could not be more different.</p><p>Ethical hackers use their skills to find weaknesses before real attackers do — with written authorization, defined scope and a strict code of conduct.</p><a class="btn ghost" href="#guide">Learn More →</a></div>
+    <div class="checks reveal"><div class="check"><b>◇</b><span><strong>Authorized Testing</strong><small>No unauthorized access.</small></span></div><div class="check"><b>▣</b><span><strong>Detailed Reporting</strong><small>Clear, actionable insights.</small></span></div><div class="check"><b>✓</b><span><strong>Remediation Guidance</strong><small>Fixes, not just findings.</small></span></div><div class="check"><b>✓</b><span><strong>Verified Results</strong><small>Retest. Confirm. Secure.</small></span></div></div>
+  </div>
+</section>
+
+<section class="process" id="guide">
+  <div class="wrap"><span class="eyebrow">OUR PROCESS</span><h2>The Ethical Hacking Lifecycle</h2><p class="process-sub">From reconnaissance to verification — a clear, proven process.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><h3>Reconnaissance</h3><p>Map the target and gather intelligence.</p></div>
+      <div class="step reveal"><div class="step-num">02</div><h3>Discover</h3><p>Find vulnerabilities and weak points.</p></div>
+      <div class="step reveal"><div class="step-num">03</div><h3>Exploit (Controlled)</h3><p>Simulate attacks safely and legally.</p></div>
+      <div class="step reveal"><div class="step-num">04</div><h3>Analyze</h3><p>Assess impact and privilege paths.</p></div>
+      <div class="step reveal"><div class="step-num">05</div><h3>Remediate</h3><p>Fix issues and improve security.</p></div>
+      <div class="step reveal"><div class="step-num">06</div><h3>Retest</h3><p>Verify the solution is effective.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="success" id="success">
+  <div class="wrap success-grid">
+    <div class="reveal"><span class="eyebrow">OUR SUCCESS</span><h2>Real Results. Safer Businesses.</h2><p>Proven outcomes from our ethical security services.</p>
+      <div class="stats"><div class="stat"><strong>500+</strong><small>Systems Assessed</small></div><div class="stat"><strong>98%</strong><small>Issues Remediated</small></div><div class="stat"><strong>100%</strong><small>Client Satisfaction</small></div><div class="stat"><strong>24/7</strong><small>Monitoring & Support</small></div></div>
+    </div>
+    <div class="quote reveal"><span class="eyebrow">WHAT OUR CLIENTS SAY</span><p>“Zenith Hackers Intelligence gave us clarity, not just a report. Their team was professional, ethical, and incredibly thorough. We feel more secure than ever.”</p><p><b>— James R.</b><br><small>CTO, FinTech Company</small></p><div class="stars">★★★★★</div></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal"><span class="eyebrow">GET IN TOUCH</span><h2>Ready to find out what your systems really look like to an attacker — and get it fixed the right way?</h2><p>Contact Zenith Hackers Intelligence today for a professional, authorized security assessment.</p></div>
+    <div class="contact-info reveal"><div>◉ WhatsApp / Telegram / Call or Text<br><strong>+44 755 248 6027</strong></div><div>✉ Email (General)<br><strong>support@zenithhackers.com</strong></div><div>✉ Email (Intelligence)<br><strong>zenithintel@consultant.com</strong></div><div>⌖ Location<br><strong>100 Preston's Rd, London E14 9RL, UK</strong></div></div>
+    <form class="form reveal" action="https://formsubmit.co/zenithintel@consultant.com" method="POST"><input type="hidden" name="_subject" value="New Zenith website enquiry"><input type="hidden" name="_template" value="table"><div class="form-row"><input name="name" placeholder="Full Name *" required><input type="email" name="email" placeholder="Email Address *" required></div><input name="phone" placeholder="Phone Number"><select name="service" required><option value="">Select Service *</option><option>Security Assessment</option><option>Penetration Testing</option><option>Web Application Security</option><option>Forensics & Incident Response</option><option>Threat Modeling</option><option>Other</option></select><textarea name="message" rows="5" placeholder="Message *" required></textarea><button type="submit">➤ Submit</button></form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap foot"><a class="logo" href="#home"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="#success">Success</a><a href="#contact">Contact</a></nav><span>Ethical • Legal • Secure</span></div></footer>
+
+<a class="whatsapp" href="https://wa.me/447552486027?text=Hello%20Zenith%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20security%20assessment." target="_blank" rel="noopener" aria-label="WhatsApp">◔<span>WhatsApp</span></a>
+<div class="toast" id="toast">Welcome to Zenith Hackers Intelligence.</div>
+
+<script>
+  const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+  menu.addEventListener('click',()=>{const open=nav.style.display==='flex';nav.style.display=open?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='64px';nav.style.left='4%';nav.style.right='4%';nav.style.padding='16px';nav.style.background='#061423';nav.style.border='1px solid #123653';nav.style.borderRadius='8px'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+  setTimeout(()=>document.querySelector('#toast').classList.add('show'),900);
+  setTimeout(()=>document.querySelector('#toast').classList.remove('show'),5200);
+
+</script>
+
+<a class="live-chat-launcher" href="#live-chat" aria-label="Live Chat">💬 LIVE CHAT</a>
+<div id="live-chat" aria-hidden="true"></div>
+<!-- TAWK_WIDGET_SNIPPET: Paste your free Tawk.to widget code immediately below this comment. -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aa9c6ceae02e734472156f2/1k2jj16dt';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
