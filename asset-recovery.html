@@ -28,6 +28,33 @@ section{padding:70px 0}.intro{background:linear-gradient(rgba(2,8,17,.88),rgba(2
 .live-chat-launcher:hover{transform:translateY(-2px);filter:brightness(1.08)}
 @media(max-width:600px){.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{right:16px;bottom:18px}}
 </style>
+
+<style id="zenith-tawk-launcher-style">
+#zenith-live-chat-launcher{
+  position:fixed;
+  right:20px;
+  bottom:88px;
+  z-index:2147483000;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 20px;
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(135deg,#00e5ff,#7c3aed);
+  color:#fff;
+  font:700 15px/1.1 Arial,sans-serif;
+  letter-spacing:.3px;
+  box-shadow:0 8px 28px rgba(0,0,0,.35);
+  cursor:pointer;
+  text-decoration:none;
+}
+#zenith-live-chat-launcher:hover{transform:translateY(-2px)}
+@media(max-width:600px){
+  #zenith-live-chat-launcher{right:14px;bottom:82px;padding:12px 16px;font-size:14px}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap head"><a class="logo" href="index.html"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="index.html#contact" class="cta">Get Started →</a></nav></div></header>
@@ -67,6 +94,12 @@ section{padding:70px 0}.intro{background:linear-gradient(rgba(2,8,17,.88),rgba(2
 
 
 
+
+
+<button id="zenith-live-chat-launcher" type="button" aria-label="Open live chat">
+  💬 LIVE CHAT
+</button>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -80,4 +113,29 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
+<script id="zenith-tawk-launcher-script">
+(function(){
+  var btn = document.getElementById('zenith-live-chat-launcher');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+      window.Tawk_API.maximize();
+    } else {
+      // Tawk may still be loading; retry briefly without navigating or scrolling.
+      var attempts = 0;
+      var timer = setInterval(function(){
+        attempts++;
+        if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+          clearInterval(timer);
+          window.Tawk_API.maximize();
+        } else if (attempts >= 20) {
+          clearInterval(timer);
+        }
+      }, 250);
+    }
+  });
+})();
+</script>
+
 </body></html>
