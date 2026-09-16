@@ -1,151 +1,146 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Zenith Hackers Intelligence community blog — publish cybersecurity insights and discuss posts.">
-<title>Zenith Blog | Hackers Intelligence</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#020811;--panel:#061423;--panel2:#081b2d;--line:#123653;--blue:#0798ff;--cyan:#20c7ff;--text:#f4f8ff;--muted:#9fb2c7;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.65;background:linear-gradient(rgba(1,7,14,.86),rgba(1,7,14,.94)),url("assets/asset-tracing-security.jpg") center/cover fixed no-repeat,var(--bg)}
-a{text-decoration:none;color:inherit}.wrap{width:min(92%,var(--max));margin:auto}
-header{position:fixed;top:0;left:0;right:0;height:68px;z-index:50;background:rgba(1,7,14,.82);backdrop-filter:blur(15px);border-bottom:1px solid rgba(32,199,255,.14)}
-.head{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.shield{width:35px;height:40px;display:grid;place-items:center;color:#fff;font-weight:800;border:2px solid var(--blue);clip-path:polygon(50% 0,100% 15%,90% 78%,50% 100%,10% 78%,0 15%);box-shadow:0 0 18px rgba(0,153,255,.35)}.logo b{letter-spacing:.24em;font-size:16px}.logo small{display:block;color:var(--cyan);font-size:7px;letter-spacing:.18em}nav{display:flex;gap:24px;align-items:center;font-size:13px;color:#d0dceb}nav a:hover,nav a.active{color:var(--cyan)}.cta{padding:9px 16px;border:1px solid var(--blue);border-radius:7px}
-.hero{padding:145px 0 72px;min-height:510px;background:linear-gradient(90deg,rgba(1,8,16,.93),rgba(1,8,16,.55)),url("assets/asset-tracing-office.jpg") center/cover;position:relative;border-bottom:1px solid #0b2c42}.eyebrow{font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:.22em}.hero h1{font-size:clamp(46px,6vw,76px);line-height:1;margin:13px 0 18px;letter-spacing:-.04em}.hero h1 span{color:var(--blue)}.hero p{max-width:700px;color:#c3d2e3;font-size:16px}.buttons{display:flex;gap:10px;margin-top:24px}.btn{padding:11px 18px;border-radius:22px;border:1px solid var(--blue);font-size:12px;font-weight:800}.primary{background:linear-gradient(90deg,#078cff,#13b3ff)}.ghost{background:rgba(4,18,31,.7)}
-main{padding:60px 0 90px}.grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(290px,.7fr);gap:28px}.panel{border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,rgba(5,24,40,.93),rgba(3,13,23,.95));padding:24px;box-shadow:0 16px 45px rgba(0,0,0,.18)}.panel h2{font-size:27px;margin:0 0 8px}.muted{color:var(--muted);font-size:13px}
-.post-list{display:grid;gap:16px;margin-top:20px}.post{border:1px solid #16405e;border-radius:9px;padding:20px;background:rgba(4,17,29,.9)}.post h3{margin:0 0 5px;font-size:21px}.post-meta{font-size:10px;color:#82a0ba;margin-bottom:13px}.post-body{white-space:pre-wrap;color:#dce8f5;font-size:13px}.post-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.small-btn{border:1px solid #1b557a;background:#071a2a;color:#dff4ff;border-radius:18px;padding:7px 11px;font-size:10px;cursor:pointer}.small-btn:hover{border-color:var(--cyan);color:#fff}.comments{margin-top:18px;border-top:1px solid #15334b;padding-top:16px}.comment{padding:11px 0;border-bottom:1px solid rgba(18,54,83,.6)}.comment:last-child{border-bottom:0}.comment strong{font-size:11px}.comment time{font-size:9px;color:#7893aa;margin-left:7px}.comment p{font-size:11px;color:#c5d5e6;margin:4px 0 0;white-space:pre-wrap}.comment-form{margin-top:13px;display:grid;gap:8px}
-.form{display:grid;gap:9px}.form label{font-size:10px;color:#9fb2c7;font-weight:700}.form input,.form textarea{width:100%;background:#091c2d;border:1px solid #183c57;border-radius:6px;padding:11px;color:#fff;font:inherit;font-size:12px;outline:none}.form input:focus,.form textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(32,199,255,.08)}.form textarea{min-height:150px;resize:vertical}.form button{border:0;border-radius:22px;padding:12px;background:linear-gradient(90deg,#078cff,#13b3ff);color:#fff;font-size:11px;font-weight:800;cursor:pointer}.notice{border:1px solid #16405e;background:#061725;border-radius:7px;padding:11px 12px;color:#a9c0d4;font-size:10px;margin:15px 0 0}.notice b{color:#dff5ff}.empty{padding:35px 10px;text-align:center;color:#839ab0;font-size:12px}.danger{border-color:#6d3040}.side{display:grid;gap:16px}.topic{display:flex;gap:9px;align-items:flex-start;margin:10px 0}.topic i{width:25px;height:25px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-style:normal;font-size:10px;flex:none}.topic strong{display:block;font-size:11px}.topic span{display:block;color:#849bb0;font-size:9px}
-footer{padding:25px 0;border-top:1px solid #092238;background:#01060c}.foot{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#74899f}.foot nav{font-size:8px;gap:18px}.whatsapp{position:fixed;right:20px;bottom:20px;width:49px;height:49px;border-radius:50%;background:#19d56d;color:#fff;display:grid;place-items:center;font-size:23px;z-index:60;box-shadow:0 10px 30px rgba(25,213,109,.3)}.whatsapp span{position:absolute;right:57px;background:#06121d;border:1px solid #19415d;border-radius:5px;padding:6px 8px;font-size:8px;white-space:nowrap;opacity:0;transition:.2s}.whatsapp:hover span{opacity:1}.live-chat-launcher{position:fixed;right:20px;bottom:84px;z-index:59;display:flex;align-items:center;gap:8px;background:#078cff;color:#fff;border:1px solid #38c6ff;border-radius:26px;padding:11px 16px;font-size:12px;font-weight:800;box-shadow:0 10px 30px rgba(0,140,255,.28)}.live-chat-launcher:hover{transform:translateY(-2px)}
-.toast{position:fixed;right:20px;top:84px;background:#061725;border:1px solid #1b6c9c;padding:10px 14px;border-radius:7px;font-size:10px;z-index:80;display:none}.toast.show{display:block}
-@media(max-width:850px){nav{display:none}.grid{grid-template-columns:1fr}.hero{min-height:540px}.foot{flex-direction:column;gap:10px;align-items:flex-start}}@media(max-width:600px){.hero{padding-top:125px}.hero h1{font-size:45px}.buttons{flex-direction:column}.btn{text-align:center}.panel{padding:18px}.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{right:16px;bottom:18px}}
-</style>
-
-
-
-<style id="zenith-tawk-launcher-style">
-#zenith-live-chat-launcher{
-  position:fixed;
-  right:20px;
-  bottom:88px;
-  z-index:2147483000;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:14px 20px;
-  border:0;
-  border-radius:999px;
-  background:linear-gradient(135deg,#00e5ff,#7c3aed);
-  color:#fff;
-  font:700 15px/1.1 Arial,sans-serif;
-  letter-spacing:.3px;
-  box-shadow:0 8px 28px rgba(0,0,0,.35);
-  cursor:pointer;
-  text-decoration:none;
-}
-#zenith-live-chat-launcher:hover{transform:translateY(-2px)}
-@media(max-width:600px){
-  #zenith-live-chat-launcher{right:14px;bottom:82px;padding:12px 16px;font-size:14px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zenith Hackers Intelligence — cybersecurity intelligence, ethical hacking, digital forensics and asset-tracing articles.">
+  <title>Zenith Intelligence Blog</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="tawk-config.js" defer></script>
+  <style>
+    :root{--bg:#05080d;--panel:#0b111a;--panel2:#0f1722;--text:#eaf2f8;--muted:#9aabb9;--line:#1b2a38;--accent:#49d9ff;--accent2:#7b61ff;--danger:#ff6b7a}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 80% -10%,#123047 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}
+    nav{position:sticky;top:0;z-index:20;background:rgba(5,8,13,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.04em}.brand span{color:var(--accent)}
+    .links{display:flex;gap:22px;align-items:center}.links a{color:#c5d0d9}.links a:hover{color:var(--accent)}
+    .hero{padding:88px 0 54px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-size:.78rem;font-weight:800}.hero h1{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.98;margin:12px 0 20px;max-width:900px}.hero p{max-width:720px;color:var(--muted);font-size:1.15rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--accent),#6c8cff);color:#041019;border:0}.btn:hover{transform:translateY(-1px)}
+    .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 28px}.search{flex:1;min-width:220px}.input,.textarea,.select{width:100%;border:1px solid var(--line);background:#071019;color:var(--text);border-radius:10px;padding:13px 14px;outline:none}.input:focus,.textarea:focus,.select:focus{border-color:var(--accent)}.select{min-width:180px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;overflow:hidden}.cardbody{padding:20px}.cover{height:190px;width:100%;object-fit:cover;background:#101a25}.tag{display:inline-block;border:1px solid #284557;color:var(--accent);padding:4px 8px;border-radius:999px;font-size:.72rem;font-weight:800}.card h3{font-size:1.25rem;line-height:1.2;margin:12px 0 8px}.meta{color:var(--muted);font-size:.82rem}.excerpt{color:#b5c1cb}
+    section{padding:40px 0}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.sectionhead h2{margin:0;font-size:2rem}.empty{padding:40px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modalbox{width:min(760px,100%);max-height:92vh;overflow:auto;background:#09111a;border:1px solid var(--line);border-radius:18px;padding:26px}.modalhead{display:flex;justify-content:space-between;gap:15px}.close{background:none;border:0;color:var(--muted);font-size:1.6rem;cursor:pointer}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}.label{font-size:.82rem;color:#aebbc5;font-weight:800;display:block;margin-bottom:6px}.notice{padding:12px 14px;border-radius:10px;background:#101d28;color:#b9c8d2;border:1px solid var(--line);margin-bottom:16px}.status{margin-top:12px;font-size:.9rem}.ok{color:#7df0b4}.err{color:#ff8996}
+    .article{max-width:860px;margin:auto}.article h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05}.article-content{white-space:pre-wrap;color:#cbd6de;font-size:1.08rem}.comments{margin-top:40px}.comment{border-top:1px solid var(--line);padding:16px 0}.comment strong{color:#fff}.comment p{margin:5px 0;color:#bcc8d0}.commentform{display:grid;gap:10px}
+    footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);margin-top:60px}
+    @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.links{gap:10px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}}
+    @media(max-width:580px){.grid{grid-template-columns:1fr}.navin{height:auto;padding:15px 0;align-items:flex-start}.links{font-size:.82rem;flex-wrap:wrap;justify-content:flex-end}.hero{padding-top:58px}}
+  </style>
 </head>
 <body>
-<header><div class="wrap head"><a class="logo" href="index.html"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a class="active" href="blog.html">Blog</a><a href="index.html#contact" class="cta">Get Started →</a></nav></div></header>
-<section class="hero"><div class="wrap"><span class="eyebrow">ZENITH COMMUNITY BLOG</span><h1>Security ideas.<br><span>Real conversations.</span></h1><p>Publish cybersecurity articles, lessons learned, defensive guidance and authorized security insights. Visitors can comment on posts and join the discussion.</p><div class="buttons"><a class="btn primary" href="#create">✎ Create a Post</a><a class="btn ghost" href="#posts">↓ Read Posts</a></div></div></section>
-<main><div class="wrap grid"><section class="panel" id="posts"><span class="eyebrow">COMMUNITY POSTS</span><h2>Latest Posts</h2><p class="muted">Share useful, lawful and defensive cybersecurity knowledge.</p><div id="postList" class="post-list"></div></section>
-<aside class="side"><section class="panel" id="create"><span class="eyebrow">PUBLISH</span><h2>Create a Post</h2><p class="muted">Add your name, title and article. Keep posts legal, authorized and security-focused.</p><form id="postForm" class="form"><label for="author">Author name</label><input id="author" maxlength="80" required placeholder="Your name"><label for="title">Post title</label><input id="title" maxlength="120" required placeholder="e.g. Five ways to harden a login system"><label for="body">Post content</label><textarea id="body" maxlength="8000" required placeholder="Write your cybersecurity article..."></textarea><button type="submit">PUBLISH POST</button></form><div class="notice"><b>GitHub Pages note:</b> this standalone version stores posts and comments in the visitor's browser using local storage. It does not create a shared public database. A database can be connected later for site-wide community posts.</div></section>
-<section class="panel"><span class="eyebrow">COMMUNITY RULES</span><h2>Keep it ethical</h2><div class="topic"><i>✓</i><div><strong>Authorized security</strong><span>Discuss testing and research performed with permission.</span></div></div><div class="topic"><i>✓</i><div><strong>Defensive value</strong><span>Focus on prevention, detection, remediation and learning.</span></div></div><div class="topic"><i>✓</i><div><strong>No personal data</strong><span>Do not publish private credentials, secrets or sensitive records.</span></div></div></section></aside></div></main>
-<footer><div class="wrap foot"><a class="logo" href="index.html"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="index.html">Home</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="index.html#contact">Contact</a></nav><span>Ethical • Legal • Secure</span></div></footer>
-<a class="whatsapp" href="https://wa.me/447552486027?text=Hello%20Zenith%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20security%20matter." target="_blank" rel="noopener" aria-label="WhatsApp">◔<span>WhatsApp</span></a>
-<div id="live-chat" aria-hidden="true"></div>
-<div class="toast" id="toast"></div>
+<nav><div class="wrap navin"><a class="brand" href="index.html">ZENITH <span>HACKERS</span></a><div class="links"><a href="index.html">Home</a><a href="asset-recovery.html">Asset Tracing</a><a href="blog.html">Blog</a><a href="#create" id="topCreate">Create Post</a></div></div></nav>
 
+<header class="hero wrap">
+  <div class="eyebrow">Ethical • Legal • Secure</div>
+  <h1>Zenith Intelligence</h1>
+  <p>Cybersecurity knowledge, ethical hacking, digital forensics, threat intelligence and practical security guidance from the Zenith community.</p>
+  <div class="actions"><button class="btn primary" id="heroCreate">Create a Post</button><a class="btn" href="#latest">Explore Articles</a></div>
+</header>
 
+<main class="wrap">
+<section id="latest">
+  <div class="sectionhead"><div><div class="eyebrow">Community knowledge</div><h2>Latest Intelligence</h2></div></div>
+  <div class="toolbar">
+    <input class="input search" id="search" placeholder="Search articles...">
+    <select class="select" id="category"><option value="">All categories</option><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity Tips</option><option>Case Studies</option></select>
+  </div>
+  <div id="posts" class="grid"><div class="empty">Loading intelligence...</div></div>
+</section>
+</main>
+
+<div class="modal" id="create">
+  <div class="modalbox">
+    <div class="modalhead"><div><div class="eyebrow">Community publishing</div><h2>Create a Post</h2></div><button class="close" id="closeCreate">×</button></div>
+    <div class="notice">Posts are public. Do not publish passwords, private personal data, exploit credentials, or confidential client information.</div>
+    <form id="postForm">
+      <div class="formgrid">
+        <div><label class="label">Title</label><input class="input" name="title" maxlength="180" required></div>
+        <div><label class="label">Your name</label><input class="input" name="author_name" maxlength="80" required></div>
+        <div><label class="label">Category</label><select class="select" name="category"><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity Tips</option><option>Case Studies</option></select></div>
+        <div><label class="label">Cover image URL (optional)</label><input class="input" name="cover_image" type="url"></div>
+        <div class="full"><label class="label">Short excerpt</label><textarea class="textarea" name="excerpt" maxlength="500" rows="3" required></textarea></div>
+        <div class="full"><label class="label">Article</label><textarea class="textarea" name="content" minlength="20" rows="12" required></textarea></div>
+      </div>
+      <button class="btn primary" type="submit" style="margin-top:16px">Publish Post</button>
+      <div id="postStatus" class="status"></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="articleModal">
+  <div class="modalbox article">
+    <button class="close" id="closeArticle">×</button>
+    <div id="articleContent"></div>
+  </div>
+</div>
+
+<footer><div class="wrap">© <span id="year"></span> Zenith Hackers Intelligence · Ethical • Legal • Secure</div></footer>
+
+<script src="supabase-config.js"></script>
 <script>
-const KEY='zenithBlogPostsV1';
-const seed=[{id:'seed-1',author:'Zenith Team',title:'Why authorized security testing matters',body:'Security testing is most useful when scope, authorization and reporting expectations are clear. A professional assessment should identify weaknesses, explain practical risk, and help the owner remediate and verify the result.',created:'2026-09-15T12:00:00.000Z',comments:[{id:'seed-c1',author:'Community Member',body:'Clear scope and useful reporting make a big difference.',created:'2026-09-15T13:00:00.000Z'}]}];
-function load(){try{const x=JSON.parse(localStorage.getItem(KEY));return Array.isArray(x)?x:seed}catch(e){return seed}}
-function save(posts){localStorage.setItem(KEY,JSON.stringify(posts))}
-function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-function fmt(d){return new Date(d).toLocaleString([], {dateStyle:'medium',timeStyle:'short'})}
-function render(){const posts=load(), list=document.getElementById('postList'); if(!posts.length){list.innerHTML='<div class="empty">No posts yet. Be the first to publish one.</div>';return} list.innerHTML=posts.slice().sort((a,b)=>new Date(b.created)-new Date(a.created)).map(p=>`<article class="post"><h3>${esc(p.title)}</h3><div class="post-meta">By ${esc(p.author)} · ${fmt(p.created)}</div><div class="post-body">${esc(p.body)}</div><div class="post-actions"><button class="small-btn" onclick="focusComment('${p.id}')">💬 Comment (${(p.comments||[]).length})</button><button class="small-btn danger" onclick="deletePost('${p.id}')">Delete post</button></div><div class="comments" id="comments-${p.id}">${(p.comments||[]).length? p.comments.map(c=>`<div class="comment"><strong>${esc(c.author)}</strong><time>${fmt(c.created)}</time><p>${esc(c.body)}</p></div>`).join(''):'<div class="muted">No comments yet.</div>'}<form class="comment-form" onsubmit="addComment(event,'${p.id}')"><input maxlength="80" required placeholder="Your name"><input maxlength="1200" required placeholder="Write a comment"><button class="small-btn" type="submit">POST COMMENT</button></form></div></article>`).join('')}
-function addComment(e,id){e.preventDefault();const f=e.target,p=load().find(x=>x.id===id);if(!p)return;p.comments=p.comments||[];p.comments.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),author:f.elements[0].value.trim(),body:f.elements[1].value.trim(),created:new Date().toISOString()});save(load().map(x=>x.id===id?p:x));render()}
-function deletePost(id){if(!confirm('Delete this post and its comments from this browser?'))return;save(load().filter(p=>p.id!==id));render()}
-function focusComment(id){document.getElementById('comments-'+id)?.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>document.querySelector('#comments-'+id+' input')?.focus(),350)}
-document.getElementById('postForm').addEventListener('submit',e=>{e.preventDefault();const f=e.target,posts=load();posts.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),author:f.author.value.trim(),title:f.title.value.trim(),body:f.body.value.trim(),created:new Date().toISOString(),comments:[]});save(posts);f.reset();render();document.getElementById('posts').scrollIntoView({behavior:'smooth'});showToast('Post published on this browser.')});
-function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),3000)}
-render();
-</script>
+const { createClient } = window.supabase;
+const sb = createClient(window.ZENITH_SUPABASE_URL, window.ZENITH_SUPABASE_PUBLISHABLE_KEY);
+const $ = s => document.querySelector(s);
+let allPosts = [];
 
-
-
-
-
-
-
-
-
-
-
-<button id="zenith-live-chat-launcher" type="button" aria-label="Open Zenith live chat">
-  💬 LIVE CHAT
-</button>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-
-(function(){
-  var s1 = document.createElement("script");
-  var s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = 'https://embed.tawk.to/6aa9c6ceae02e734472156f2/1k2jj16dt';
-  s1.charset = 'UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<script id="zenith-tawk-launcher-script">
-(function(){
-  var ready = false;
-  var button = document.getElementById('zenith-live-chat-launcher');
-
-  window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_API.onLoad = function(){
-    ready = true;
+function slugify(v){ return v.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').slice(0,90) + '-' + Math.random().toString(36).slice(2,7); }
+function escapeHtml(v=''){return v.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function dateFmt(v){return new Date(v).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});}
+function renderPosts(){
+  const q=$('#search').value.toLowerCase().trim(), cat=$('#category').value;
+  const filtered=allPosts.filter(p=>(!cat||p.category===cat)&&(!q||`${p.title} ${p.excerpt} ${p.author_name} ${p.content}`.toLowerCase().includes(q)));
+  $('#posts').innerHTML=filtered.length?filtered.map(p=>`
+    <article class="card">
+      ${p.cover_image?`<img class="cover" src="${escapeHtml(p.cover_image)}" alt="" loading="lazy" onerror="this.style.display='none'">`:''}
+      <div class="cardbody"><span class="tag">${escapeHtml(p.category)}</span><h3>${escapeHtml(p.title)}</h3>
+      <div class="meta">By ${escapeHtml(p.author_name)} · ${dateFmt(p.created_at)}</div><p class="excerpt">${escapeHtml(p.excerpt)}</p>
+      <button class="btn" data-read="${p.id}">Read Article</button></div>
+    </article>`).join(''):'<div class="empty" style="grid-column:1/-1">No articles match your search.</div>';
+  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>openArticle(b.dataset.read));
+}
+async function loadPosts(){
+  const {data,error}=await sb.from('posts').select('*').eq('published',true).order('created_at',{ascending:false});
+  if(error){$('#posts').innerHTML=`<div class="empty" style="grid-column:1/-1">Could not load the blog database. ${escapeHtml(error.message)}</div>`;return;}
+  allPosts=data||[]; renderPosts();
+}
+async function openArticle(id){
+  const p=allPosts.find(x=>x.id===id); if(!p)return;
+  $('#articleContent').innerHTML=`
+    <span class="tag">${escapeHtml(p.category)}</span><h1>${escapeHtml(p.title)}</h1>
+    <div class="meta">By ${escapeHtml(p.author_name)} · ${dateFmt(p.created_at)}</div>
+    ${p.cover_image?`<img class="cover" style="height:auto;max-height:420px;margin:20px 0" src="${escapeHtml(p.cover_image)}" alt="">`:''}
+    <p class="article-content">${escapeHtml(p.content)}</p>
+    <div class="comments"><h2>Comments</h2><div id="commentsList"><div class="empty">Loading comments...</div></div>
+      <h3>Leave a comment</h3>
+      <form class="commentform" id="commentForm"><input class="input" name="author_name" maxlength="80" placeholder="Your name" required><textarea class="textarea" name="content" maxlength="2000" rows="5" placeholder="Your comment" required></textarea><button class="btn primary">Post Comment</button><div id="commentStatus" class="status"></div></form>
+    </div>`;
+  $('#articleModal').classList.add('open');
+  await loadComments(id);
+  $('#commentForm').onsubmit=async e=>{
+    e.preventDefault(); const f=new FormData(e.target);
+    $('#commentStatus').textContent='Posting...';
+    const {error}=await sb.from('comments').insert({post_id:id,author_name:f.get('author_name').trim(),content:f.get('content').trim(),approved:true});
+    if(error){$('#commentStatus').className='status err';$('#commentStatus').textContent=error.message;return;}
+    e.target.reset();$('#commentStatus').className='status ok';$('#commentStatus').textContent='Comment published.';await loadComments(id);
   };
-
-  if (!button) return;
-
-  button.addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
-      window.Tawk_API.toggle();
-      return;
-    }
-
-    if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
-      window.Tawk_API.maximize();
-      return;
-    }
-
-    // Tawk is still loading. Give it time, without navigating/scrolling.
-    var tries = 0;
-    var timer = setInterval(function(){
-      tries++;
-      if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
-        clearInterval(timer);
-        window.Tawk_API.toggle();
-      } else if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
-        clearInterval(timer);
-        window.Tawk_API.maximize();
-      } else if (tries >= 40) {
-        clearInterval(timer);
-      }
-    }, 250);
-  });
-})();
+}
+async function loadComments(postId){
+  const {data,error}=await sb.from('comments').select('*').eq('post_id',postId).eq('approved',true).order('created_at',{ascending:true});
+  if(error){$('#commentsList').innerHTML=`<div class="empty">${escapeHtml(error.message)}</div>`;return;}
+  $('#commentsList').innerHTML=data.length?data.map(c=>`<div class="comment"><strong>${escapeHtml(c.author_name)}</strong><div class="meta">${dateFmt(c.created_at)}</div><p>${escapeHtml(c.content)}</p></div>`).join(''):'<div class="empty">No comments yet. Start the conversation.</div>';
+}
+$('#postForm').onsubmit=async e=>{
+  e.preventDefault();const f=new FormData(e.target);const title=f.get('title').trim();
+  $('#postStatus').textContent='Publishing...';
+  const {error}=await sb.from('posts').insert({title,slug:slugify(title),excerpt:f.get('excerpt').trim(),content:f.get('content').trim(),author_name:f.get('author_name').trim(),category:f.get('category'),cover_image:f.get('cover_image')||null,published:true});
+  if(error){$('#postStatus').className='status err';$('#postStatus').textContent=error.message;return;}
+  $('#postStatus').className='status ok';$('#postStatus').textContent='Published successfully.';e.target.reset();await loadPosts();setTimeout(()=>$('#create').classList.remove('open'),700);
+};
+function openCreate(e){if(e)e.preventDefault();$('#create').classList.add('open');}
+$('#heroCreate').onclick=openCreate;$('#topCreate').onclick=openCreate;$('#closeCreate').onclick=()=>$('#create').classList.remove('open');$('#closeArticle').onclick=()=>$('#articleModal').classList.remove('open');
+window.onclick=e=>{if(e.target.classList.contains('modal'))e.target.classList.remove('open')};
+$('#search').oninput=renderPosts;$('#category').onchange=renderPosts;$('#year').textContent=new Date().getFullYear();
+loadPosts();
 </script>
-</body></html>
+</body>
+</html>

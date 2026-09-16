@@ -49,3 +49,9 @@ Tawk.to live chat is installed on `index.html`, `asset-recovery.html`, and `blog
 
 
 Tawk live chat: installed on index.html, asset-recovery.html, and blog.html. The Zenith LIVE CHAT button uses Tawk_API.toggle()/maximize() after the Tawk API becomes available and does not navigate to #live-chat.
+
+## Supabase shared blog
+The blog is now connected to Supabase for shared public posts and comments.
+Run `supabase-schema.sql` once in the Supabase SQL Editor before publishing.
+The site uses only the public Supabase publishable key in `supabase-config.js`.
+Never place a Supabase secret/service-role key in the website.
