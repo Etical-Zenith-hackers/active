@@ -46,3 +46,6 @@ A free Tawk.to live-chat launcher is prepared on both pages. Paste your unique T
 
 ### Live Chat
 Tawk.to live chat is installed on `index.html`, `asset-recovery.html`, and `blog.html` using the supplied widget code.
+
+
+Tawk live chat: installed on index.html, asset-recovery.html, and blog.html. The Zenith LIVE CHAT button uses Tawk_API.toggle()/maximize() after the Tawk API becomes available and does not navigate to #live-chat.

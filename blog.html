@@ -21,6 +21,8 @@ footer{padding:25px 0;border-top:1px solid #092238;background:#01060c}.foot{disp
 @media(max-width:850px){nav{display:none}.grid{grid-template-columns:1fr}.hero{min-height:540px}.foot{flex-direction:column;gap:10px;align-items:flex-start}}@media(max-width:600px){.hero{padding-top:125px}.hero h1{font-size:45px}.buttons{flex-direction:column}.btn{text-align:center}.panel{padding:18px}.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{right:16px;bottom:18px}}
 </style>
 
+
+
 <style id="zenith-tawk-launcher-style">
 #zenith-live-chat-launcher{
   position:fixed;
@@ -46,7 +48,6 @@ footer{padding:25px 0;border-top:1px solid #092238;background:#01060c}.foot{disp
   #zenith-live-chat-launcher{right:14px;bottom:82px;padding:12px 16px;font-size:14px}
 }
 </style>
-
 </head>
 <body>
 <header><div class="wrap head"><a class="logo" href="index.html"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a class="active" href="blog.html">Blog</a><a href="index.html#contact" class="cta">Get Started →</a></nav></div></header>
@@ -80,46 +81,71 @@ render();
 
 
 
-<button id="zenith-live-chat-launcher" type="button" aria-label="Open live chat">
+
+
+
+
+
+
+<button id="zenith-live-chat-launcher" type="button" aria-label="Open Zenith live chat">
   💬 LIVE CHAT
 </button>
-
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6aa9c6ceae02e734472156f2/1k2jj16dt';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+  var s1 = document.createElement("script");
+  var s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6aa9c6ceae02e734472156f2/1k2jj16dt';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
 <script id="zenith-tawk-launcher-script">
 (function(){
-  var btn = document.getElementById('zenith-live-chat-launcher');
-  if (!btn) return;
-  btn.addEventListener('click', function(){
+  var ready = false;
+  var button = document.getElementById('zenith-live-chat-launcher');
+
+  window.Tawk_API = window.Tawk_API || {};
+  window.Tawk_API.onLoad = function(){
+    ready = true;
+  };
+
+  if (!button) return;
+
+  button.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
+      window.Tawk_API.toggle();
+      return;
+    }
+
     if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
       window.Tawk_API.maximize();
-    } else {
-      // Tawk may still be loading; retry briefly without navigating or scrolling.
-      var attempts = 0;
-      var timer = setInterval(function(){
-        attempts++;
-        if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
-          clearInterval(timer);
-          window.Tawk_API.maximize();
-        } else if (attempts >= 20) {
-          clearInterval(timer);
-        }
-      }, 250);
+      return;
     }
+
+    // Tawk is still loading. Give it time, without navigating/scrolling.
+    var tries = 0;
+    var timer = setInterval(function(){
+      tries++;
+      if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
+        clearInterval(timer);
+        window.Tawk_API.toggle();
+      } else if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+        clearInterval(timer);
+        window.Tawk_API.maximize();
+      } else if (tries >= 40) {
+        clearInterval(timer);
+      }
+    }, 250);
   });
 })();
 </script>
-
 </body></html>
