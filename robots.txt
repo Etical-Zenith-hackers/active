@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://etical-zenith-hackers.github.io/active/sitemap.xml
