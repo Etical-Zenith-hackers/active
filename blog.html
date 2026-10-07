@@ -118,7 +118,7 @@ function renderPosts(){
       ${p.cover_image?`<img class="cover" src="${escapeHtml(p.cover_image)}" alt="" loading="lazy" onerror="this.style.display='none'">`:''}
       <div class="cardbody"><span class="tag">${escapeHtml(p.category)}</span><h3>${escapeHtml(p.title)}</h3>
       <div class="meta">By ${escapeHtml(p.author_name)} · ${dateFmt(p.created_at)}</div><p class="excerpt">${escapeHtml(p.excerpt)}</p>
-      <a class="btn" href="article.html?slug=${encodeURIComponent(p.slug)}">Read Article</a></div>
+      <a class="btn" href="articles/${encodeURIComponent(p.slug)}.html">Read Article</a></div>
     </article>`).join(''):'<div class="empty" style="grid-column:1/-1">No articles match your search.</div>';
   document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>openArticle(b.dataset.read));
 }
