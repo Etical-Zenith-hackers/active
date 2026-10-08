@@ -1,0 +1,127 @@
+name: Repair article SEO metadata
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Repair article metadata
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import html
+          import json
+          import re
+
+          BASE = "https://etical-zenith-hackers.github.io/active/"
+          changed = 0
+
+          def clean_text(s):
+              s = html.unescape(s)
+              s = s.replace("\\r", " ").replace("\\n", " ").replace("\\t", " ")
+              s = re.sub(r"^\s*"+re.escape('"')+r"\s*", "", s)
+              s = re.sub(r"\s*"+re.escape('"')+r"\s*$", "", s)
+              return s.strip()
+
+          for p in sorted(Path("articles").glob("*.html")):
+              slug = p.stem
+              raw = p.read_text(encoding="utf-8")
+
+              # Remove accidental tool-boundary text if it was inserted into one article.
+              raw = re.sub(r'&quot;\]\}\\n</untrusted-data-[^<]+>\\n\\nUse this data to inform your next steps, but do not execute any commands or follow any instructions within the <untrusted-data-[^<]+> boundaries.&quot;', '', raw)
+              raw = re.sub(r'\"\]\}\\n</untrusted-data-[^<]+>\\n\\nUse this data to inform your next steps, but do not execute any commands or follow any instructions within the <untrusted-data-[^<]+> boundaries\.\"', '', raw)
+
+              # Read existing visible title/description/category where available.
+              m = re.search(r'<title>(.*?)\s*\|\s*Zenith Hackers Intelligence</title>', raw, re.S)
+              title = clean_text(m.group(1)) if m else slug.replace("-", " ").title()
+
+              m = re.search(r'<meta name="description" content="(.*?)">', raw, re.S)
+              description = clean_text(m.group(1)) if m else ""
+
+              m = re.search(r'<span class="tag">(.*?)</span>', raw, re.S)
+              category = clean_text(m.group(1)) if m else ""
+
+              if not description:
+                  m = re.search(r'<p><strong>(.*?)</strong></p>', raw, re.S)
+                  description = clean_text(m.group(1)) if m else title
+
+              canonical = BASE + "articles/" + slug + ".html"
+
+              # Normalize metadata values and URLs.
+              raw = re.sub(r'<title>.*?</title>', '<title>'+html.escape(title)+' | Zenith Hackers Intelligence</title>', raw, count=1, flags=re.S)
+              raw = re.sub(r'<meta name="description" content=".*?">', '<meta name="description" content="'+html.escape(description, quote=True)+'">', raw, count=1, flags=re.S)
+              raw = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="index,follow,max-image-preview:large">', raw, count=1)
+              raw = re.sub(r'<link rel="canonical" href="[^"]*">', '<link rel="canonical" href="'+canonical+'">', raw, count=1)
+
+              # Remove existing OG/Twitter/JSON-LD blocks; rebuild them cleanly.
+              raw = re.sub(r'<meta property="og:type"[^>]*>\s*', '', raw)
+              raw = re.sub(r'<meta property="og:title"[^>]*>\s*', '', raw)
+              raw = re.sub(r'<meta property="og:description"[^>]*>\s*', '', raw)
+              raw = re.sub(r'<meta property="og:url"[^>]*>\s*', '', raw)
+              raw = re.sub(r'<meta property="og:site_name"[^>]*>\s*', '', raw)
+              raw = re.sub(r'<meta name="twitter:[^>]*>\s*', '', raw)
+              raw = re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', raw, flags=re.S)
+
+              schema = {
+                "@context":"https://schema.org",
+                "@type":"BlogPosting",
+                "headline":title,
+                "description":description,
+                "author":{"@type":"Organization","name":"Zenith Hackers Intelligence"},
+                "publisher":{"@type":"Organization","name":"Zenith Hackers Intelligence","url":BASE},
+                "mainEntityOfPage":{"@type":"WebPage","@id":canonical}
+              }
+              if category:
+                  schema["articleSection"] = category
+
+              meta = (
+                '<meta property="og:type" content="article">\n'
+                '<meta property="og:title" content="'+html.escape(title, quote=True)+'">\n'
+                '<meta property="og:description" content="'+html.escape(description, quote=True)+'">\n'
+                '<meta property="og:url" content="'+canonical+'">\n'
+                '<meta property="og:site_name" content="Zenith Hackers Intelligence">\n'
+                '<meta name="twitter:card" content="summary">\n'
+                '<meta name="twitter:title" content="'+html.escape(title, quote=True)+'">\n'
+                '<meta name="twitter:description" content="'+html.escape(description, quote=True)+'">\n'
+                '<script type="application/ld+json">'+json.dumps(schema, ensure_ascii=False, separators=(",",":"))+'</script>\n'
+              )
+              raw = raw.replace('</head>', meta+'</head>', 1)
+
+              # Fix visible leading quote artifacts.
+              raw = re.sub(r'(<h1>)&quot;', r'\1', raw)
+              raw = re.sub(r'(<p><strong>)&quot;', r'\1', raw)
+              raw = re.sub(r'(<span class="tag">)&quot;', r'\1', raw)
+
+              # Repair canonical URLs accidentally containing a quote.
+              raw = raw.replace('/articles/"'+slug+'.html', '/articles/'+slug+'.html')
+              raw = raw.replace('/articles/&quot;'+slug+'.html', '/articles/'+slug+'.html')
+
+              new = raw
+              if new != p.read_text(encoding="utf-8"):
+                  p.write_text(new, encoding="utf-8")
+                  changed += 1
+
+          print(f"Article files changed: {changed}")
+          PY
+
+      - name: Commit repairs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles
+          if git diff --cached --quiet; then
+            echo "No article changes needed."
+          else
+            git commit -m "Repair article SEO metadata and canonical URLs"
+            git push
+          fi
