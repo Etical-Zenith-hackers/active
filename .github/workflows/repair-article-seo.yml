@@ -125,3 +125,5 @@ jobs:
             git commit -m "Repair article SEO metadata and canonical URLs"
             git push
           fi
+
+# Trigger repair run
