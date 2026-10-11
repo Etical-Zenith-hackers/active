@@ -19,7 +19,7 @@
 <div class="notice warn"><strong>Manual-control safeguard:</strong> This dashboard never sends emails, pitches, or articles to external publishers. It prepares drafts and records your manual actions only. Publisher rules, AI-content policy, exclusivity, and permission must be checked for each outlet.</div>
 <div id="auth-panel" class="panel">
 <h2>Sign in</h2><p class="muted small">Use your existing Supabase account. This page does not offer public account registration.</p>
-<form id="login-form" class="grid"><div><label for="email">Email</label><input id="email" type="email" autocomplete="username" required></div><div><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required></div><div class="actions" style="align-items:end"><button class="primary" type="submit">Sign in securely</button></div></form><p id="auth-message" role="status" class="small muted"></p>
+<div class="actions" style="margin:14px 0"><button id="github-login" type="button" class="primary">Continue with GitHub</button></div><p class="muted small">GitHub sign-in redirects to GitHub for authorization. If this is your first time, GitHub and Supabase must be configured for this site.</p><div class="notice" style="margin-top:14px"><strong>Or use email and password</strong></div><form id="login-form" class="grid"><div><label for="email">Email</label><input id="email" type="email" autocomplete="username" required></div><div><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required></div><div class="actions" style="align-items:end"><button type="submit">Sign in with email</button></div></form><p id="auth-message" role="status" class="small muted"></p>
 </div>
 <section id="app" class="hidden">
 <div class="grid">
@@ -131,6 +131,19 @@
      root.appendChild(card);
    });
  }
+ document.getElementById('github-login').addEventListener('click',async()=>{
+   authMessage.textContent='Redirecting to GitHub…';authMessage.className='small muted';
+   try {
+     const {error}=await client.auth.signInWithOAuth({
+       provider:'github',
+       options:{redirectTo:window.location.origin+window.location.pathname}
+     });
+     if(error) throw error;
+   } catch(e) {
+     authMessage.textContent='GitHub sign-in is not enabled/configured in Supabase yet. Enable the GitHub provider and set its OAuth credentials and redirect URLs, then try again. Details: '+e.message;
+     authMessage.className='small error';
+   }
+ });
  document.getElementById('login-form').addEventListener('submit',async e=>{
    e.preventDefault();authMessage.textContent='Signing in…';
    const {data,error}=await client.auth.signInWithPassword({email:document.getElementById('email').value,password:document.getElementById('password').value});
