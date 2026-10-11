@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>External Publisher Workflow | Zenith Hackers Intelligence</title>
+<style>
+:root{color-scheme:dark;--bg:#0a1020;--panel:#121c30;--line:#283852;--text:#edf3ff;--muted:#a9b8d0;--accent:#7dd3fc;--green:#86efac;--amber:#fcd34d}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#0a1020,#101b2f);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1120px;margin:auto;padding:28px 18px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand{font-weight:800;letter-spacing:.04em}.muted{color:var(--muted)}h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.12;margin:28px 0 10px}h2{font-size:1.2rem;margin:0 0 12px}.panel{background:rgba(18,28,48,.95);border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0;box-shadow:0 12px 40px #0002}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}label{display:block;font-size:.9rem;color:var(--muted);margin:10px 0 5px}input,select,textarea{width:100%;padding:11px 12px;background:#0b1426;border:1px solid #344661;border-radius:9px;color:var(--text);font:inherit}button,.button{border:1px solid #42607f;border-radius:9px;background:#163451;color:var(--text);padding:10px 14px;font:inherit;font-weight:650;cursor:pointer}button.primary{background:#075985;border-color:#0ea5e9}button.good{background:#14532d;border-color:#22c55e}button:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.status{display:inline-block;padding:3px 9px;border-radius:999px;background:#25334a;color:var(--accent);font-size:.82rem;overflow-wrap:anywhere}.notice{padding:12px 14px;border:1px solid #3b526e;background:#101c30;border-radius:10px;margin:12px 0}.notice.warn{border-color:#92732a;color:var(--amber)}.package{border-top:1px solid var(--line);padding:18px 0}.package:first-child{border-top:0}.pitch{white-space:pre-wrap;background:#0a1323;border:1px solid var(--line);padding:14px;border-radius:10px;overflow-wrap:anywhere}.small{font-size:.88rem}.hidden{display:none!important}.checklist{padding-left:20px;color:var(--muted)}.checklist li{margin:5px 0}.error{color:#fca5a5}.success{color:var(--green)}a{color:var(--accent)}footer{margin-top:32px;color:var(--muted);font-size:.85rem}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+</head>
+<body>
+<main>
+<div class="top"><div class="brand">ZENITH HACKERS INTELLIGENCE</div><div class="actions"><a href="index.html">Main website</a><button id="signout" class="hidden">Sign out</button></div></div>
+<h1>External Publisher Workflow</h1>
+<p class="muted">Research, match, prepare, review, and track third-party article submissions in one place.</p>
+<div class="notice warn"><strong>Manual-control safeguard:</strong> This dashboard never sends emails, pitches, or articles to external publishers. It prepares drafts and records your manual actions only. Publisher rules, AI-content policy, exclusivity, and permission must be checked for each outlet.</div>
+<div id="auth-panel" class="panel">
+<h2>Sign in</h2><p class="muted small">Use your existing Supabase account. This page does not offer public account registration.</p>
+<form id="login-form" class="grid"><div><label for="email">Email</label><input id="email" type="email" autocomplete="username" required></div><div><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required></div><div class="actions" style="align-items:end"><button class="primary" type="submit">Sign in securely</button></div></form><p id="auth-message" role="status" class="small muted"></p>
+</div>
+<section id="app" class="hidden">
+<div class="grid">
+<div class="panel"><div class="muted small">Verified potential targets</div><div id="target-count" style="font-size:2rem;font-weight:800">—</div></div>
+<div class="panel"><div class="muted small">Approved/reviewed articles available</div><div id="article-count" style="font-size:2rem;font-weight:800">—</div></div>
+<div class="panel"><div class="muted small">Submission packages tracked</div><div id="package-count" style="font-size:2rem;font-weight:800">—</div></div>
+</div>
+<div class="panel">
+<h2>Prepare a submission package</h2>
+<p class="muted small">Only verified, eligible prospects and articles with an approved review are offered. Previously published content may be ineligible for a publisher; the checklist will flag that for human confirmation.</p>
+<form id="package-form">
+<div class="grid"><div><label for="prospect">Publisher / target</label><select id="prospect" required><option value="">Loading targets…</option></select></div><div><label for="article">Approved article</label><select id="article" required><option value="">Loading articles…</option></select></div></div>
+<div class="actions"><button class="primary" type="submit">Create draft package</button><button type="button" id="refresh">Refresh data</button></div>
+</form><p id="package-message" role="status" class="small muted"></p>
+</div>
+<div class="panel"><div class="top"><h2>Submission pipeline</h2><button type="button" id="refresh-packages">Refresh packages</button></div><div id="packages"><p class="muted">Sign in to load packages.</p></div></div>
+</section>
+<footer>Zenith external publishing tools · authenticated access · no automatic third-party outreach · never place secret/service-role keys in this page.</footer>
+</main>
+<script>
+(() => {
+ const url = window.ZENITH_SUPABASE_URL;
+ const key = window.ZENITH_SUPABASE_PUBLISHABLE_KEY;
+ const authPanel = document.getElementById('auth-panel');
+ const app = document.getElementById('app');
+ const authMessage = document.getElementById('auth-message');
+ const packageMessage = document.getElementById('package-message');
+ const signout = document.getElementById('signout');
+ if (!window.supabase || !url || !key) {
+   authMessage.textContent = 'Supabase client/configuration could not load. Check supabase-config.js and the CDN connection.';
+   return;
+ }
+ const client = window.supabase.createClient(url, key);
+ let session = null, prospects = [], articles = [], packages = [];
+ const endpoint = url + '/functions/v1/external-publisher-workflow';
+ const esc = value => String(value ?? '');
+ async function api(path, options={}) {
+   const response = await fetch(endpoint + path, { ...options, headers: {
+     apikey: key, Authorization: 'Bearer ' + session.access_token,
+     'Content-Type': 'application/json', ...(options.headers || {})
+   }});
+   const body = await response.json().catch(() => ({}));
+   if (!response.ok || body.success === false) throw new Error(body.error || 'Request failed (' + response.status + ')');
+   return body;
+ }
+ function option(select, value, label) { const o=document.createElement('option');o.value=value;o.textContent=label;select.appendChild(o); }
+ function safeLink(urlValue, label) {
+   try { const u=new URL(urlValue); if(!['https:','http:'].includes(u.protocol)) return null; const a=document.createElement('a');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label;return a; } catch { return null; }
+ }
+ async function loadAll() {
+   packageMessage.textContent='Loading verified targets, approved articles, and package history…';
+   try {
+     const [p,a,pk]=await Promise.all([api('?view=prospects'),api('?view=articles'),api('?view=packages&limit=100')]);
+     prospects=p.prospects||[]; articles=a.articles||[]; packages=pk.packages||[];
+     document.getElementById('target-count').textContent=prospects.length;
+     document.getElementById('article-count').textContent=articles.length;
+     document.getElementById('package-count').textContent=packages.length;
+     const ps=document.getElementById('prospect');ps.replaceChildren();option(ps,'','Choose a verified target…');
+     prospects.forEach(x=>option(ps,x.id,x.organization_name+' · fit '+x.fit_score+' · '+x.submission_method));
+     const as=document.getElementById('article');as.replaceChildren();option(as,'','Choose an approved article…');
+     articles.forEach(x=>option(as,x.id,x.title+' · '+x.status));
+     renderPackages(); packageMessage.textContent='Data refreshed. No external messages were sent.';
+   } catch(e) { packageMessage.textContent=e.message;packageMessage.className='small error'; }
+ }
+ function addText(parent, tag, text, className='') { const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;parent.appendChild(n);return n; }
+ async function changeStatus(pkg, status) {
+   let body={package_id:pkg.id,status};
+   if(status==='submitted') {
+     const summary=window.prompt('Confirm you manually submitted this package. Where/how did you submit it?');
+     if(!summary || !summary.trim()) return;
+     body.event_summary='User-confirmed manual submission: '+summary.trim();
+   }
+   if(status==='published') {
+     const publishedUrl=window.prompt('Enter the publisher’s live URL. Publication can only be logged when evidence-backed permission is recorded.');
+     if(!publishedUrl) return;
+     body.published_url=publishedUrl.trim();body.event_summary='User recorded publication at '+publishedUrl.trim();
+   }
+   const notes=['accepted','declined','response_received','withdrawn','needs_revision'].includes(status) ? window.prompt('Optional notes (reply/decision/revision reason):') : null;
+   if(notes) body.outcome_notes=notes;
+   try { await api('',{method:'PATCH',body:JSON.stringify(body)}); packageMessage.textContent='Workflow record updated. No external action was taken.'; await loadAll(); }
+   catch(e) { packageMessage.textContent=e.message;packageMessage.className='small error'; }
+ }
+ function renderPackages() {
+   const root=document.getElementById('packages');root.replaceChildren();
+   if(!packages.length){addText(root,'p','No packages yet. Choose a verified target and an approved article above to create the first draft.','muted');return;}
+   packages.forEach(pkg=>{
+     const card=document.createElement('article');card.className='package';
+     const header=document.createElement('div');header.className='top';card.appendChild(header);
+     const title=document.createElement('h3');title.textContent=pkg.proposed_title||'Submission package';title.style.margin='0';header.appendChild(title);
+     addText(header,'span',pkg.status,'status');
+     const prospect=pkg.prospect||{}; const article=pkg.article||{};
+     addText(card,'p',(prospect.organization_name||prospect.domain||'Publisher')+' · '+(article.status||'')+' · '+(article.title||''),'muted small');
+     addText(card,'p',pkg.tailored_angle||'','small');
+     const link=safeLink(prospect.guidelines_url||pkg.submission_url,'Open official guidelines');if(link)card.appendChild(link);
+     addText(card,'h4','Pitch draft (not sent)','small');
+     const pitch=document.createElement('pre');pitch.className='pitch';pitch.textContent=pkg.pitch_draft||'';card.appendChild(pitch);
+     const copy=document.createElement('button');copy.textContent='Copy pitch draft';copy.onclick=async()=>{try{await navigator.clipboard.writeText(pkg.pitch_draft||'');copy.textContent='Copied';}catch{copy.textContent='Copy unavailable — select text manually';}};card.appendChild(copy);
+     const checks=document.createElement('ul');checks.className='checklist';
+     (pkg.submission_checklist||[]).forEach(item=>addText(checks,'li',(item.complete?'✓ ':'□ ')+item.item));card.appendChild(checks);
+     const actions=document.createElement('div');actions.className='actions';card.appendChild(actions);
+     const addAction=(label,status,cls='')=>{const b=document.createElement('button');b.textContent=label;if(cls)b.className=cls;b.onclick=()=>changeStatus(pkg,status);actions.appendChild(b);};
+     if(pkg.status==='draft_only'||pkg.status==='needs_revision') addAction('Mark ready for review','ready_for_manual_review','primary');
+     if(pkg.status==='ready_for_manual_review') {addAction('Request revisions','needs_revision');addAction('Approve for manual submission','approved_for_manual_submission','good');}
+     if(pkg.status==='approved_for_manual_submission') addAction('Log manually submitted','submitted','primary');
+     if(pkg.status==='submitted') {addAction('Log response received','response_received');addAction('Mark accepted','accepted','good');addAction('Mark declined','declined');}
+     if(pkg.status==='response_received') {addAction('Mark accepted','accepted','good');addAction('Mark declined','declined');}
+     if(pkg.status==='accepted') addAction('Log publication URL','published','good');
+     if(!['published','withdrawn','declined'].includes(pkg.status)) addAction('Withdraw package','withdrawn');
+     root.appendChild(card);
+   });
+ }
+ document.getElementById('login-form').addEventListener('submit',async e=>{
+   e.preventDefault();authMessage.textContent='Signing in…';
+   const {data,error}=await client.auth.signInWithPassword({email:document.getElementById('email').value,password:document.getElementById('password').value});
+   if(error){authMessage.textContent=error.message;authMessage.className='small error';return;}
+   session=data.session;authMessage.textContent='Signed in.';await showApp();
+ });
+ async function showApp() {
+   if(!session){authPanel.classList.remove('hidden');app.classList.add('hidden');signout.classList.add('hidden');return;}
+   authPanel.classList.add('hidden');app.classList.remove('hidden');signout.classList.remove('hidden');await loadAll();
+ }
+ signout.addEventListener('click',async()=>{await client.auth.signOut();session=null;await showApp();});
+ document.getElementById('refresh').addEventListener('click',loadAll);
+ document.getElementById('refresh-packages').addEventListener('click',loadAll);
+ document.getElementById('package-form').addEventListener('submit',async e=>{
+   e.preventDefault();packageMessage.textContent='Preparing draft…';
+   try {const result=await api('',{method:'POST',body:JSON.stringify({action:'prepare_package',prospect_id:document.getElementById('prospect').value,article_id:document.getElementById('article').value})});packageMessage.textContent=result.message||'Draft prepared.';packageMessage.className='small success';await loadAll();}
+   catch(err){packageMessage.textContent=err.message;packageMessage.className='small error';}
+ });
+ client.auth.getSession().then(({data})=>{session=data.session;showApp();});
+ client.auth.onAuthStateChange((_event,newSession)=>{session=newSession;showApp();});
+})();
+</script>
+</body>
+</html>
