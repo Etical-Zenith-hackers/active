@@ -49,9 +49,54 @@
     footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);margin-top:60px}
     @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.links{gap:10px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}}
     @media(max-width:580px){.grid{grid-template-columns:1fr}.navin{height:auto;padding:15px 0;align-items:flex-start}.links{font-size:.82rem;flex-wrap:wrap;justify-content:flex-end}.hero{padding-top:58px}}
+  
+    /* Zenith visual refresh: brighter cyber glow, floating light forms, and tactile article cards */
+    body{background:linear-gradient(rgba(2,10,20,.60),rgba(2,10,20,.78)),url("assets/blog-background.jpg.png") center top/cover fixed no-repeat,radial-gradient(circle at 80% -10%,#123047 0,transparent 35%),var(--bg);background-size:cover,cover,auto,auto}
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:linear-gradient(115deg,transparent 0%,rgba(73,217,255,.035) 45%,transparent 70%);background-size:220% 100%;animation:ambientSweep 18s ease-in-out infinite}
+    nav,header,main,footer{position:relative;z-index:1}
+    .hero{position:relative}
+    .hero:after{content:"";position:absolute;right:3%;top:24%;width:clamp(90px,15vw,190px);aspect-ratio:1;border:1px solid rgba(73,217,255,.38);border-radius:34% 66% 61% 39%/42% 42% 58% 58%;box-shadow:0 0 35px rgba(73,217,255,.14),inset 0 0 30px rgba(123,97,255,.12);pointer-events:none;animation:floatShape 9s ease-in-out infinite;transform:rotate(-20deg)}
+    .hero h1{background:linear-gradient(100deg,#fff 5%,#9cecff 42%,#b6a7ff 72%,#fff 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 34px rgba(73,217,255,.12);animation:titleShimmer 9s linear infinite}
+    .hero p{color:#d1e0ec}
+    .eyebrow{text-shadow:0 0 18px rgba(73,217,255,.3)}
+    .actions .btn,.btn{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,filter .25s ease}
+    .btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 8px 28px rgba(73,217,255,.18);border-color:rgba(73,217,255,.65);filter:brightness(1.08)}
+    .grid{gap:24px;perspective:1200px}
+    .card{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(105,207,245,.35);border-radius:20px;background:linear-gradient(145deg,rgba(5,18,31,.82),rgba(10,15,35,.91)),url("assets/blog-background.jpg.png") center/cover;box-shadow:0 12px 32px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,border-color .32s ease;animation:cardRise .65s both}
+    .card:nth-child(3n+2){animation-delay:.08s}.card:nth-child(3n){animation-delay:.16s}
+    .card:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 100% 0,rgba(73,217,255,.18),transparent 38%),radial-gradient(circle at 0 100%,rgba(123,97,255,.20),transparent 42%);opacity:.85;transition:opacity .3s ease}
+    .card:after{content:"";position:absolute;top:-80%;left:-65%;width:48%;height:260%;pointer-events:none;transform:rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.11),transparent);transition:left .7s ease}
+    .card:hover,.card:focus-within{transform:translateY(-10px) scale(1.015);border-color:rgba(73,217,255,.85);box-shadow:0 22px 48px rgba(0,0,0,.4),0 0 28px rgba(73,217,255,.16),inset 0 1px 0 rgba(255,255,255,.13)}
+    .card:hover:before,.card:focus-within:before{opacity:1}
+    .card:hover:after,.card:focus-within:after{left:125%}
+    .cardbody{position:relative;background:linear-gradient(180deg,rgba(5,14,26,.70),rgba(5,10,20,.91));backdrop-filter:blur(5px);padding:22px}
+    .cover{height:205px;display:block;object-fit:cover;border-bottom:1px solid rgba(73,217,255,.28);filter:saturate(1.12) contrast(1.04);transition:transform .5s ease,filter .5s ease}
+    .card:hover .cover{transform:scale(1.045);filter:saturate(1.28) contrast(1.07)}
+    .tag{background:rgba(12,39,55,.76);border-color:rgba(73,217,255,.48);box-shadow:0 0 18px rgba(73,217,255,.08)}
+    .card h3{color:#f3fbff;transition:color .25s ease,text-shadow .25s ease}
+    .card:hover h3{color:#a8f0ff;text-shadow:0 0 18px rgba(73,217,255,.17)}
+    .excerpt{color:#c9d8e5}
+    .meta{color:#a9c2d3}
+    .input,.textarea,.select{background:rgba(5,15,27,.9);border-color:rgba(87,151,184,.38)}
+    .sectionhead h2{color:#f1faff;text-shadow:0 0 22px rgba(73,217,255,.10)}
+    .ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+    .orb{position:absolute;display:block;border-radius:50%;filter:blur(.4px);opacity:.48;mix-blend-mode:screen;animation:orbDrift 18s ease-in-out infinite}
+    .orb.one{width:190px;height:190px;left:-70px;top:34%;background:radial-gradient(circle at 35% 35%,rgba(73,217,255,.30),rgba(73,217,255,0) 70%)}
+    .orb.two{width:250px;height:250px;right:-90px;top:60%;background:radial-gradient(circle at 45% 45%,rgba(123,97,255,.28),rgba(123,97,255,0) 70%);animation-delay:-6s}
+    .orb.three{width:140px;height:140px;left:65%;top:14%;background:radial-gradient(circle at 40% 40%,rgba(96,255,220,.19),rgba(96,255,220,0) 72%);animation-delay:-11s}
+    @keyframes orbDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(22px,-32px,0) scale(1.12)}}
+    @keyframes floatShape{0%,100%{transform:translateY(0) rotate(-20deg)}50%{transform:translateY(-18px) rotate(4deg)}}
+    @keyframes ambientSweep{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+    @keyframes titleShimmer{0%{background-position:0% center}100%{background-position:220% center}}
+    @keyframes cardRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:850px){.hero:after{right:1%;top:15%;opacity:.55;width:100px}.cardbody{padding:19px}}
+    @media(max-width:580px){body{background-attachment:scroll;background-position:center top}.hero:after{width:74px;top:12%;right:0;opacity:.4}.grid{gap:18px}.card{border-radius:17px}.card:hover{transform:translateY(-3px)}.cardbody{padding:19px}.cover{height:185px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.card:hover,.card:focus-within{transform:none}}
+
   </style>
 </head>
 <body>
+<div class="ambient" aria-hidden="true"><span class="orb one"></span><span class="orb two"></span><span class="orb three"></span></div>
 <nav><div class="wrap navin"><a class="brand" href="index.html">ZENITH <span>HACKERS</span></a><div class="links"><a href="index.html">Home</a><a href="asset-recovery.html">Asset Tracing</a><a href="blog.html">Blog</a><a href="#create" id="topCreate">Create Post</a></div></div></nav>
 
 <header class="hero wrap">
