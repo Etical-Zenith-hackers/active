@@ -51,6 +51,36 @@ section{padding:70px 0}.intro{background:linear-gradient(rgba(2,8,17,.88),rgba(2
 .live-chat-launcher{position:fixed;right:20px;bottom:84px;z-index:89;display:flex;align-items:center;gap:8px;background:#078cff;color:#fff;border:1px solid #38c6ff;border-radius:26px;padding:11px 16px;font-size:12px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,140,255,.28)}
 .live-chat-launcher:hover{transform:translateY(-2px);filter:brightness(1.08)}
 @media(max-width:600px){.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{left:16px;bottom:18px;padding:0 16px}}
+
+/* Zenith signature motion layer: asset tracing page */
+body{background:radial-gradient(ellipse at 20% 0%,rgba(0,153,255,.13),transparent 34%),radial-gradient(ellipse at 95% 45%,rgba(124,58,237,.10),transparent 28%),#020811}
+body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(115deg,transparent 0%,rgba(32,199,255,.07) 43%,rgba(139,92,255,.05) 60%,transparent 78%);background-size:220% 100%;animation:zenithSweep 12s ease-in-out infinite}
+header,main,section,footer{position:relative}
+.hero{background-position:center;background-size:cover;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(0,200,255,.30),transparent 30%),linear-gradient(120deg,transparent 40%,rgba(124,58,237,.18));animation:zenithPulse 8s ease-in-out infinite}
+.hero-content,.visual-copy{position:relative;z-index:2}
+.hero h1{ text-shadow:0 0 35px rgba(0,175,255,.25)}
+.hero h1 span{color:#67efff;text-shadow:0 0 25px rgba(0,200,255,.4)}
+.note{box-shadow:0 0 25px rgba(0,180,255,.12);backdrop-filter:blur(8px)}
+.side-image{min-height:360px;border-radius:16px;box-shadow:0 22px 55px rgba(0,0,0,.35),0 0 30px rgba(0,180,255,.18);transition:transform .45s,filter .45s}
+.side-image:hover{transform:scale(1.025);filter:saturate(1.3) brightness(1.12)}
+.table-wrap{border-radius:16px;border-color:rgba(32,199,255,.42);box-shadow:0 25px 70px rgba(0,0,0,.3),0 0 28px rgba(0,140,255,.10)}
+th{background:linear-gradient(90deg,#07243a,#111a3b)}
+tbody tr{transition:background .25s,box-shadow .25s}
+tbody tr:hover{background:rgba(0,174,255,.10);box-shadow:inset 4px 0 #20c7ff}
+.box{border-radius:15px;background:linear-gradient(145deg,rgba(5,25,43,.94),rgba(6,13,32,.93));border-color:rgba(32,199,255,.32);box-shadow:0 12px 32px rgba(0,0,0,.15);transition:transform .3s,border-color .3s,box-shadow .3s}
+.box:hover{transform:translateY(-6px);border-color:#54f3ff;box-shadow:0 18px 40px rgba(0,130,255,.18)}
+.btn,.cta,.whatsapp,.live-chat-launcher,#zenith-live-chat-launcher{transition:transform .28s,box-shadow .28s,filter .28s}
+.btn:hover,.cta:hover,.whatsapp:hover,.live-chat-launcher:hover,#zenith-live-chat-launcher:hover{transform:translateY(-4px);filter:brightness(1.12);box-shadow:0 0 28px rgba(0,180,255,.28)}
+.visual-break{min-height:470px;position:relative;background-position:center;background-size:cover}
+.visual-break:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 35%,rgba(0,200,255,.2),transparent 28%),linear-gradient(110deg,rgba(2,8,17,.65),rgba(2,8,17,.1));animation:zenithPulse 9s ease-in-out infinite}
+.visual-copy{padding:55px 0}
+section{scroll-margin-top:78px}
+@keyframes zenithSweep{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes zenithPulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.035)}}
+@media(max-width:850px){.side-image{min-height:280px}.visual-break{min-height:380px}.box:hover{transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style>
 
 
@@ -82,6 +112,7 @@ section{padding:70px 0}.intro{background:linear-gradient(rgba(2,8,17,.88),rgba(2
 </style>
 </head>
 <body>
+<div class="zenith-motion-orbs" aria-hidden="true" style="position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0"><span style="position:absolute;left:-90px;top:30%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(32,199,255,.18),transparent 70%);animation:zenithPulse 8s ease-in-out infinite"></span><span style="position:absolute;right:-100px;top:58%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,255,.18),transparent 70%);animation:zenithPulse 10s ease-in-out infinite reverse"></span></div>
 <header><div class="wrap head"><a class="logo" href="index.html"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="index.html#contact" class="cta">Get Started →</a></nav></div></header>
 <main>
 <section class="hero"><div class="wrap hero-content"><span class="eyebrow">ASSET TRACING • INVESTIGATION • RECOVERY SUPPORT</span><h1>Track What Was Lost.<br><span>Find the Right Trail.</span></h1><p>Zenith can help investigate commonly lost or stolen assets using lawful, authorized tracing methods and available records. In suitable cases, this may support recovery efforts — but recovery is never guaranteed.</p><div class="note">ETHICAL • LEGAL • AUTHORIZED — Every investigation must have a lawful basis and defined scope.</div></div></section>
