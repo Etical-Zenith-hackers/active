@@ -23,7 +23,7 @@ jobs:
           import json
           import re
 
-          BASE = "https://etical-zenith-hackers.github.io/active/"
+          BASE = "https://ethicalzenithhackers.xyz/"
           changed = 0
 
           def clean_text(s):
