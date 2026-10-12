@@ -109,6 +109,54 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 @media(max-width:850px){.service-cards{gap:12px}.card:hover{transform:translateY(-4px)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
+
+/* Home hero refresh: cinematic binary rain, readable layout, and clear mobile-safe CTA space */
+.hero{isolation:isolate;min-height:690px;background-image:linear-gradient(90deg,rgba(1,8,16,.91) 0%,rgba(1,8,16,.72) 42%,rgba(1,8,16,.18) 82%,rgba(1,8,16,.35)),url("assets/asset-tracing-hero.jpg");background-size:cover;background-position:center 42%}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 25% 44%,rgba(0,183,255,.18),transparent 42%),radial-gradient(ellipse at 83% 32%,rgba(123,75,255,.24),transparent 35%),linear-gradient(115deg,transparent 40%,rgba(20,218,255,.07),transparent 72%);animation:heroEnergy 8s ease-in-out infinite}
+.hero:after{z-index:1;height:145px;background:linear-gradient(transparent,var(--bg))}
+.hero-content{min-height:590px;align-items:center;padding-top:54px;padding-bottom:35px}
+.copy{max-width:620px;position:relative;z-index:3;padding:26px 28px 30px 0}
+.copy:before{content:"";position:absolute;z-index:-1;inset:0 auto 0 -26px;width:min(650px,calc(100% + 52px));border-left:2px solid rgba(32,199,255,.55);background:linear-gradient(90deg,rgba(2,13,25,.70),rgba(2,13,25,.36),transparent);clip-path:polygon(0 0,96% 0,100% 9%,100% 91%,96% 100%,0 100%);backdrop-filter:blur(2px)}
+.copy .eyebrow{display:inline-block;padding:7px 12px;border:1px solid rgba(32,199,255,.42);border-radius:99px;background:rgba(0,12,24,.66);box-shadow:0 0 24px rgba(32,199,255,.12)}
+.copy h1{max-width:620px;font-size:clamp(48px,6.8vw,86px);line-height:.98;letter-spacing:-.055em;margin:20px 0 22px;text-wrap:balance}
+.copy h1 span{background:linear-gradient(100deg,#20c7ff,#a3f5ff 45%,#8b75ff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(32,199,255,.2))}
+.copy p{font-size:clamp(15px,1.4vw,18px);line-height:1.8;color:#e0edf8;max-width:510px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.buttons{flex-wrap:wrap;gap:13px;margin-top:28px}
+.btn{min-height:46px;padding:13px 20px;font-size:12px;box-shadow:0 8px 26px rgba(0,0,0,.18)}
+.primary{box-shadow:0 8px 28px rgba(0,153,255,.26)}
+.hero-points{z-index:4;bottom:22px;gap:clamp(14px,3vw,36px)}
+.point{padding:9px 13px;border:1px solid rgba(83,191,255,.22);border-radius:12px;background:rgba(2,13,25,.65);backdrop-filter:blur(8px);box-shadow:0 7px 26px rgba(0,0,0,.15)}
+.point i{box-shadow:0 0 18px rgba(32,199,255,.22)}
+.hero-binary{position:absolute;inset:64px 0 20px;z-index:1;overflow:hidden;pointer-events:none;opacity:.72;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.82) 55%,#000)}
+.binary-column{position:absolute;top:-35%;display:flex;flex-direction:column;gap:7px;white-space:pre;font:600 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:3px;color:rgba(60,226,255,.65);text-shadow:0 0 12px rgba(32,199,255,.55);writing-mode:vertical-rl;animation:binaryFall linear infinite}
+.binary-column:nth-child(3n){color:rgba(167,126,255,.62);text-shadow:0 0 13px rgba(139,92,255,.6)}
+.binary-column:nth-child(4n){font-size:15px;color:rgba(117,255,221,.52)}
+@keyframes binaryFall{from{transform:translateY(-12%)}to{transform:translateY(150%)}}
+@keyframes heroEnergy{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.025)}}
+.whatsapp{left:20px;right:auto;bottom:20px;transform:none}
+.whatsapp:hover{transform:translateY(-3px) scale(1.04)}
+#zenith-live-chat-launcher{right:20px;bottom:20px}
+.live-chat-launcher{right:20px;bottom:84px}
+@media(max-width:900px){.hero{background-position:62% center}.hero-content{min-height:590px}.copy{max-width:590px}}
+@media(max-width:600px){
+ .hero{min-height:760px;background-position:61% center;background-size:auto 760px}
+ .hero-content{min-height:610px;align-items:center;padding-top:92px;padding-bottom:120px}
+ .copy{max-width:100%;padding:18px 8px 24px 0}
+ .copy:before{left:-12px;width:calc(100% + 22px);background:linear-gradient(90deg,rgba(2,13,25,.84),rgba(2,13,25,.60) 82%,rgba(2,13,25,.25));clip-path:polygon(0 0,97% 0,100% 5%,100% 95%,97% 100%,0 100%)}
+ .copy h1{font-size:clamp(43px,12vw,60px);line-height:1.02;margin:18px 0}
+ .copy p{font-size:15px;line-height:1.65;max-width:96%}
+ .buttons{flex-direction:column;align-items:stretch;max-width:270px;margin-top:22px}
+ .btn{justify-content:center;width:100%}
+ .hero-points{position:relative;bottom:auto;padding-bottom:120px;display:grid;grid-template-columns:1fr;gap:8px;margin-top:-78px}
+ .point{padding:8px 11px;max-width:270px}
+ .hero-binary{inset:64px 0 0;opacity:.45}
+ .binary-column{font-size:10px;letter-spacing:2px}
+ .whatsapp{left:12px;right:auto;bottom:12px;min-height:44px;padding:0 12px;font-size:12px;transform:none;z-index:88}
+ #zenith-live-chat-launcher{right:12px;bottom:12px;padding:12px 14px;font-size:12px}
+ .live-chat-launcher{right:12px;bottom:72px}
+}
+@media(prefers-reduced-motion:reduce){.binary-column{animation:none!important;opacity:.25}.hero:before{animation:none!important}}
+
 </style>
 
 
@@ -153,6 +201,7 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 
 <main>
 <section class="hero" id="home">
+  <div class="hero-binary" id="hero-binary" aria-hidden="true"></div>
   <div class="wrap hero-content">
     <div class="copy reveal">
       <span class="eyebrow">ETHICAL ZENITH HACKERS INTELLIGENCE</span>
@@ -227,6 +276,25 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 <div class="toast" id="toast">Welcome to Zenith Hackers Intelligence.</div>
 
 <script>
+  // Decorative binary rain: generated locally, no external library or network request.
+  (function(){
+    const layer=document.getElementById('hero-binary');
+    if(!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const count=window.innerWidth<600?15:27;
+    for(let i=0;i<count;i++){
+      const col=document.createElement('span');
+      col.className='binary-column';
+      col.style.left=(i*100/count)+'%';
+      col.style.animationDuration=(11+(i%8)*2.1)+'s';
+      col.style.animationDelay=(-((i*1.7)%18))+'s';
+      col.style.opacity=(0.25+((i*7)%6)/10).toFixed(2);
+      let bits='';
+      for(let j=0;j<30;j++) bits+=(j%4===0?'ZENITH':(j%2===0?'1':'0'))+' ';
+      col.textContent=bits;
+      layer.appendChild(col);
+    }
+  })();
+
   const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
   menu.addEventListener('click',()=>{const open=nav.style.display==='flex';nav.style.display=open?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='64px';nav.style.left='4%';nav.style.right='4%';nav.style.padding='16px';nav.style.background='#061423';nav.style.border='1px solid #123653';nav.style.borderRadius='8px'});
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
