@@ -6,7 +6,7 @@
   <title>Zenith Intelligence Article</title>
   <meta name="description" content="Cybersecurity, digital forensics, asset tracing and security intelligence from Zenith Hackers Intelligence.">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://etical-zenith-hackers.github.io/active/article.html">
+  <link rel="canonical" href="https://ethicalzenithhackers.xyz/article.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Zenith Hackers Intelligence">
   <meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@ async function load(){
   document.querySelector('link[rel="canonical"]').setAttribute('href',new URL('articles/'+encodeURIComponent(data.slug)+'.html',location.href).href);
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',data.title);
   document.querySelector('#article').innerHTML='<span class="tag">'+esc(data.category)+'</span><h1>'+esc(data.title)+'</h1><div class="meta">By '+esc(data.author_name)+' · '+new Date(data.created_at).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})+'</div>'+(data.cover_image?'<img src="'+esc(data.cover_image)+'" alt="" style="max-width:100%;margin:25px 0;border-radius:14px">':'')+'<div class="content">'+esc(data.content)+'</div>';
-  const ld=document.createElement('script');ld.type='application/ld+json';ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting','headline':data.title,'description':data.excerpt,'datePublished':data.created_at,'author':{'@type':'Person','name':data.author_name},'publisher':{'@type':'Organization','name':'Zenith Hackers Intelligence','url':'https://etical-zenith-hackers.github.io/active/'},'mainEntityOfPage':new URL('articles/'+encodeURIComponent(data.slug)+'.html',location.href).href});document.head.appendChild(ld);
+  const ld=document.createElement('script');ld.type='application/ld+json';ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting','headline':data.title,'description':data.excerpt,'datePublished':data.created_at,'author':{'@type':'Person','name':data.author_name},'publisher':{'@type':'Organization','name':'Zenith Hackers Intelligence','url':'https://ethicalzenithhackers.xyz/'},'mainEntityOfPage':new URL('articles/'+encodeURIComponent(data.slug)+'.html',location.href).href});document.head.appendChild(ld);
 }
 document.querySelector('#year').textContent=new Date().getFullYear();load();
 </script>
