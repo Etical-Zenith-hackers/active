@@ -93,7 +93,31 @@
     @media(max-width:580px){body{background-attachment:scroll;background-position:center top}.hero:after{width:74px;top:12%;right:0;opacity:.4}.grid{gap:18px}.card{border-radius:17px}.card:hover{transform:translateY(-3px)}.cardbody{padding:19px}.cover{height:185px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.card:hover,.card:focus-within{transform:none}}
 
-  </style>
+  
+/* Stronger editorial visual treatment: bigger images, more energy, richer article panels */
+body{background:linear-gradient(rgba(2,10,20,.46),rgba(2,10,20,.68)),url("assets/blog-background.jpg.png") center top/cover fixed no-repeat,radial-gradient(circle at 80% -10%,#123047 0,transparent 35%),var(--bg)}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;perspective:1400px}
+.card{min-height:100%;border-radius:24px;background:linear-gradient(145deg,rgba(5,18,31,.74),rgba(10,15,35,.85)),url("assets/blog-background.jpg.png") center/cover;box-shadow:0 16px 40px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.10);border-color:rgba(105,207,245,.48)}
+.cover{height:300px;width:100%;object-fit:cover;object-position:center;filter:saturate(1.16) contrast(1.05);border-bottom:1px solid rgba(73,217,255,.38)}
+.cardbody{padding:28px;background:linear-gradient(180deg,rgba(5,14,26,.58),rgba(5,10,20,.94))}
+.card h3{font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.2}
+.excerpt{font-size:1rem;line-height:1.75}
+.card:hover,.card:focus-within{transform:translateY(-13px) scale(1.018);box-shadow:0 28px 65px rgba(0,0,0,.46),0 0 38px rgba(73,217,255,.22),0 0 0 1px rgba(123,97,255,.22)}
+.card:before{background:radial-gradient(circle at 100% 0,rgba(73,217,255,.26),transparent 42%),radial-gradient(circle at 0 100%,rgba(123,97,255,.26),transparent 45%)}
+.card:after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
+.hero{padding-top:105px;padding-bottom:65px}
+.hero h1{font-size:clamp(3rem,8vw,6.5rem)}
+.hero p{font-size:clamp(1.05rem,2vw,1.3rem);color:#e0edf7}
+.toolbar{padding:15px;border:1px solid rgba(73,217,255,.22);border-radius:18px;background:rgba(3,12,24,.58);backdrop-filter:blur(10px)}
+.sectionhead h2{font-size:clamp(2rem,4vw,2.8rem)}
+.tag{padding:6px 11px;font-size:.75rem}
+.card .btn{margin-top:6px;background:linear-gradient(120deg,rgba(73,217,255,.16),rgba(123,97,255,.20));border-color:rgba(73,217,255,.55)}
+.card .btn:hover{background:linear-gradient(120deg,#49d9ff,#8b7bff);color:#05111c}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.cover{height:235px}.cardbody{padding:21px}}
+@media(max-width:580px){.grid{grid-template-columns:1fr;gap:22px}.cover{height:260px}.cardbody{padding:22px}.card:hover{transform:translateY(-4px)}.hero{padding-top:70px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+</style>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"><span class="orb one"></span><span class="orb two"></span><span class="orb three"></span></div>
