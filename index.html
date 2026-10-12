@@ -244,8 +244,7 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 
 <main>
 <section class="hero" id="home">
-  <div class="hero-binary" id="hero-binary" aria-hidden="true"></div>
-  <div class="wrap hero-content">
+<div class="wrap hero-content">
     <div class="copy reveal">
       <span class="eyebrow">ETHICAL ZENITH HACKERS INTELLIGENCE</span>
       <h1>Professional.<br><span>Ethical.</span> Secure.</h1>
@@ -319,26 +318,7 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 <div class="toast" id="toast">Welcome to Zenith Hackers Intelligence.</div>
 
 <script>
-  // Decorative binary rain: generated locally, no external library or network request.
-  (function(){
-    const layer=document.getElementById('hero-binary');
-    if(!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const count=window.innerWidth<600?15:27;
-    for(let i=0;i<count;i++){
-      const col=document.createElement('span');
-      col.className='binary-column';
-      col.style.left=(i*100/count)+'%';
-      col.style.animationDuration=(11+(i%8)*2.1)+'s';
-      col.style.animationDelay=(-((i*1.7)%18))+'s';
-      col.style.opacity=(0.25+((i*7)%6)/10).toFixed(2);
-      let bits='';
-      for(let j=0;j<30;j++) bits+=(j%4===0?'ZENITH':(j%2===0?'1':'0'))+' ';
-      col.textContent=bits;
-      layer.appendChild(col);
-    }
-  })();
-
-  const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
   menu.addEventListener('click',()=>{const open=nav.style.display==='flex';nav.style.display=open?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='64px';nav.style.left='4%';nav.style.right='4%';nav.style.padding='16px';nav.style.background='#061423';nav.style.border='1px solid #123653';nav.style.borderRadius='8px'});
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
@@ -424,5 +404,6 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
   });
 })();
 </script>
+<script src="zenith-binary.js" defer></script>
 </body>
 </html>
