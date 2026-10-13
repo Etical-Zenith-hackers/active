@@ -366,65 +366,37 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
 <button id="zenith-live-chat-launcher" type="button" aria-label="Open Zenith live chat">
   💬 LIVE CHAT
 </button>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 
-(function(){
-  var s1 = document.createElement("script");
-  var s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = 'https://embed.tawk.to/6aa9c6ceae02e734472156f2/1k2jj16dt';
-  s1.charset = 'UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 <script id="zenith-tawk-launcher-script">
-(function(){
-  var ready = false;
+(function () {
   var button = document.getElementById('zenith-live-chat-launcher');
-
   window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_API.onLoad = function(){
-    ready = true;
-  };
-
   if (!button) return;
 
-  button.addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
+  button.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-    if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
-      window.Tawk_API.toggle();
-      return;
-    }
-
-    if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
-      window.Tawk_API.maximize();
-      return;
-    }
-
-    // Tawk is still loading. Give it time, without navigating/scrolling.
-    var tries = 0;
-    var timer = setInterval(function(){
-      tries++;
-      if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
-        clearInterval(timer);
-        window.Tawk_API.toggle();
-      } else if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
-        clearInterval(timer);
-        window.Tawk_API.maximize();
-      } else if (tries >= 40) {
-        clearInterval(timer);
+    var attempts = 0;
+    var timer = window.setInterval(function () {
+      attempts++;
+      var api = window.Tawk_API;
+      if (api && typeof api.maximize === 'function') {
+        window.clearInterval(timer);
+        api.maximize();
+      } else if (api && typeof api.toggle === 'function') {
+        window.clearInterval(timer);
+        api.toggle();
+      } else if (attempts >= 40) {
+        window.clearInterval(timer);
+        console.warn('Tawk.to chat is not ready. Check the widget property and browser blockers.');
       }
     }, 250);
   });
 })();
 </script>
   <script src="zenith-binary.js" defer></script>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
