@@ -1,21 +1,27 @@
-FREE LIVE CHAT SETUP — ZENITH
+ZENITH AI WEBSITE CHAT — DEPLOYMENT NOTES
 
-Recommended service: Tawk.to. Its current website states that its live chat is free,
-and its official help center says to paste the widget code before </body>.
+A custom floating AI assistant is implemented in zenith-chat-widget.js.
+It is included by the site's HTML pages and appears fixed at the bottom centre.
+It answers visitor questions using the Zenith AI Edge Function and recommends
+contacting Zenith for case-specific service enquiries.
 
-1. The supplied Tawk.to widget code is already installed in the site files.
-2. Create/select the Zenith property.
-3. Open Administration -> Channels -> Chat Widget.
-4. Upload the updated site to GitHub Pages.
-5. In BOTH:
-     index.html
-     asset-recovery.html
-   find:
-     <!-- TAWK_WIDGET_SNIPPET: ... -->
-   and paste the complete Tawk widget code immediately underneath it.
-6. Upload the files to GitHub Pages.
+Chat backend:
+Supabase project: fayjsztyyfxkxtixwpci
+Edge Function: zenith-site-chat
+Function status: deployed, version 1
+Model provider: Gemini API using the server-side GEMINI_API_KEY secret.
+The Gemini API key must remain in Supabase secrets and must never be placed
+in a public HTML or JavaScript file.
 
-The Zenith floating WhatsApp button is already installed on ALL pages.
-The live-chat launcher is also present on ALL pages; the actual real-time chat
-connection requires the Tawk.to property/widget code because it is unique to your
-account. No fake chat endpoint has been inserted.
+Visitor contact routes:
+support@zenithhackers.com
+zenithintel@consultant.com
++44 755 248 6027
+https://ethicalzenithhackers.xyz/
+
+Safety notes:
+- The widget does not guarantee recovery of cryptocurrency or other assets.
+- Visitors should never provide seed phrases, private keys, passwords, or one-time codes.
+- The AI assistant provides general website information, not a substitute for a formal case assessment.
+- Verify the chat by opening the live website, asking a test question, and checking the contact recommendation.
+- If chat replies with a temporary-unavailable error, verify GEMINI_API_KEY exists in Supabase Edge Function secrets and inspect the zenith-site-chat function logs.
