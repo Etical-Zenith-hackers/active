@@ -59,220 +59,240 @@
       "category": "Ethical Hacking Fundamentals",
       "title": "What ethical hackers do: practical guide",
       "slug": "what-ethical-hackers-do-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/what-ethical-hackers-do-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/what-ethical-hackers-do-practical-guide.html",
+      "status": "published",
       "primary_intent": "what ethical hackers do",
       "editorial_brief": "Create an original, evidence-led article about what ethical hackers do. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 2,
       "category": "Ethical Hacking Fundamentals",
       "title": "Written authorization and scope: practical guide",
       "slug": "written-authorization-and-scope-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/written-authorization-and-scope-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/written-authorization-and-scope-practical-guide.html",
+      "status": "published",
       "primary_intent": "written authorization and scope",
       "editorial_brief": "Create an original, evidence-led article about written authorization and scope. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 3,
       "category": "Ethical Hacking Fundamentals",
       "title": "Rules of engagement: practical guide",
       "slug": "rules-of-engagement-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/rules-of-engagement-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/rules-of-engagement-practical-guide.html",
+      "status": "published",
       "primary_intent": "rules of engagement",
       "editorial_brief": "Create an original, evidence-led article about rules of engagement. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 4,
       "category": "Ethical Hacking Fundamentals",
       "title": "Responsible vulnerability disclosure: practical guide",
       "slug": "responsible-vulnerability-disclosure-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/responsible-vulnerability-disclosure-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/responsible-vulnerability-disclosure-practical-guide.html",
+      "status": "published",
       "primary_intent": "responsible vulnerability disclosure",
       "editorial_brief": "Create an original, evidence-led article about responsible vulnerability disclosure. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 5,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security assessment planning: practical guide",
       "slug": "security-assessment-planning-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-assessment-planning-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-assessment-planning-practical-guide.html",
+      "status": "published",
       "primary_intent": "security assessment planning",
       "editorial_brief": "Create an original, evidence-led article about security assessment planning. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 6,
       "category": "Ethical Hacking Fundamentals",
       "title": "Penetration testing versus vulnerability scanning: practical guide",
       "slug": "penetration-testing-versus-vulnerability-scanning-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/penetration-testing-versus-vulnerability-scanning-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/penetration-testing-versus-vulnerability-scanning-practical-guide.html",
+      "status": "published",
       "primary_intent": "penetration testing versus vulnerability scanning",
       "editorial_brief": "Create an original, evidence-led article about penetration testing versus vulnerability scanning. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 7,
       "category": "Ethical Hacking Fundamentals",
       "title": "Risk-based testing: practical guide",
       "slug": "risk-based-testing-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/risk-based-testing-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/risk-based-testing-practical-guide.html",
+      "status": "published",
       "primary_intent": "risk-based testing",
       "editorial_brief": "Create an original, evidence-led article about risk-based testing. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 8,
       "category": "Ethical Hacking Fundamentals",
       "title": "Evidence handling: practical guide",
       "slug": "evidence-handling-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/evidence-handling-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/evidence-handling-practical-guide.html",
+      "status": "published",
       "primary_intent": "evidence handling",
       "editorial_brief": "Create an original, evidence-led article about evidence handling. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 9,
       "category": "Ethical Hacking Fundamentals",
       "title": "Reporting findings clearly: practical guide",
       "slug": "reporting-findings-clearly-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/reporting-findings-clearly-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/reporting-findings-clearly-practical-guide.html",
+      "status": "published",
       "primary_intent": "reporting findings clearly",
       "editorial_brief": "Create an original, evidence-led article about reporting findings clearly. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 10,
       "category": "Ethical Hacking Fundamentals",
       "title": "Remediation verification: practical guide",
       "slug": "remediation-verification-practical-guide",
-      "url": "https://ethicalzenithhackers.xyz/articles/remediation-verification-practical-guide.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/remediation-verification-practical-guide.html",
+      "status": "published",
       "primary_intent": "remediation verification",
       "editorial_brief": "Create an original, evidence-led article about remediation verification. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 11,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for small businesses: checklist",
       "slug": "security-testing-for-small-businesses-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-small-businesses-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-small-businesses-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for small businesses",
       "editorial_brief": "Create an original, evidence-led article about security testing for small businesses. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 12,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for nonprofits: checklist",
       "slug": "security-testing-for-nonprofits-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-nonprofits-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-nonprofits-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for nonprofits",
       "editorial_brief": "Create an original, evidence-led article about security testing for nonprofits. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 13,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for startups: checklist",
       "slug": "security-testing-for-startups-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-startups-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-startups-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for startups",
       "editorial_brief": "Create an original, evidence-led article about security testing for startups. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 14,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for remote teams: checklist",
       "slug": "security-testing-for-remote-teams-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-remote-teams-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-remote-teams-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for remote teams",
       "editorial_brief": "Create an original, evidence-led article about security testing for remote teams. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 15,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for public websites: checklist",
       "slug": "security-testing-for-public-websites-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-public-websites-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-public-websites-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for public websites",
       "editorial_brief": "Create an original, evidence-led article about security testing for public websites. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 16,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for SaaS products: checklist",
       "slug": "security-testing-for-saas-products-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-saas-products-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-saas-products-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for SaaS products",
       "editorial_brief": "Create an original, evidence-led article about security testing for SaaS products. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 17,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for internal networks: checklist",
       "slug": "security-testing-for-internal-networks-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-internal-networks-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-internal-networks-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for internal networks",
       "editorial_brief": "Create an original, evidence-led article about security testing for internal networks. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 18,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for cloud environments: checklist",
       "slug": "security-testing-for-cloud-environments-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-cloud-environments-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-cloud-environments-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for cloud environments",
       "editorial_brief": "Create an original, evidence-led article about security testing for cloud environments. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 19,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for APIs: checklist",
       "slug": "security-testing-for-apis-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-apis-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-apis-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for APIs",
       "editorial_brief": "Create an original, evidence-led article about security testing for APIs. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 20,
       "category": "Ethical Hacking Fundamentals",
       "title": "Security testing for mobile applications: checklist",
       "slug": "security-testing-for-mobile-applications-checklist",
-      "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-mobile-applications-checklist.html",
-      "status": "planned_not_published",
+      "url": "https://etical-zenith-hackers.github.io/active/articles/security-testing-for-mobile-applications-checklist.html",
+      "status": "published",
       "primary_intent": "security testing for mobile applications",
       "editorial_brief": "Create an original, evidence-led article about security testing for mobile applications. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 21,
@@ -5557,9 +5577,8 @@
   ],
   "publishing_status": {
     "updated_at": "2026-10-21",
-    "roadmap_topics": 500,
-    "completed_full_articles": 13,
-    "remaining_planned_topics": 487,
+    "completed_full_articles": 33,
+    "remaining_planned_topics": 467,
     "published_article_paths": [
       "articles/ethical-hacking-authorized-security-assessment-guide.html",
       "articles/grey-hat-hacking-legal-risks-and-responsible-disclosure.html",
@@ -5573,8 +5592,28 @@
       "articles/small-business-cybersecurity-checklist-2026.html",
       "articles/responsible-vulnerability-disclosure-how-to-report-a-security-flaw.html",
       "articles/cloud-security-posture-review-checklist.html",
-      "articles/incident-response-plan-for-small-businesses.html"
+      "articles/incident-response-plan-for-small-businesses.html",
+      "articles/what-ethical-hackers-do-practical-guide.html",
+      "articles/written-authorization-and-scope-practical-guide.html",
+      "articles/rules-of-engagement-practical-guide.html",
+      "articles/responsible-vulnerability-disclosure-practical-guide.html",
+      "articles/security-assessment-planning-practical-guide.html",
+      "articles/penetration-testing-versus-vulnerability-scanning-practical-guide.html",
+      "articles/risk-based-testing-practical-guide.html",
+      "articles/evidence-handling-practical-guide.html",
+      "articles/reporting-findings-clearly-practical-guide.html",
+      "articles/remediation-verification-practical-guide.html",
+      "articles/security-testing-for-small-businesses-checklist.html",
+      "articles/security-testing-for-nonprofits-checklist.html",
+      "articles/security-testing-for-startups-checklist.html",
+      "articles/security-testing-for-remote-teams-checklist.html",
+      "articles/security-testing-for-public-websites-checklist.html",
+      "articles/security-testing-for-saas-products-checklist.html",
+      "articles/security-testing-for-internal-networks-checklist.html",
+      "articles/security-testing-for-cloud-environments-checklist.html",
+      "articles/security-testing-for-apis-checklist.html",
+      "articles/security-testing-for-mobile-applications-checklist.html"
     ],
-    "note": "Counts are maintained manually. A roadmap topic is not a published article until a full page has been reviewed and committed. Indexing is not guaranteed."
+    "note": "Counts are based on article files committed to GitHub. Search indexing is not guaranteed; live deployment and content review should be checked separately."
   }
 }
