@@ -540,10 +540,11 @@
       "title": "Penetration testing readiness checklist: risk review",
       "slug": "penetration-testing-readiness-checklist-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/penetration-testing-readiness-checklist-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "penetration testing readiness checklist",
       "editorial_brief": "Create an original, evidence-led article about penetration testing readiness checklist. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 42,
@@ -551,10 +552,11 @@
       "title": "Security assessment budget planning: risk review",
       "slug": "security-assessment-budget-planning-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-assessment-budget-planning-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security assessment budget planning",
       "editorial_brief": "Create an original, evidence-led article about security assessment budget planning. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 43,
@@ -562,10 +564,11 @@
       "title": "Security testing for ecommerce: risk review",
       "slug": "security-testing-for-ecommerce-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-ecommerce-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for ecommerce",
       "editorial_brief": "Create an original, evidence-led article about security testing for ecommerce. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 44,
@@ -573,10 +576,11 @@
       "title": "Security testing for professional services: risk review",
       "slug": "security-testing-for-professional-services-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-professional-services-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for professional services",
       "editorial_brief": "Create an original, evidence-led article about security testing for professional services. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 45,
@@ -584,10 +588,11 @@
       "title": "Security testing for educational organizations: risk review",
       "slug": "security-testing-for-educational-organizations-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-educational-organizations-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for educational organizations",
       "editorial_brief": "Create an original, evidence-led article about security testing for educational organizations. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 46,
@@ -595,10 +600,11 @@
       "title": "Security testing for healthcare providers: risk review",
       "slug": "security-testing-for-healthcare-providers-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-healthcare-providers-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for healthcare providers",
       "editorial_brief": "Create an original, evidence-led article about security testing for healthcare providers. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 47,
@@ -606,10 +612,11 @@
       "title": "Security testing for financial services: risk review",
       "slug": "security-testing-for-financial-services-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-financial-services-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for financial services",
       "editorial_brief": "Create an original, evidence-led article about security testing for financial services. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 48,
@@ -617,10 +624,11 @@
       "title": "Security testing for local government: risk review",
       "slug": "security-testing-for-local-government-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-local-government-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for local government",
       "editorial_brief": "Create an original, evidence-led article about security testing for local government. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 49,
@@ -628,10 +636,11 @@
       "title": "Security testing for distributed teams: risk review",
       "slug": "security-testing-for-distributed-teams-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/security-testing-for-distributed-teams-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "security testing for distributed teams",
       "editorial_brief": "Create an original, evidence-led article about security testing for distributed teams. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 50,
@@ -639,10 +648,11 @@
       "title": "Building a security testing program: risk review",
       "slug": "building-a-security-testing-program-risk-review",
       "url": "https://ethicalzenithhackers.xyz/articles/building-a-security-testing-program-risk-review.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "building a security testing program",
       "editorial_brief": "Create an original, evidence-led article about building a security testing program. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 51,
@@ -5597,8 +5607,8 @@
   ],
   "publishing_status": {
     "updated_at": "2026-10-21",
-    "completed_full_articles": 53,
-    "remaining_planned_topics": 447,
+    "completed_full_articles": 63,
+    "remaining_planned_topics": 437,
     "published_article_paths": [
       "articles/ethical-hacking-authorized-security-assessment-guide.html",
       "articles/grey-hat-hacking-legal-risks-and-responsible-disclosure.html",
@@ -5652,8 +5662,18 @@
       "articles/third-party-testing-coordination-planning-guide.html",
       "articles/safe-test-environments-planning-guide.html",
       "articles/security-testing-change-windows-planning-guide.html",
-      "articles/post-assessment-lessons-learned-planning-guide.html"
+      "articles/post-assessment-lessons-learned-planning-guide.html",
+      "articles/penetration-testing-readiness-checklist-risk-review.html",
+      "articles/security-assessment-budget-planning-risk-review.html",
+      "articles/security-testing-for-ecommerce-risk-review.html",
+      "articles/security-testing-for-professional-services-risk-review.html",
+      "articles/security-testing-for-educational-organizations-risk-review.html",
+      "articles/security-testing-for-healthcare-providers-risk-review.html",
+      "articles/security-testing-for-financial-services-risk-review.html",
+      "articles/security-testing-for-local-government-risk-review.html",
+      "articles/security-testing-for-distributed-teams-risk-review.html",
+      "articles/building-a-security-testing-program-risk-review.html"
     ],
-    "note": "Counts reflect article files committed to GitHub. Search engines control crawling, indexing, and ranking; live deployment and article quality should be checked separately."
+    "note": "Counts reflect committed article files. Search indexing and ranking are controlled by search engines and are not guaranteed."
   }
 }
