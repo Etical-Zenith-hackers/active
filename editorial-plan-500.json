@@ -5554,5 +5554,27 @@
       "editorial_brief": "Create an original, evidence-led article about independent assessment limitations. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
       "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
     }
-  ]
+  ],
+  "publishing_status": {
+    "updated_at": "2026-10-21",
+    "roadmap_topics": 500,
+    "completed_full_articles": 13,
+    "remaining_planned_topics": 487,
+    "published_article_paths": [
+      "articles/ethical-hacking-authorized-security-assessment-guide.html",
+      "articles/grey-hat-hacking-legal-risks-and-responsible-disclosure.html",
+      "articles/penetration-testing-scope-rules-of-engagement-checklist.html",
+      "articles/web-application-access-control-testing-guide.html",
+      "articles/cloud-iam-least-privilege-security-review.html",
+      "articles/digital-evidence-preservation-cybersecurity-incident-checklist.html",
+      "articles/threat-modeling-for-small-businesses-practical-workshop.html",
+      "articles/secure-software-development-lifecycle-security-checklist.html",
+      "articles/how-to-choose-an-ethical-hacking-consultant.html",
+      "articles/small-business-cybersecurity-checklist-2026.html",
+      "articles/responsible-vulnerability-disclosure-how-to-report-a-security-flaw.html",
+      "articles/cloud-security-posture-review-checklist.html",
+      "articles/incident-response-plan-for-small-businesses.html"
+    ],
+    "note": "Counts are maintained manually. A roadmap topic is not a published article until a full page has been reviewed and committed. Indexing is not guaranteed."
+  }
 }
