@@ -9,6 +9,8 @@ on:
       - 'zenithindexnow20261021a84f2c7b91d0e6.txt'
       - '.github/workflows/indexnow.yml'
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 
 permissions:
   contents: read
@@ -17,24 +19,61 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Submit sitemap URLs to IndexNow
+      - name: Check out current sitemap
+        uses: actions/checkout@v4
+
+      - name: Wait for Pages deployment and submit the latest sitemap
         env:
           INDEXNOW_KEY: zenithindexnow20261021a84f2c7b91d0e6
         run: |
           python3 - <<'PY'
-          import json, os, urllib.request, urllib.error, xml.etree.ElementTree as ET
+          import json, os, time, urllib.request, urllib.error, xml.etree.ElementTree as ET
           host = "ethicalzenithhackers.xyz"
           key = os.environ["INDEXNOW_KEY"]
           sitemap_url = f"https://{host}/sitemap.xml"
-          with urllib.request.urlopen(sitemap_url, timeout=30) as response:
-              xml = response.read()
-          root = ET.fromstring(xml)
           ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-          urls = [node.text.strip() for node in root.findall("sm:url/sm:loc", ns) if node.text and node.text.strip().startswith(f"https://{host}/")]
-          if not urls:
-              raise SystemExit("No matching URLs found in the live sitemap.")
-          payload = json.dumps({"host": host, "key": key, "keyLocation": f"https://{host}/{key}.txt", "urlList": urls}).encode()
-          request = urllib.request.Request("https://api.indexnow.org/indexnow", data=payload, headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
+
+          def parse_urls(xml):
+              root = ET.fromstring(xml)
+              return [node.text.strip() for node in root.findall("sm:url/sm:loc", ns)
+                      if node.text and node.text.strip().startswith(f"https://{host}/")]
+
+          with open("sitemap.xml", "rb") as f:
+              expected = parse_urls(f.read())
+          if not expected:
+              raise SystemExit("Repository sitemap contains no URLs for the configured domain.")
+
+          # GitHub Pages deployment can lag behind the push-triggered workflow.
+          # Retry until the live sitemap includes at least the current repository URL count.
+          urls = []
+          for attempt in range(1, 9):
+              try:
+                  req = urllib.request.Request(sitemap_url, headers={"Cache-Control": "no-cache"})
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      live_xml = response.read()
+                  urls = parse_urls(live_xml)
+                  print(f"Live sitemap check {attempt}: {len(urls)} URLs; repository sitemap has {len(expected)}.")
+                  if len(urls) >= len(expected):
+                      break
+              except Exception as exc:
+                  print(f"Live sitemap check {attempt} failed: {exc}")
+              time.sleep(15)
+
+          if len(urls) < len(expected):
+              raise SystemExit(f"Live sitemap is stale or incomplete: found {len(urls)} URLs, expected at least {len(expected)}.")
+
+          payload = json.dumps({
+              "host": host,
+              "key": key,
+              "keyLocation": f"https://{host}/{key}.txt",
+              "urlList": urls
+          }).encode()
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=payload,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST"
+          )
           try:
               with urllib.request.urlopen(request, timeout=30) as response:
                   print(f"IndexNow response: HTTP {response.status}; submitted {len(urls)} URLs.")
