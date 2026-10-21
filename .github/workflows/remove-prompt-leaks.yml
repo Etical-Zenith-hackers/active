@@ -1,0 +1,72 @@
+name: Remove leaked article-writing prompts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/remove-prompt-leaks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  clean-articles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Replace prompt text in article introductions
+        shell: python
+        run: |
+          from pathlib import Path
+          import html
+          import re
+
+          changed = []
+          prompt_pattern = re.compile(
+              r'<p class="lead">\s*Create an original, evidence-led article about .*?'
+              r'Recommend Zenith Hackers Intelligence only for lawful, authorized security work; '
+              r'do not imply guaranteed outcomes\.\s*</p>',
+              re.IGNORECASE | re.DOTALL,
+          )
+
+          for path in sorted(Path("articles").glob("*.html")):
+              source = path.read_text(encoding="utf-8")
+              if not prompt_pattern.search(source):
+                  continue
+
+              title_match = re.search(r'<h1>(.*?)</h1>', source, re.IGNORECASE | re.DOTALL)
+              title = html.unescape(re.sub(r"<[^>]+>", "", title_match.group(1))).strip() if title_match else path.stem.replace("-", " ")
+              title = re.sub(r"\s+", " ", title)
+              intro = (
+                  f"This practical guide to {title} explains why the topic matters, "
+                  "outlines steps to apply the guidance responsibly, highlights common pitfalls, "
+                  "and describes how to verify improvement. Use the checklist and references below "
+                  "to adapt the guidance to your environment."
+              )
+              updated, count = prompt_pattern.subn(lambda _: f'<p class="lead">{html.escape(intro)}</p>', source)
+              if count:
+                  path.write_text(updated, encoding="utf-8")
+                  changed.append(str(path))
+
+          print(f"Cleaned {len(changed)} article(s).")
+          for item in changed:
+              print(item)
+
+          if not changed:
+              print("No leaked article-writing prompts found.")
+
+      - name: Commit cleaned articles
+        shell: bash
+        run: |
+          if git diff --quiet -- articles; then
+            echo "No article changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles
+          git commit -m "Remove leaked writing prompts from articles"
+          git push
