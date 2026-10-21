@@ -900,10 +900,11 @@
       "title": "Business logic testing: common mistakes and fixes",
       "slug": "business-logic-testing-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/business-logic-testing-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "business logic testing",
       "editorial_brief": "Create an original, evidence-led article about business logic testing. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 72,
@@ -911,10 +912,11 @@
       "title": "Checkout flow security: common mistakes and fixes",
       "slug": "checkout-flow-security-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/checkout-flow-security-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "checkout flow security",
       "editorial_brief": "Create an original, evidence-led article about checkout flow security. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 73,
@@ -922,10 +924,11 @@
       "title": "Payment integration security: common mistakes and fixes",
       "slug": "payment-integration-security-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/payment-integration-security-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "payment integration security",
       "editorial_brief": "Create an original, evidence-led article about payment integration security. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 74,
@@ -933,10 +936,11 @@
       "title": "User profile privacy: common mistakes and fixes",
       "slug": "user-profile-privacy-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/user-profile-privacy-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "user profile privacy",
       "editorial_brief": "Create an original, evidence-led article about user profile privacy. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 75,
@@ -944,10 +948,11 @@
       "title": "Multi-tenant isolation: common mistakes and fixes",
       "slug": "multi-tenant-isolation-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/multi-tenant-isolation-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "multi-tenant isolation",
       "editorial_brief": "Create an original, evidence-led article about multi-tenant isolation. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 76,
@@ -955,10 +960,11 @@
       "title": "Admin panel protection: common mistakes and fixes",
       "slug": "admin-panel-protection-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/admin-panel-protection-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "admin panel protection",
       "editorial_brief": "Create an original, evidence-led article about admin panel protection. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 77,
@@ -966,10 +972,11 @@
       "title": "OAuth implementation review: common mistakes and fixes",
       "slug": "oauth-implementation-review-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/oauth-implementation-review-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "OAuth implementation review",
       "editorial_brief": "Create an original, evidence-led article about OAuth implementation review. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 78,
@@ -977,10 +984,11 @@
       "title": "OpenID Connect configuration: common mistakes and fixes",
       "slug": "openid-connect-configuration-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/openid-connect-configuration-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "OpenID Connect configuration",
       "editorial_brief": "Create an original, evidence-led article about OpenID Connect configuration. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 79,
@@ -988,10 +996,11 @@
       "title": "JWT validation: common mistakes and fixes",
       "slug": "jwt-validation-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/jwt-validation-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "JWT validation",
       "editorial_brief": "Create an original, evidence-led article about JWT validation. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 80,
@@ -999,10 +1008,11 @@
       "title": "API key lifecycle: common mistakes and fixes",
       "slug": "api-key-lifecycle-common-mistakes-and-fixes",
       "url": "https://ethicalzenithhackers.xyz/articles/api-key-lifecycle-common-mistakes-and-fixes.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "API key lifecycle",
       "editorial_brief": "Create an original, evidence-led article about API key lifecycle. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 81,
@@ -5627,8 +5637,8 @@
   ],
   "publishing_status": {
     "updated_at": "2026-10-21",
-    "completed_full_articles": 83,
-    "remaining_planned_topics": 417,
+    "completed_full_articles": 93,
+    "remaining_planned_topics": 407,
     "published_article_paths": [
       "articles/ethical-hacking-authorized-security-assessment-guide.html",
       "articles/grey-hat-hacking-legal-risks-and-responsible-disclosure.html",
@@ -5712,7 +5722,17 @@
       "articles/secure-cookie-settings-checklist.html",
       "articles/content-security-policy-checklist.html",
       "articles/security-headers-checklist.html",
-      "articles/tls-configuration-checklist.html"
+      "articles/tls-configuration-checklist.html",
+      "articles/business-logic-testing-common-mistakes-and-fixes.html",
+      "articles/checkout-flow-security-common-mistakes-and-fixes.html",
+      "articles/payment-integration-security-common-mistakes-and-fixes.html",
+      "articles/user-profile-privacy-common-mistakes-and-fixes.html",
+      "articles/multi-tenant-isolation-common-mistakes-and-fixes.html",
+      "articles/admin-panel-protection-common-mistakes-and-fixes.html",
+      "articles/oauth-implementation-review-common-mistakes-and-fixes.html",
+      "articles/openid-connect-configuration-common-mistakes-and-fixes.html",
+      "articles/jwt-validation-common-mistakes-and-fixes.html",
+      "articles/api-key-lifecycle-common-mistakes-and-fixes.html"
     ],
     "note": "Counts reflect committed article files. Search indexing and ranking are controlled by search engines and are not guaranteed."
   }
