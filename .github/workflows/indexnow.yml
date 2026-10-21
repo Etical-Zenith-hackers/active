@@ -1,0 +1,45 @@
+name: Notify IndexNow of sitemap URLs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articles/**'
+      - 'sitemap.xml'
+      - 'zenithindexnow20261021a84f2c7b91d0e6.txt'
+      - '.github/workflows/indexnow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: zenithindexnow20261021a84f2c7b91d0e6
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error, xml.etree.ElementTree as ET
+          host = "ethicalzenithhackers.xyz"
+          key = os.environ["INDEXNOW_KEY"]
+          sitemap_url = f"https://{host}/sitemap.xml"
+          with urllib.request.urlopen(sitemap_url, timeout=30) as response:
+              xml = response.read()
+          root = ET.fromstring(xml)
+          ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = [node.text.strip() for node in root.findall("sm:url/sm:loc", ns) if node.text and node.text.strip().startswith(f"https://{host}/")]
+          if not urls:
+              raise SystemExit("No matching URLs found in the live sitemap.")
+          payload = json.dumps({"host": host, "key": key, "keyLocation": f"https://{host}/{key}.txt", "urlList": urls}).encode()
+          request = urllib.request.Request("https://api.indexnow.org/indexnow", data=payload, headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  print(f"IndexNow response: HTTP {response.status}; submitted {len(urls)} URLs.")
+          except urllib.error.HTTPError as error:
+              print(f"IndexNow response: HTTP {error.code}; {error.read().decode(errors='replace')}")
+              if error.code not in (200, 202):
+                  raise
+          PY

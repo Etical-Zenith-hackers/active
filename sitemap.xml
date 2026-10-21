@@ -264,4 +264,14 @@
   <url><loc>https://ethicalzenithhackers.xyz/articles/output-encoding-practical-guide.html</loc></url>
   <url><loc>https://ethicalzenithhackers.xyz/articles/cross-site-scripting-prevention-practical-guide.html</loc></url>
   <url><loc>https://ethicalzenithhackers.xyz/articles/cross-site-request-forgery-defenses-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/sql-injection-prevention-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/file-upload-security-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/server-side-request-forgery-prevention-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/api-authorization-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/rate-limiting-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/account-enumeration-prevention-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/secure-cookie-settings-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/content-security-policy-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/security-headers-checklist.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/tls-configuration-checklist.html</loc></url>
 </urlset>
