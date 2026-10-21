@@ -660,10 +660,11 @@
       "title": "Secure login design: practical guide",
       "slug": "secure-login-design-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/secure-login-design-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "secure login design",
       "editorial_brief": "Create an original, evidence-led article about secure login design. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 52,
@@ -671,10 +672,11 @@
       "title": "Multi-factor authentication review: practical guide",
       "slug": "multi-factor-authentication-review-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/multi-factor-authentication-review-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "multi-factor authentication review",
       "editorial_brief": "Create an original, evidence-led article about multi-factor authentication review. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 53,
@@ -682,10 +684,11 @@
       "title": "Session management: practical guide",
       "slug": "session-management-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/session-management-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "session management",
       "editorial_brief": "Create an original, evidence-led article about session management. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 54,
@@ -693,10 +696,11 @@
       "title": "Password reset workflows: practical guide",
       "slug": "password-reset-workflows-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/password-reset-workflows-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "password reset workflows",
       "editorial_brief": "Create an original, evidence-led article about password reset workflows. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 55,
@@ -704,10 +708,11 @@
       "title": "Access control testing: practical guide",
       "slug": "access-control-testing-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/access-control-testing-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "access control testing",
       "editorial_brief": "Create an original, evidence-led article about access control testing. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 56,
@@ -715,10 +720,11 @@
       "title": "Role-based authorization: practical guide",
       "slug": "role-based-authorization-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/role-based-authorization-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "role-based authorization",
       "editorial_brief": "Create an original, evidence-led article about role-based authorization. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 57,
@@ -726,10 +732,11 @@
       "title": "Input validation: practical guide",
       "slug": "input-validation-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/input-validation-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "input validation",
       "editorial_brief": "Create an original, evidence-led article about input validation. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 58,
@@ -737,10 +744,11 @@
       "title": "Output encoding: practical guide",
       "slug": "output-encoding-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/output-encoding-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "output encoding",
       "editorial_brief": "Create an original, evidence-led article about output encoding. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 59,
@@ -748,10 +756,11 @@
       "title": "Cross-site scripting prevention: practical guide",
       "slug": "cross-site-scripting-prevention-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/cross-site-scripting-prevention-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "cross-site scripting prevention",
       "editorial_brief": "Create an original, evidence-led article about cross-site scripting prevention. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 60,
@@ -759,10 +768,11 @@
       "title": "Cross-site request forgery defenses: practical guide",
       "slug": "cross-site-request-forgery-defenses-practical-guide",
       "url": "https://ethicalzenithhackers.xyz/articles/cross-site-request-forgery-defenses-practical-guide.html",
-      "status": "planned_not_published",
+      "status": "published",
       "primary_intent": "cross-site request forgery defenses",
       "editorial_brief": "Create an original, evidence-led article about cross-site request forgery defenses. Explain the purpose, practical steps, limitations, common errors, and how to verify improvement. Include a relevant checklist and trustworthy references. Recommend Zenith Hackers Intelligence only for lawful, authorized security work; do not imply guaranteed outcomes.",
-      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led."
+      "safety_boundary": "Testing and investigations must be authorized, scoped, privacy-aware, and evidence-led.",
+      "published_at": "2026-10-21"
     },
     {
       "id": 61,
@@ -5607,8 +5617,8 @@
   ],
   "publishing_status": {
     "updated_at": "2026-10-21",
-    "completed_full_articles": 63,
-    "remaining_planned_topics": 437,
+    "completed_full_articles": 73,
+    "remaining_planned_topics": 427,
     "published_article_paths": [
       "articles/ethical-hacking-authorized-security-assessment-guide.html",
       "articles/grey-hat-hacking-legal-risks-and-responsible-disclosure.html",
@@ -5672,7 +5682,17 @@
       "articles/security-testing-for-financial-services-risk-review.html",
       "articles/security-testing-for-local-government-risk-review.html",
       "articles/security-testing-for-distributed-teams-risk-review.html",
-      "articles/building-a-security-testing-program-risk-review.html"
+      "articles/building-a-security-testing-program-risk-review.html",
+      "articles/secure-login-design-practical-guide.html",
+      "articles/multi-factor-authentication-review-practical-guide.html",
+      "articles/session-management-practical-guide.html",
+      "articles/password-reset-workflows-practical-guide.html",
+      "articles/access-control-testing-practical-guide.html",
+      "articles/role-based-authorization-practical-guide.html",
+      "articles/input-validation-practical-guide.html",
+      "articles/output-encoding-practical-guide.html",
+      "articles/cross-site-scripting-prevention-practical-guide.html",
+      "articles/cross-site-request-forgery-defenses-practical-guide.html"
     ],
     "note": "Counts reflect committed article files. Search indexing and ranking are controlled by search engines and are not guaranteed."
   }

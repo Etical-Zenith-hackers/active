@@ -254,4 +254,14 @@
   <url><loc>https://ethicalzenithhackers.xyz/articles/security-testing-for-local-government-risk-review.html</loc></url>
   <url><loc>https://ethicalzenithhackers.xyz/articles/security-testing-for-distributed-teams-risk-review.html</loc></url>
   <url><loc>https://ethicalzenithhackers.xyz/articles/building-a-security-testing-program-risk-review.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/secure-login-design-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/multi-factor-authentication-review-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/session-management-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/password-reset-workflows-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/access-control-testing-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/role-based-authorization-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/input-validation-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/output-encoding-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/cross-site-scripting-prevention-practical-guide.html</loc></url>
+  <url><loc>https://ethicalzenithhackers.xyz/articles/cross-site-request-forgery-defenses-practical-guide.html</loc></url>
 </urlset>
