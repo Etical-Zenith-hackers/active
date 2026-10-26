@@ -39,39 +39,30 @@
     nav{position:sticky;top:0;z-index:20;background:rgba(5,8,13,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.04em}.brand span{color:var(--accent)}
     .links{display:flex;gap:22px;align-items:center}.links a{color:#c5d0d9}.links a:hover{color:var(--accent)}
-    .hero{padding:88px 0 54px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-size:.78rem;font-weight:800}.hero h1{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.98;margin:12px 0 20px;max-width:900px}.hero p{max-width:720px;color:var(--muted);font-size:1.15rem}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--accent),#6c8cff);color:#041019;border:0}.btn:hover{transform:translateY(-1px)}
-    .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 28px}.search{flex:1;min-width:220px}.input,.textarea,.select{width:100%;border:1px solid var(--line);background:#071019;color:var(--text);border-radius:10px;padding:13px 14px;outline:none}.input:focus,.textarea:focus,.select:focus{border-color:var(--accent)}.select{min-width:180px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;overflow:hidden}.cardbody{padding:20px}.cover{height:190px;width:100%;object-fit:cover;background:#101a25}.tag{display:inline-block;border:1px solid #284557;color:var(--accent);padding:4px 8px;border-radius:999px;font-size:.72rem;font-weight:800}.card h3{font-size:1.25rem;line-height:1.2;margin:12px 0 8px}.meta{color:var(--muted);font-size:.82rem}.excerpt{color:#b5c1cb}
-    section{padding:40px 0}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.sectionhead h2{margin:0;font-size:2rem}.empty{padding:40px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modalbox{width:min(760px,100%);max-height:92vh;overflow:auto;background:#09111a;border:1px solid var(--line);border-radius:18px;padding:26px}.modalhead{display:flex;justify-content:space-between;gap:15px}.close{background:none;border:0;color:var(--muted);font-size:1.6rem;cursor:pointer}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}.label{font-size:.82rem;color:#aebbc5;font-weight:800;display:block;margin-bottom:6px}.notice{padding:12px 14px;border-radius:10px;background:#101d28;color:#b9c8d2;border:1px solid var(--line);margin-bottom:16px}.status{margin-top:12px;font-size:.9rem}.ok{color:#7df0b4}.err{color:#ff8996}
-    .article{max-width:860px;margin:auto}.article h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05}.article-content{white-space:pre-wrap;color:#cbd6de;font-size:1.08rem}.comments{margin-top:40px}.comment{border-top:1px solid var(--line);padding:16px 0}.comment strong{color:#fff}.comment p{margin:5px 0;color:#bcc8d0}.commentform{display:grid;gap:10px}
-    footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);margin-top:60px}
+    .hero{padding:88px 0 54px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-size:.78rem;font-weight:800}.hero h1{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.9;margin:18px 0 16px}.hero p{font-size:clamp(1.05rem,2vw,1.3rem);max-width:760px;color:#dfeaf3}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer}.btn.primary{background:linear-gradient(135deg,#49d9ff,#7b61ff);color:#07131d;border-color:transparent}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 28px}.search{flex:1;min-width:220px}.input,.textarea,.select{width:100%;border:1px solid var(--line);background:#071019;color:var(--text);padding:12px 14px;border-radius:10px;font:inherit}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .22s ease,border-color .22s ease}.cardbody{padding:22px}.tag{display:inline-block;background:rgba(73,217,255,.12);color:var(--accent);border:1px solid rgba(73,217,255,.36);padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:700}.meta,.excerpt{color:var(--muted)}.excerpt{margin-top:10px}.empty{padding:40px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modalbox{width:min(760px,100%);max-height:88vh;overflow:auto;background:#08131d;border:1px solid var(--line);border-radius:18px;padding:20px}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.close{border:1px solid var(--line);background:transparent;color:var(--text);font-size:1.5rem;width:40px;height:40px;border-radius:10px;cursor:pointer}.article{max-width:860px;margin:auto}.article h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05}.article-content{white-space:pre-wrap;color:#cbd6de;font-size:1.08rem}.comments{margin-top:24px}.comment{padding:12px 0;border-top:1px solid var(--line)}footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);margin-top:60px}
     @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.links{gap:10px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}}
-    @media(max-width:580px){.grid{grid-template-columns:1fr}.navin{height:auto;padding:15px 0;align-items:flex-start}.links{font-size:.82rem;flex-wrap:wrap;justify-content:flex-end}.hero{padding-top:58px}}
-  
+    @media(max-width:580px){.grid{grid-template-columns:1fr}.navin{height:auto;padding:15px 0;align-items:flex-start}.links{font-size:.82rem;flex-wrap:wrap;justify-content:flex-end}.hero{padding-top:72px}}
+
     /* Zenith visual refresh: brighter cyber glow, floating light forms, and tactile article cards */
-    body{background:linear-gradient(rgba(2,10,20,.60),rgba(2,10,20,.78)),url("assets/blog-background.jpg.png") center top/cover fixed no-repeat,radial-gradient(circle at 80% -10%,#123047 0,transparent 35%),var(--bg);background-size:cover,cover,auto,auto}
-    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:linear-gradient(115deg,transparent 0%,rgba(73,217,255,.035) 45%,transparent 70%);background-size:220% 100%;animation:ambientSweep 18s ease-in-out infinite}
+    body{background:linear-gradient(rgba(2,10,20,.60),rgba(2,10,20,.78)),url("assets/blog-background.jpg.png") center top/cover fixed no-repeat,radial-gradient(circle at 80% -10%,#123047 0,transparent 34%),var(--bg)}
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:linear-gradient(115deg,transparent 0%,rgba(73,217,255,.035) 45%,transparent 70%);background-size:220% 100%}
     nav,header,main,footer{position:relative;z-index:1}
     .hero{position:relative}
-    .hero:after{content:"";position:absolute;right:3%;top:24%;width:clamp(90px,15vw,190px);aspect-ratio:1;border:1px solid rgba(73,217,255,.38);border-radius:34% 66% 61% 39%/42% 42% 58% 58%;box-shadow:0 0 35px rgba(73,217,255,.14),inset 0 0 30px rgba(123,97,255,.12);pointer-events:none;animation:floatShape 9s ease-in-out infinite;transform:rotate(-20deg)}
-    .hero h1{background:linear-gradient(100deg,#fff 5%,#9cecff 42%,#b6a7ff 72%,#fff 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 34px rgba(73,217,255,.12);animation:titleShimmer 9s linear infinite}
+    .hero:after{content:"";position:absolute;right:3%;top:24%;width:clamp(90px,15vw,190px);aspect-ratio:1;border:1px solid rgba(73,217,255,.38);border-radius:34% 66% 61% 39%/42% 42% 58% 58%;box-shadow:0 0 40px rgba(73,217,255,.14)}
+    .hero h1{background:linear-gradient(100deg,#fff 5%,#9cecff 42%,#b6a7ff 72%,#fff 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 18px rgba(73,217,255,.2)}
     .hero p{color:#d1e0ec}
     .eyebrow{text-shadow:0 0 18px rgba(73,217,255,.3)}
     .actions .btn,.btn{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,filter .25s ease}
     .btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 8px 28px rgba(73,217,255,.18);border-color:rgba(73,217,255,.65);filter:brightness(1.08)}
     .grid{gap:24px;perspective:1200px}
-    .card{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(105,207,245,.35);border-radius:20px;background:linear-gradient(145deg,rgba(5,18,31,.82),rgba(10,15,35,.91)),url("assets/blog-background.jpg.png") center/cover;box-shadow:0 12px 32px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,border-color .32s ease;animation:cardRise .65s both}
+    .card{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(105,207,245,.35);border-radius:20px;background:linear-gradient(145deg,rgba(5,18,31,.82),rgba(10,15,35,.91)),url("assets/blog-background.jpg.png") center/cover;box-shadow:0 12px 26px rgba(0,0,0,.18)}
     .card:nth-child(3n+2){animation-delay:.08s}.card:nth-child(3n){animation-delay:.16s}
-    .card:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 100% 0,rgba(73,217,255,.18),transparent 38%),radial-gradient(circle at 0 100%,rgba(123,97,255,.20),transparent 42%);opacity:.85;transition:opacity .3s ease}
-    .card:after{content:"";position:absolute;top:-80%;left:-65%;width:48%;height:260%;pointer-events:none;transform:rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.11),transparent);transition:left .7s ease}
-    .card:hover,.card:focus-within{transform:translateY(-10px) scale(1.015);border-color:rgba(73,217,255,.85);box-shadow:0 22px 48px rgba(0,0,0,.4),0 0 28px rgba(73,217,255,.16),inset 0 1px 0 rgba(255,255,255,.13)}
+    .card:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 100% 0,rgba(73,217,255,.18),transparent 38%),radial-gradient(circle at 0 100%,rgba(123,97,255,.18),transparent 42%)}
+    .card:after{content:"";position:absolute;top:-80%;left:-65%;width:48%;height:260%;pointer-events:none;transform:rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);transition:left .55s ease}
+    .card:hover,.card:focus-within{transform:translateY(-10px) scale(1.015);border-color:rgba(73,217,255,.85);box-shadow:0 22px 48px rgba(0,0,0,.4),0 0 28px rgba(73,217,255,.16),inset 0 1px 0 rgba(255,255,255,.03)}
     .card:hover:before,.card:focus-within:before{opacity:1}
     .card:hover:after,.card:focus-within:after{left:125%}
     .cardbody{position:relative;background:linear-gradient(180deg,rgba(5,14,26,.70),rgba(5,10,20,.91));backdrop-filter:blur(5px);padding:22px}
-    .cover{height:205px;display:block;object-fit:cover;border-bottom:1px solid rgba(73,217,255,.28);filter:saturate(1.12) contrast(1.04);transition:transform .5s ease,filter .5s ease}
-    .card:hover .cover{transform:scale(1.045);filter:saturate(1.28) contrast(1.07)}
     .tag{background:rgba(12,39,55,.76);border-color:rgba(73,217,255,.48);box-shadow:0 0 18px rgba(73,217,255,.08)}
     .card h3{color:#f3fbff;transition:color .25s ease,text-shadow .25s ease}
     .card:hover h3{color:#a8f0ff;text-shadow:0 0 18px rgba(73,217,255,.17)}
@@ -85,43 +76,16 @@
     .orb.two{width:250px;height:250px;right:-90px;top:60%;background:radial-gradient(circle at 45% 45%,rgba(123,97,255,.28),rgba(123,97,255,0) 70%);animation-delay:-6s}
     .orb.three{width:140px;height:140px;left:65%;top:14%;background:radial-gradient(circle at 40% 40%,rgba(96,255,220,.19),rgba(96,255,220,0) 72%);animation-delay:-11s}
     @keyframes orbDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(22px,-32px,0) scale(1.12)}}
-    @keyframes floatShape{0%,100%{transform:translateY(0) rotate(-20deg)}50%{transform:translateY(-18px) rotate(4deg)}}
-    @keyframes ambientSweep{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-    @keyframes titleShimmer{0%{background-position:0% center}100%{background-position:220% center}}
-    @keyframes cardRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
     @media(max-width:850px){.hero:after{right:1%;top:15%;opacity:.55;width:100px}.cardbody{padding:19px}}
-    @media(max-width:580px){body{background-attachment:scroll;background-position:center top}.hero:after{width:74px;top:12%;right:0;opacity:.4}.grid{gap:18px}.card{border-radius:17px}.card:hover{transform:translateY(-3px)}.cardbody{padding:19px}.cover{height:185px}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.card:hover,.card:focus-within{transform:none}}
-
-  
-/* Stronger editorial visual treatment: bigger images, more energy, richer article panels */
-body{background:linear-gradient(rgba(2,10,20,.46),rgba(2,10,20,.68)),url("assets/blog-background.jpg.png") center top/cover fixed no-repeat,radial-gradient(circle at 80% -10%,#123047 0,transparent 35%),var(--bg)}
-.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;perspective:1400px}
-.card{min-height:100%;border-radius:24px;background:linear-gradient(145deg,rgba(5,18,31,.74),rgba(10,15,35,.85)),url("assets/blog-background.jpg.png") center/cover;box-shadow:0 16px 40px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.10);border-color:rgba(105,207,245,.48)}
-.cover{height:300px;width:100%;object-fit:cover;object-position:center;filter:saturate(1.16) contrast(1.05);border-bottom:1px solid rgba(73,217,255,.38)}
-.cardbody{padding:28px;background:linear-gradient(180deg,rgba(5,14,26,.58),rgba(5,10,20,.94))}
-.card h3{font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.2}
-.excerpt{font-size:1rem;line-height:1.75}
-.card:hover,.card:focus-within{transform:translateY(-13px) scale(1.018);box-shadow:0 28px 65px rgba(0,0,0,.46),0 0 38px rgba(73,217,255,.22),0 0 0 1px rgba(123,97,255,.22)}
-.card:before{background:radial-gradient(circle at 100% 0,rgba(73,217,255,.26),transparent 42%),radial-gradient(circle at 0 100%,rgba(123,97,255,.26),transparent 45%)}
-.card:after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
-.hero{padding-top:105px;padding-bottom:65px}
-.hero h1{font-size:clamp(3rem,8vw,6.5rem)}
-.hero p{font-size:clamp(1.05rem,2vw,1.3rem);color:#e0edf7}
-.toolbar{padding:15px;border:1px solid rgba(73,217,255,.22);border-radius:18px;background:rgba(3,12,24,.58);backdrop-filter:blur(10px)}
-.sectionhead h2{font-size:clamp(2rem,4vw,2.8rem)}
-.tag{padding:6px 11px;font-size:.75rem}
-.card .btn{margin-top:6px;background:linear-gradient(120deg,rgba(73,217,255,.16),rgba(123,97,255,.20));border-color:rgba(73,217,255,.55)}
-.card .btn:hover{background:linear-gradient(120deg,#49d9ff,#8b7bff);color:#05111c}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.cover{height:235px}.cardbody{padding:21px}}
-@media(max-width:580px){.grid{grid-template-columns:1fr;gap:22px}.cover{height:260px}.cardbody{padding:22px}.card:hover{transform:translateY(-4px)}.hero{padding-top:70px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-
-</style>
+    @media(max-width:580px){body{background-attachment:scroll;background-position:center top}.hero:after{width:74px;top:12%;right:0;opacity:.4}.grid{gap:18px}.card{border-radius:17px}.card:hover{transform:translateY(-4px)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+    noscript .fallback-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;padding:18px 0 0}
+    noscript .fallback-links a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(7,17,25,.72);color:#ecf6ff}
+  </style>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"><span class="orb one"></span><span class="orb two"></span><span class="orb three"></span></div>
-<nav><div class="wrap navin"><a class="brand" href="index.html">ZENITH <span>HACKERS</span></a><div class="links"><a href="index.html">Home</a><a href="asset-recovery.html">Asset Tracing</a><a href="blog.html">Blog</a><a href="#create" id="topCreate">Create Post</a></div></div></nav>
+<nav><div class="wrap navin"><a class="brand" href="index.html">ZENITH <span>HACKERS</span></a><div class="links"><a href="index.html">Home</a><a href="asset-recovery.html">Asset Tracing</a><a href="blog.html">Blog</a><a href="index.html#contact">Contact</a></div></div></nav>
 
 <header class="hero wrap">
   <div class="eyebrow">Ethical • Legal • Secure</div>
@@ -130,12 +94,26 @@ body{background:linear-gradient(rgba(2,10,20,.46),rgba(2,10,20,.68)),url("assets
   <div class="actions"><button class="btn primary" id="heroCreate">Create a Post</button><a class="btn" href="#latest">Explore Articles</a></div>
 </header>
 
+<noscript>
+  <div class="wrap" style="padding:0 0 24px;">
+    <div class="eyebrow">Blog Index</div>
+    <div class="fallback-links">
+      <a href="articles/bicycle-ebike-asset-tracing.html">Bicycle and E-Bike Asset Tracing</a>
+      <a href="articles/crypto-recovery-after-phishing-link-evidence.html">Crypto Recovery After a Phishing Link</a>
+      <a href="articles/how-to-trace-usdt-tron-after-crypto-scam.html">How to Trace USDT on TRON After a Crypto Scam</a>
+      <a href="articles/what-to-do-crypto-wallet-drained-by-phishing.html">What to Do If a Crypto Wallet Was Drained by Phishing</a>
+      <a href="articles/preserve-crypto-exchange-withdrawal-evidence.html">How to Preserve Crypto Exchange Withdrawal Evidence</a>
+      <a href="articles/token-expiration-and-rotation-planning-guide.html">Token expiration and rotation: planning guide</a>
+    </div>
+  </div>
+</noscript>
+
 <main class="wrap">
 <section id="latest">
   <div class="sectionhead"><div><div class="eyebrow">Community knowledge</div><h2>Latest Intelligence</h2></div></div>
   <div class="toolbar">
     <input class="input search" id="search" placeholder="Search articles...">
-    <select class="select" id="category"><option value="">All categories</option><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity Tips</option><option>Case Studies</option></select>
+    <select class="select" id="category"><option value="">All categories</option><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity</option></select>
   </div>
   <div id="posts" class="grid"><div class="empty">Loading intelligence...</div></div>
 </section>
@@ -149,7 +127,7 @@ body{background:linear-gradient(rgba(2,10,20,.46),rgba(2,10,20,.68)),url("assets
       <div class="formgrid">
         <div><label class="label">Title</label><input class="input" name="title" maxlength="180" required></div>
         <div><label class="label">Your name</label><input class="input" name="author_name" maxlength="80" required></div>
-        <div><label class="label">Category</label><select class="select" name="category"><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity Tips</option><option>Case Studies</option></select></div>
+        <div><label class="label">Category</label><select class="select" name="category"><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity</option></select></div>
         <div><label class="label">Cover image URL (optional)</label><input class="input" name="cover_image" type="url"></div>
         <div class="full"><label class="label">Short excerpt</label><textarea class="textarea" name="excerpt" maxlength="500" rows="3" required></textarea></div>
         <div class="full"><label class="label">Article</label><textarea class="textarea" name="content" minlength="20" rows="12" required></textarea></div>
@@ -167,16 +145,8 @@ body{background:linear-gradient(rgba(2,10,20,.46),rgba(2,10,20,.68)),url("assets
   </div>
 </div>
 
-<section class="wrap" id="featured-security-guides" style="padding:30px 0 55px"><div class="sectionhead"><div><div class="eyebrow">Featured security guides</div><h2>Ethical Hacking & Security Research</h2><p>Practical guidance on authorized testing, responsible disclosure, and security improvement.</p></div></div><div class="grid"><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Business logic testing: common mistakes and fixes</h3><p class="excerpt">business logic testing. Checklist and verification guidance.</p><a class="btn" href="articles/business-logic-testing-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Checkout flow security: common mistakes and fixes</h3><p class="excerpt">checkout flow security. Checklist and verification guidance.</p><a class="btn" href="articles/checkout-flow-security-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Payment integration security: common mistakes and fixes</h3><p class="excerpt">payment integration security. Checklist and verification guidance.</p><a class="btn" href="articles/payment-integration-security-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>User profile privacy: common mistakes and fixes</h3><p class="excerpt">user profile privacy. Checklist and verification guidance.</p><a class="btn" href="articles/user-profile-privacy-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Multi-tenant isolation: common mistakes and fixes</h3><p class="excerpt">multi-tenant isolation. Checklist and verification guidance.</p><a class="btn" href="articles/multi-tenant-isolation-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Admin panel protection: common mistakes and fixes</h3><p class="excerpt">admin panel protection. Checklist and verification guidance.</p><a class="btn" href="articles/admin-panel-protection-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>OAuth implementation review: common mistakes and fixes</h3><p class="excerpt">OAuth implementation review. Checklist and verification guidance.</p><a class="btn" href="articles/oauth-implementation-review-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>OpenID Connect configuration: common mistakes and fixes</h3><p class="excerpt">OpenID Connect configuration. Checklist and verification guidance.</p><a class="btn" href="articles/openid-connect-configuration-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>JWT validation: common mistakes and fixes</h3><p class="excerpt">JWT validation. Checklist and verification guidance.</p><a class="btn" href="articles/jwt-validation-common-mistakes-and-fixes.html">Read Guide</a></div></article>
-<article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>API key lifecycle: common mistakes and fixes</h3><p class="excerpt">API key lifecycle. Checklist and verification guidance.</p><a class="btn" href="articles/api-key-lifecycle-common-mistakes-and-fixes.html">Read Guide</a></div></article></div></section>
+<section class="wrap" id="featured-security-guides" style="padding:30px 0 55px"><div class="sectionhead"><div><div class="eyebrow">Featured security guides</div><h2>Ethical Hacking & Security Resources</h2></div></div><div class="grid"><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Checkout flow security: common mistakes and fixes</h3><p class="excerpt">Checkout flow security. Common mistakes, verification steps, and practical fixes.</p></div></article><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Payment integration security: common mistakes and fixes</h3><p class="excerpt">Payment integration security. Checklists and things to test before launch.</p></div></article><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>User profile privacy: common mistakes and fixes</h3><p class="excerpt">User profile privacy. Common mistakes and fixes for safe handling of personal data.</p></div></article><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Multi-tenant isolation: common mistakes and fixes</h3><p class="excerpt">Multi-tenant isolation. Practical controls and checks for shared systems.</p></div></article><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>Admin panel protection: common mistakes and fixes</h3><p class="excerpt">Admin panel protection. Common mistakes, validation steps, and safe boundaries.</p></div></article><article class="card"><div class="cardbody"><span class="tag">Web Application Security</span><h3>OAuth implementation review: common mistakes and fixes</h3><p class="excerpt">OAuth implementation review. Checklist and recommended control validations.</p></div></article></div></section>
+
 <footer><div class="wrap">© <span id="year"></span> Zenith Hackers Intelligence · Ethical • Legal • Secure</div></footer>
 
 <script src="supabase-config.js"></script>
@@ -215,7 +185,7 @@ async function openArticle(id){
     <p class="article-content">${escapeHtml(p.content)}</p>
     <div class="comments"><h2>Comments</h2><div id="commentsList"><div class="empty">Loading comments...</div></div>
       <h3>Leave a comment</h3>
-      <form class="commentform" id="commentForm"><input class="input" name="author_name" maxlength="80" placeholder="Your name" required><textarea class="textarea" name="content" maxlength="2000" rows="5" placeholder="Your comment" required></textarea><button class="btn primary">Post Comment</button><div id="commentStatus" class="status"></div></form>
+      <form class="commentform" id="commentForm"><input class="input" name="author_name" maxlength="80" placeholder="Your name" required><textarea class="textarea" name="content" maxlength="2000" rows="4" placeholder="Comment" required></textarea><button class="btn primary" type="submit">Post Comment</button><div id="commentStatus" class="status"></div></form>
     </div>`;
   $('#articleModal').classList.add('open');
   await loadComments(id);
@@ -230,12 +200,12 @@ async function openArticle(id){
 async function loadComments(postId){
   const {data,error}=await sb.from('comments').select('*').eq('post_id',postId).eq('approved',true).order('created_at',{ascending:true});
   if(error){$('#commentsList').innerHTML=`<div class="empty">${escapeHtml(error.message)}</div>`;return;}
-  $('#commentsList').innerHTML=data.length?data.map(c=>`<div class="comment"><strong>${escapeHtml(c.author_name)}</strong><div class="meta">${dateFmt(c.created_at)}</div><p>${escapeHtml(c.content)}</p></div>`).join(''):'<div class="empty">No comments yet. Start the conversation.</div>';
+  $('#commentsList').innerHTML=data.length?data.map(c=>`<div class="comment"><strong>${escapeHtml(c.author_name)}</strong><div class="meta">${dateFmt(c.created_at)}</div><p>${escapeHtml(c.content)}</p></div>`).join(''):'<div class="empty">No comments yet.</div>';
 }
 $('#postForm').onsubmit=async e=>{
   e.preventDefault();const f=new FormData(e.target);const title=f.get('title').trim();
   $('#postStatus').textContent='Publishing...';
-  const {error}=await sb.from('posts').insert({title,slug:slugify(title),excerpt:f.get('excerpt').trim(),content:f.get('content').trim(),author_name:f.get('author_name').trim(),category:f.get('category'),cover_image:f.get('cover_image')||null,published:true});
+  const {error}=await sb.from('posts').insert({title,slug:slugify(title),excerpt:f.get('excerpt').trim(),content:f.get('content').trim(),author_name:f.get('author_name').trim(),category:f.get('category').trim(),published:true,cover_image:f.get('cover_image').trim()||null});
   if(error){$('#postStatus').className='status err';$('#postStatus').textContent=error.message;return;}
   $('#postStatus').className='status ok';$('#postStatus').textContent='Published successfully.';e.target.reset();await loadPosts();setTimeout(()=>$('#create').classList.remove('open'),700);
 };
@@ -245,7 +215,7 @@ window.onclick=e=>{if(e.target.classList.contains('modal'))e.target.classList.re
 $('#search').oninput=renderPosts;$('#category').onchange=renderPosts;$('#year').textContent=new Date().getFullYear();
 loadPosts();
 </script>
-  <script src="zenith-binary.js" defer></script>
+<script src="zenith-binary.js" defer></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -262,6 +232,5 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 </script>
 <!--End of Tawk.to Script-->
 <script src="zenith-chat-widget.js" defer></script>
-<section id="article-library-link" class="wrap" style="padding:20px 0"><div class="sectionhead"><div><div class="eyebrow">Browse all guides</div><h2>Ethical Hacking & Cybersecurity Library</h2><p>Search the article collection covering authorized security testing, defensive controls, digital forensics, and responsible disclosure.</p><a class="btn" href="articles/index.html">Browse the article library →</a></div></div></section>
 </body>
 </html>
