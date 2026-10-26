@@ -47,205 +47,37 @@
   <style>
     :root{--bg:#020811;--panel:#061423;--panel2:#081b2d;--line:#123653;--blue:#0798ff;--cyan:#20c7ff;--text:#f4f8ff;--muted:#9fb2c7;--max:1180px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.65;
-background:linear-gradient(rgba(1,7,14,.82),rgba(1,7,14,.90)),url("assets/asset-tracing-security.jpg") center top/cover fixed no-repeat,var(--bg)}
-    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 75% 10%,rgba(0,147,255,.12),transparent 28%),radial-gradient(circle at 10% 55%,rgba(0,117,255,.08),transparent 25%),#020811}
+ background:linear-gradient(rgba(1,7,14,.82),rgba(1,7,14,.90)),url("assets/asset-tracing-security.jpg") center top/cover fixed no-repeat,var(--bg)}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 75% 10%,rgba(0,147,255,.12),transparent 28%),radial-gradient(circle at 10% 55%,rgba(0,117,255,.08),transparent 18%),linear-gradient(180deg,#020811,#050e18)}
     a{text-decoration:none;color:inherit}.wrap{width:min(92%,var(--max));margin:auto}
     header{position:fixed;top:0;left:0;right:0;height:64px;z-index:50;background:rgba(1,7,14,.78);backdrop-filter:blur(15px);border-bottom:1px solid rgba(32,199,255,.12)}
-    .head{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.shield{width:34px;height:38px;display:grid;place-items:center;color:#fff;font-weight:800;border:2px solid var(--blue);clip-path:polygon(50% 0,100% 15%,90% 78%,50% 100%,10% 78%,0 15%);box-shadow:0 0 18px rgba(0,153,255,.35)}
+    .head{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.shield{width:34px;height:38px;display:grid;place-items:center;counter:0}
     .logo b{letter-spacing:.25em;font-size:18px}.logo small{display:block;color:var(--cyan);font-size:6px;letter-spacing:.18em}
     nav{display:flex;align-items:center;gap:29px;font-size:13px;color:#cbd7e5}nav a:hover{color:#fff}nav a.active{color:var(--cyan)}
     .cta{padding:9px 17px;border:1px solid var(--blue);border-radius:7px;background:rgba(0,140,255,.08)}
     .menu{display:none;border:0;background:none;color:#fff;font-size:25px}
-    .hero{min-height:610px;background-color:#03101b;padding-top:64px;position:relative;overflow:hidden;background-image:linear-gradient(90deg,rgba(1,8,16,.88) 0%,rgba(1,8,16,.62) 38%,rgba(1,8,16,.12) 78%,rgba(1,8,16,.38)),url("assets/asset-tracing-hero.jpg");background-size:cover;background-position:center}
+    .hero{min-height:610px;background-color:#03101b;padding-top:64px;position:relative;overflow:hidden;background-image:linear-gradient(90deg,rgba(1,8,16,.88) 0%,rgba(1,8,16,.62) 38%,rgba(1,8,16,.18) 82%,rgba(1,8,16,.35)),url("assets/asset-tracing-hero.jpg") center/cover no-repeat}
     .hero:after{content:"";position:absolute;inset:auto 0 0;height:110px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-    .hero-content{position:relative;z-index:2;min-height:545px;display:flex;align-items:center}.copy{max-width:550px}.eyebrow{font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:.22em}.copy h1{font-size:clamp(50px,6vw,78px);line-height:.98;margin:14px 0 18px;letter-spacing:-.04em}.copy h1 span{color:var(--blue)}.copy p{font-size:16px;color:#c3d2e3;max-width:520px}.buttons{display:flex;gap:10px;margin-top:24px}.btn{padding:11px 18px;border-radius:22px;border:1px solid var(--blue);font-size:11px;font-weight:700;display:inline-flex;gap:10px;align-items:center}.primary{background:linear-gradient(100deg,#078cff,#10b7ff)}.ghost{background:rgba(0,0,0,.12)}
-.hero-points{position:absolute;bottom:17px;left:0;right:0;z-index:4;display:flex;gap:32px}.point{display:flex;gap:9px;align-items:center;font-size:11px}.point i{width:23px;height:23px;border:1px solid var(--blue);border-radius:6px;display:grid;place-items:center;color:var(--cyan);font-style:normal}.point small{display:block;color:#91a5bb;font-size:9px}
-section{padding:78px 0}.services{border-top:1px solid #092238;background:linear-gradient(180deg,#03101c,#020811)}.service-grid{display:grid;grid-template-columns:280px 1fr;gap:42px}.service-intro h2,.about h2,.process h2,.success h2,.contact h2{font-size:31px;line-height:1.08;margin:8px 0 12px}.service-intro p,.about p,.process p,.success p,.contact p{font-size:14px;color:var(--muted);max-width:390px}.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{min-height:145px;border:1px solid var(--line);border-radius:6px;padding:17px;background:linear-gradient(145deg,rgba(5,24,40,.9),rgba(3,13,23,.9));transition:.25s}.card:hover{transform:translateY(-4px);border-color:#147cc0;box-shadow:0 12px 35px rgba(0,111,255,.12)}.icon{color:var(--cyan);font-size:20px}.card h3{font-size:14px;line-height:1.25;margin:8px 0}.card p{font-size:10px;margin:0;color:#91a7bc}.arrow{display:block;margin-top:9px;color:#70c9ff}
-.about{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.82),rgba(2,10,18,.78)),url("assets/asset-tracing-office.jpg") center/cover}.about-grid{display:grid;grid-template-columns:360px 1fr 220px;gap:28px;align-items:center}.about-image{height:205px;border-radius:4px;background:url("assets/asset-tracing-office.jpg") center/cover;border:1px solid #16405e;box-shadow:0 0 30px rgba(0,100,180,.1)}.about-copy h2 span{color:var(--blue)}.checks{border-left:1px solid var(--line);padding-left:25px}.check{display:flex;gap:10px;margin:15px 0}.check b{width:25px;height:25px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-size:11px;flex:none}.check strong{display:block;font-size:9px}.check small{font-size:7px;color:var(--muted)}
-.process{background:radial-gradient(circle at 60% 30%,rgba(0,115,255,.08),transparent 30%),#020811;border-top:1px solid #092238}.process-sub{font-size:10px!important}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:40px}.step{position:relative}.step:after{content:"→";position:absolute;top:16px;right:-9px;color:#149fff}.step:last-child:after{display:none}.step-num{width:35px;height:35px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-size:10px;box-shadow:0 0 15px rgba(0,145,255,.2)}.step h3{font-size:13px;margin:9px 0 3px;color:#dceaff}.step p{font-size:10px;margin:0}
-.success{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.96),rgba(3,14,24,.94))}.success-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:35px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.stat{border:1px solid var(--line);border-radius:6px;padding:13px}.stat strong{font-size:22px;color:var(--cyan)}.stat small{display:block;font-size:9px;color:#90a5ba}.quote{border:1px solid var(--line);border-radius:7px;padding:20px;background:#061524}.quote p{color:#dbe7f5;font-size:14px}.stars{color:#ffc329;letter-spacing:3px}
-.contact{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.80),rgba(2,9,16,.70)),url("assets/asset-tracing-security.jpg") center/cover}.contact-grid{display:grid;grid-template-columns:1.1fr 1fr 330px;gap:32px;align-items:start}.contact-info{display:grid;gap:5px;margin-top:20px}.contact-info div{font-size:12px;color:#9eb2c7}.contact-info strong{color:#e7f2ff}.form{border:1px solid #14547d;border-radius:7px;padding:15px;background:rgba(5,20,33,.82)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}.form input,.form textarea,.form select{width:100%;margin-bottom:10px;background:#091c2d;border:1px solid #183c57;border-radius:5px;padding:12px;color:#fff;font-size:12px;outline:none}.form textarea{resize:vertical}.form button{width:100%;border:0;border-radius:20px;padding:12px;background:linear-gradient(90deg,#078cff,#13b3ff);color:#fff;font-size:9px;font-weight:800}
-footer{padding:25px 0;border-top:1px solid #092238;background:#01060c}.foot{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#74899f}.foot nav{font-size:8px;gap:18px}
-.whatsapp{position:fixed;left:20px;bottom:20px;min-height:50px;padding:0 18px;border:2px solid rgba(255,255,255,.85);border-radius:999px;background:linear-gradient(135deg,#20e879,#0ca84d);display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:15px;font-weight:900;letter-spacing:.2px;text-decoration:none;z-index:60;box-shadow:0 8px 28px rgba(24,210,107,.42);transform:rotate(-2deg);transition:transform .2s,box-shadow .2s}.whatsapp:hover{transform:rotate(2deg) scale(1.06);box-shadow:0 12px 32px rgba(24,210,107,.6)}.whatsapp .wa-joke{position:absolute;left:0;bottom:58px;background:#06121d;border:1px solid #18d26b;border-radius:12px;padding:7px 10px;font-size:11px;font-weight:700;white-space:nowrap;opacity:0;transform:translateY(5px);transition:.2s}.whatsapp:hover .wa-joke{opacity:1;transform:translateY(0)}
-.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
-.toast{position:fixed;right:20px;top:80px;background:#061725;border:1px solid #1b6c9c;padding:10px 14px;border-radius:7px;font-size:9px;z-index:80;display:none}.toast.show{display:block}
-@media(max-width:900px){nav{display:none}.menu{display:block}.service-grid,.about-grid,.success-grid,.contact-grid{grid-template-columns:1fr}.service-cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}.about-image{height:260px}.checks{border-left:0;border-top:1px solid var(--line);padding:18px 0}.contact-grid{gap:25px}}
-@media(max-width:600px){.hero{background-position:center top;background-size:auto 610px}.wrap{width:min(92%,var(--max))}.hero{min-height:650px;background-position:65% center}.hero-content{min-height:570px;align-items:center}.copy h1{font-size:45px}.hero-points{position:relative;bottom:auto;padding-bottom:20px;flex-wrap:wrap;gap:13px}.service-cards,.steps,.stats{grid-template-columns:1fr}.buttons{flex-direction:column}.btn{justify-content:center}.form-row{grid-template-columns:1fr}.foot{flex-direction:column;gap:12px;align-items:flex-start}}
-
-  
-.live-chat-launcher{position:fixed;right:20px;bottom:84px;z-index:89;display:flex;align-items:center;gap:8px;background:#078cff;color:#fff;border:1px solid #38c6ff;border-radius:26px;padding:11px 16px;font-size:12px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,140,255,.28)}
-.live-chat-launcher:hover{transform:translateY(-2px);filter:brightness(1.08)}
-@media(max-width:600px){.live-chat-launcher{right:16px;bottom:80px;padding:10px 13px}.whatsapp{right:16px;bottom:18px}}
-
-/* Zenith signature motion layer: vivid cyan/violet energy, animated section reveals and tactile cards */
-:root{--zenith-violet:#8b5cff;--zenith-aqua:#54f3ff}
-body{background-color:#020811}
-body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(115deg,transparent 0%,rgba(32,199,255,.065) 40%,rgba(139,92,255,.045) 55%,transparent 75%);background-size:220% 100%;animation:zenithSweep 12s ease-in-out infinite}
-header,main,section,footer,.hero,.hero-points{position:relative}
-header{box-shadow:0 8px 35px rgba(0,0,0,.22)}
-.hero{background-position:center;background-size:cover,cover;background-blend-mode:normal}
-.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 78% 34%,rgba(32,199,255,.25),transparent 22%),radial-gradient(circle at 88% 65%,rgba(139,92,255,.22),transparent 25%);animation:zenithPulse 8s ease-in-out infinite}
-.hero:after{height:150px;background:linear-gradient(transparent,var(--bg))}
-.copy h1{ text-shadow:0 0 34px rgba(32,199,255,.16)}
-.copy h1 span{color:#62eaff;text-shadow:0 0 25px rgba(32,199,255,.45)}
-.btn,.cta{transition:transform .28s ease,box-shadow .28s ease,filter .28s ease,border-color .28s ease}
-.btn:hover,.cta:hover{transform:translateY(-4px) scale(1.025);box-shadow:0 0 24px rgba(32,199,255,.3),0 12px 35px rgba(0,0,0,.28);filter:brightness(1.12)}
-.service-cards{gap:18px}
-.card{position:relative;overflow:hidden;border-radius:14px;border-color:rgba(32,199,255,.28);background:linear-gradient(145deg,rgba(6,30,50,.94),rgba(3,12,25,.96));box-shadow:0 10px 30px rgba(0,0,0,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s}
-.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 100% 0,rgba(32,199,255,.22),transparent 45%),linear-gradient(130deg,transparent 45%,rgba(139,92,255,.09));opacity:.75;transition:opacity .3s}
-.card:hover{transform:translateY(-9px) scale(1.025);border-color:#54f3ff;box-shadow:0 18px 45px rgba(0,135,255,.2),0 0 24px rgba(32,199,255,.12)}
-.card:hover:before{opacity:1}
-.about-image,.side-image,.visual-break{position:relative;overflow:hidden;box-shadow:0 15px 45px rgba(0,0,0,.28),0 0 30px rgba(32,199,255,.10);background-size:cover;transition:filter .4s,transform .4s}
-.about-image:hover,.side-image:hover{filter:saturate(1.3) brightness(1.12);transform:scale(1.015)}
-.step-num,.point i,.check b{box-shadow:0 0 18px rgba(32,199,255,.18);transition:transform .3s,box-shadow .3s}
-.step:hover .step-num{transform:scale(1.16) rotate(8deg);box-shadow:0 0 28px rgba(32,199,255,.4)}
-.stat,.quote,.form{transition:transform .3s,border-color .3s,box-shadow .3s}
-.stat:hover,.quote:hover,.form:focus-within{transform:translateY(-4px);border-color:rgba(32,199,255,.75);box-shadow:0 12px 32px rgba(0,100,200,.16)}
-section{scroll-margin-top:75px}
-section:not(.hero){animation:zenithFadeUp .8s both}
-@keyframes zenithSweep{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-@keyframes zenithPulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
-@keyframes zenithFadeUp{from{opacity:.65;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:850px){.service-cards{gap:12px}.card:hover{transform:translateY(-4px)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-
-
-/* Home hero refresh: cinematic binary rain, readable layout, and clear mobile-safe CTA space */
-.hero{isolation:isolate;min-height:690px;background-image:linear-gradient(90deg,rgba(1,8,16,.91) 0%,rgba(1,8,16,.72) 42%,rgba(1,8,16,.18) 82%,rgba(1,8,16,.35)),url("assets/asset-tracing-hero.jpg");background-size:cover;background-position:center 42%}
-.hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 25% 44%,rgba(0,183,255,.18),transparent 42%),radial-gradient(ellipse at 83% 32%,rgba(123,75,255,.24),transparent 35%),linear-gradient(115deg,transparent 40%,rgba(20,218,255,.07),transparent 72%);animation:heroEnergy 8s ease-in-out infinite}
-.hero:after{z-index:1;height:145px;background:linear-gradient(transparent,var(--bg))}
-.hero-content{min-height:590px;align-items:center;padding-top:54px;padding-bottom:35px}
-.copy{max-width:620px;position:relative;z-index:3;padding:26px 28px 30px 0}
-.copy:before{content:"";position:absolute;z-index:-1;inset:0 auto 0 -26px;width:min(650px,calc(100% + 52px));border-left:2px solid rgba(32,199,255,.55);background:linear-gradient(90deg,rgba(2,13,25,.70),rgba(2,13,25,.36),transparent);clip-path:polygon(0 0,96% 0,100% 9%,100% 91%,96% 100%,0 100%);backdrop-filter:blur(2px)}
-.copy .eyebrow{display:inline-block;padding:7px 12px;border:1px solid rgba(32,199,255,.42);border-radius:99px;background:rgba(0,12,24,.66);box-shadow:0 0 24px rgba(32,199,255,.12)}
-.copy h1{max-width:620px;font-size:clamp(48px,6.8vw,86px);line-height:.98;letter-spacing:-.055em;margin:20px 0 22px;text-wrap:balance}
-.copy h1 span{background:linear-gradient(100deg,#20c7ff,#a3f5ff 45%,#8b75ff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(32,199,255,.2))}
-.copy p{font-size:clamp(15px,1.4vw,18px);line-height:1.8;color:#e0edf8;max-width:510px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
-.buttons{flex-wrap:wrap;gap:13px;margin-top:28px}
-.btn{min-height:46px;padding:13px 20px;font-size:12px;box-shadow:0 8px 26px rgba(0,0,0,.18)}
-.primary{box-shadow:0 8px 28px rgba(0,153,255,.26)}
-.hero-points{z-index:4;bottom:22px;gap:clamp(14px,3vw,36px)}
-.point{padding:9px 13px;border:1px solid rgba(83,191,255,.22);border-radius:12px;background:rgba(2,13,25,.65);backdrop-filter:blur(8px);box-shadow:0 7px 26px rgba(0,0,0,.15)}
-.point i{box-shadow:0 0 18px rgba(32,199,255,.22)}
-.hero-binary{position:absolute;inset:64px 0 20px;z-index:1;overflow:hidden;pointer-events:none;opacity:.72;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.82) 55%,#000)}
-.binary-column{position:absolute;top:-35%;display:flex;flex-direction:column;gap:7px;white-space:pre;font:600 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:3px;color:rgba(60,226,255,.65);text-shadow:0 0 12px rgba(32,199,255,.55);writing-mode:vertical-rl;animation:binaryFall linear infinite}
-.binary-column:nth-child(3n){color:rgba(167,126,255,.62);text-shadow:0 0 13px rgba(139,92,255,.6)}
-.binary-column:nth-child(4n){font-size:15px;color:rgba(117,255,221,.52)}
-@keyframes binaryFall{from{transform:translateY(-12%)}to{transform:translateY(150%)}}
-@keyframes heroEnergy{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.025)}}
-.whatsapp{left:20px;right:auto;bottom:20px;transform:none}
-.whatsapp:hover{transform:translateY(-3px) scale(1.04)}
-#zenith-live-chat-launcher{right:20px;bottom:20px}
-.live-chat-launcher{right:20px;bottom:84px}
-@media(max-width:900px){.hero{background-position:62% center}.hero-content{min-height:590px}.copy{max-width:590px}}
-@media(max-width:600px){
- .hero{min-height:760px;background-position:61% center;background-size:auto 760px}
- .hero-content{min-height:610px;align-items:center;padding-top:92px;padding-bottom:120px}
- .copy{max-width:100%;padding:18px 8px 24px 0}
- .copy:before{left:-12px;width:calc(100% + 22px);background:linear-gradient(90deg,rgba(2,13,25,.84),rgba(2,13,25,.60) 82%,rgba(2,13,25,.25));clip-path:polygon(0 0,97% 0,100% 5%,100% 95%,97% 100%,0 100%)}
- .copy h1{font-size:clamp(43px,12vw,60px);line-height:1.02;margin:18px 0}
- .copy p{font-size:15px;line-height:1.65;max-width:96%}
- .buttons{flex-direction:column;align-items:stretch;max-width:270px;margin-top:22px}
- .btn{justify-content:center;width:100%}
- .hero-points{position:relative;bottom:auto;padding-bottom:120px;display:grid;grid-template-columns:1fr;gap:8px;margin-top:-78px}
- .point{padding:8px 11px;max-width:270px}
- .hero-binary{inset:64px 0 0;opacity:.45}
- .binary-column{font-size:10px;letter-spacing:2px}
- .whatsapp{left:12px;right:auto;bottom:12px;min-height:44px;padding:0 12px;font-size:12px;transform:none;z-index:88}
- #zenith-live-chat-launcher{right:12px;bottom:12px;padding:12px 14px;font-size:12px}
- .live-chat-launcher{right:12px;bottom:72px}
-}
-@media(prefers-reduced-motion:reduce){.binary-column{animation:none!important;opacity:.25}.hero:before{animation:none!important}}
-
-
-/* Final hero composition: copy begins near the top, below the fixed navigation */
-#home.hero{min-height:760px;padding-top:64px;display:flex;flex-direction:column;justify-content:flex-start;background-position:center 38%}
-#home .hero-content{min-height:0;flex:1;align-items:flex-start;padding-top:28px;padding-bottom:26px}
-#home .copy{max-width:690px;padding-top:8px;padding-bottom:24px;margin-top:0}
-#home .copy:before{inset:0 auto 0 -24px;width:min(720px,calc(100% + 48px))}
-#home .copy .eyebrow{font-size:clamp(10px,1vw,12px);letter-spacing:.2em}
-#home .copy h1{font-size:clamp(48px,7vw,88px);line-height:.99;margin:15px 0 18px;max-width:690px}
-#home .copy p{max-width:560px;font-size:clamp(15px,1.3vw,18px);line-height:1.7}
-#home .buttons{margin-top:22px}
-#home .hero-points{position:relative;bottom:auto;left:auto;right:auto;width:min(92%,var(--max));margin:0 auto 24px;flex-wrap:wrap;gap:12px}
-#home .point{min-width:170px;padding:10px 14px;background:rgba(2,13,25,.72);border-color:rgba(83,191,255,.35)}
-#home .hero-binary{inset:64px 0 0;opacity:.64}
-#home .binary-column{font-size:12px}
-.whatsapp{left:18px!important;right:auto!important;bottom:18px!important;z-index:88}
-#zenith-live-chat-launcher{right:18px!important;bottom:18px!important;z-index:89}
-@media(min-width:901px){
- #home.hero{min-height:720px}
- #home .hero-content{padding-top:24px}
- #home .copy{max-width:710px}
- #home .copy h1{font-size:clamp(64px,7vw,92px)}
- #home .hero-points{margin-bottom:24px}
-}
-@media(max-width:900px){
- #home.hero{min-height:760px;background-position:62% center}
- #home .hero-content{padding-top:32px}
- #home .copy{max-width:620px}
-}
-@media(max-width:600px){
- #home.hero{min-height:820px;background-position:64% top;background-size:auto 820px;padding-top:64px}
- #home .hero-content{min-height:0;flex:1;align-items:flex-start;padding-top:18px;padding-bottom:20px}
- #home .copy{padding:8px 5px 18px 0;max-width:100%}
- #home .copy:before{left:-10px;width:calc(100% + 18px);background:linear-gradient(90deg,rgba(2,13,25,.86),rgba(2,13,25,.66) 82%,rgba(2,13,25,.34))}
- #home .copy h1{font-size:clamp(44px,12vw,60px);margin:14px 0 16px}
- #home .copy p{font-size:15px;line-height:1.65}
- #home .buttons{max-width:270px;margin-top:18px;gap:10px}
- #home .hero-points{display:grid;grid-template-columns:1fr;gap:8px;margin-top:0;margin-bottom:86px;padding-bottom:0}
- #home .point{min-width:0;max-width:290px;padding:8px 11px}
- #home .hero-binary{inset:64px 0 0;opacity:.38}
- .whatsapp{left:10px!important;right:auto!important;bottom:10px!important;min-height:44px;padding:0 12px;font-size:12px}
- #zenith-live-chat-launcher{right:10px!important;bottom:10px!important;padding:12px 13px;font-size:12px}
-}
-
-</style>
-
-
-
-<style id="zenith-tawk-launcher-style">
-#zenith-live-chat-launcher{
-  position:fixed;
-  right:20px;
-  bottom:88px;
-  z-index:2147483000;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:14px 20px;
-  border:0;
-  border-radius:999px;
-  background:linear-gradient(135deg,#00e5ff,#7c3aed);
-  color:#fff;
-  font:700 15px/1.1 Arial,sans-serif;
-  letter-spacing:.3px;
-  box-shadow:0 8px 28px rgba(0,0,0,.35);
-  cursor:pointer;
-  text-decoration:none;
-}
-#zenith-live-chat-launcher:hover{transform:translateY(-2px)}
-@media(max-width:600px){
-  #zenith-live-chat-launcher{right:14px;bottom:82px;padding:12px 16px;font-size:14px}
-}
-</style>
-<style id="zenith-home-hover-refresh">#home.hero{min-height:clamp(700px,88vh,900px);background-image:linear-gradient(100deg,rgba(1,7,16,.93),rgba(1,9,22,.68) 48%,rgba(3,9,26,.2)),url("assets/asset-tracing-hero.jpg");background-position:center 42%;background-size:cover}#home .copy{max-width:740px}#home .copy h1{font-size:clamp(52px,7.5vw,98px);letter-spacing:-.065em;text-shadow:0 0 38px rgba(32,199,255,.22)}#home .copy h1 span{background:linear-gradient(90deg,#42eaff,#f4fbff 42%,#9a79ff);-webkit-background-clip:text;background-clip:text;color:transparent}#home .point{border-color:rgba(84,243,255,.4);background:rgba(3,16,32,.8);box-shadow:0 8px 28px rgba(0,0,0,.25)}.btn.primary,.form button{background:linear-gradient(110deg,#087bff,#12d5f4 55%,#8355ff);background-size:200% 100%;transition:background-position .35s,box-shadow .25s,transform .25s}.btn.primary:hover,.form button:hover{background-position:100% 0;box-shadow:0 0 28px rgba(32,199,255,.4)}body :is(a,button,.card,.stat,.quote,.form,.point,.step,.check,.logo,.eyebrow,h1,h2,h3,p,.about-image,.icon,.contact-info div,.copy,.service-intro,.about-copy,.step-num,.form input,.form textarea,.form select):hover{animation:zenithJingle .48s ease-in-out both}nav a:hover,.foot nav a:hover{color:#54f3ff;text-shadow:0 0 15px rgba(32,199,255,.65)}.card:hover,.stat:hover,.quote:hover,.point:hover{border-color:#54f3ff;box-shadow:0 15px 38px rgba(0,132,255,.22),0 0 22px rgba(32,199,255,.12)}@keyframes zenithJingle{0%,100%{translate:0 0;rotate:0deg}18%{translate:-2px -2px;rotate:-1.2deg}38%{translate:2px 1px;rotate:1.1deg}58%{translate:-1px 1px;rotate:-.7deg}78%{translate:1px -1px;rotate:.5deg}}@media(max-width:600px){#home.hero{min-height:790px;background-position:62% center}#home .copy h1{font-size:clamp(44px,12vw,62px)}}@media(prefers-reduced-motion:reduce){body :is(a,button,.card,.stat,.quote,.form,.point,.step,.check,.logo,.eyebrow,h1,h2,h3,p,.about-image,.icon,.contact-info div,.copy,.service-intro,.about-copy,.step-num,.form input,.form textarea,.form select):hover{animation:none}}</style></head>
+    .hero-content{position:relative;z-index:2;min-height:545px;display:flex;align-items:center}.copy{max-width:550px}.eyebrow{font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:.22em}
+    .copy h1{font-size:clamp(38px,5vw,72px);line-height:1.02;letter-spacing:-.05em;margin:18px 0 16px}.copy h1 span{color:#62eaff}.copy p{font-size:16px;color:#dfeaf3;max-width:520px}.buttons{display:flex;gap:12px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:13px 20px;border-radius:10px;border:1px solid rgba(32,199,255,.42);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.btn.primary{background:linear-gradient(135deg,#20c7ff,#0872ff);color:#031724;border-color:transparent}.btn.ghost{background:rgba(2,13,25,.55);color:#eaf4ff}.hero-points{position:absolute;bottom:17px;left:0;right:0;z-index:4;display:flex;gap:32px}.point{display:flex;gap:9px;align-items:center;font-size:11px}.point i{width:23px;height:23px;border:1px solid rgba(32,199,255,.5);border-radius:8px;display:grid;place-items:center;color:#9feeff;background:rgba(1,15,27,.7)}.point b{display:block;font-size:11px}.point small{display:block;color:#b4cce0}.discover-links{padding:18px 0 12px;border-top:1px solid #092238;background:rgba(2,10,18,.42)}.discover-links .eyebrow{display:inline-block;margin-bottom:12px}.discover-links ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.discover-links a{display:block;padding:10px 12px;border:1px solid rgba(32,199,255,.25);border-radius:10px;background:rgba(2,13,25,.5);color:#eaf4ff}.discover-links a:hover{border-color:rgba(32,199,255,.6);background:rgba(8,25,40,.75)}
+    section{padding:78px 0}.services{border-top:1px solid #092238;background:linear-gradient(180deg,#03101c,#020811)}.service-grid{display:grid;grid-template-columns:280px 1fr;gap:42px}.service-intro{max-width:250px}.service-intro h2{font-size:32px;line-height:1.1;margin:10px 0 12px}.service-cards{display:grid;grid-template-columns:repeat(2,minmax(180px,1fr));gap:18px}.card{background:linear-gradient(145deg,rgba(6,30,50,.94),rgba(3,12,25,.96));border:1px solid rgba(32,199,255,.28);padding:26px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 100% 0,rgba(32,199,255,.22),transparent 45%),linear-gradient(130deg,transparent 45%,rgba(255,255,255,.02),transparent 55%)}.icon{font-size:26px;margin-bottom:10px}.card h3{font-size:18px;line-height:1.3;margin:0 0 8px}.card p{margin:0;color:#b8cfe1;font-size:14px}.card .arrow{display:inline-block;margin-top:18px;color:#7fe8ff;font-weight:700}.about{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.82),rgba(2,10,18,.78)),url("assets/asset-tracing-office.jpg") center/cover}.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:35px}.about-image{min-height:380px;border-radius:18px;background:linear-gradient(135deg,rgba(15,39,58,.2),rgba(15,39,58,.6)),url("assets/asset-tracing-office.jpg") center/cover;border:1px solid rgba(32,199,255,.15)}.about-copy h2{font-size:clamp(30px,3vw,46px);line-height:1.08;margin:12px 0 14px}.about-copy h2 span{color:#62eaff}.checks{display:grid;gap:14px;margin-top:22px}.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid rgba(32,199,255,.2);border-radius:12px;background:rgba(3,15,28,.5)}.check b{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:rgba(32,199,255,.12);color:#9feeff}.check strong{display:block;margin-bottom:4px}.check small{display:block;color:#b3c8d7}.process{background:radial-gradient(circle at 60% 30%,rgba(0,115,255,.08),transparent 30%),#020811;border-top:1px solid #092238}.process-sub{font-size:10px!important}.steps{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:18px;margin-top:26px}.step{padding:22px;border:1px solid rgba(32,199,255,.2);border-radius:16px;background:linear-gradient(180deg,rgba(5,19,33,.72),rgba(3,15,26,.95))}.step-num{display:inline-grid;place-items:center;width:48px;height:48px;background:linear-gradient(135deg,#32d6ff,#7a62ff);border-radius:12px;font-weight:800;color:#031724;margin-bottom:16px}.step h3{margin:0 0 8px;font-size:20px}.step p{margin:0;color:#b7ccdb}.success{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.96),rgba(3,14,24,.94))}.success-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:35px}.stats{display:grid;grid-template-columns:repeat(3,minmax(100px,1fr));gap:18px;margin-top:20px}.stat{padding:18px;border:1px solid rgba(32,199,255,.2);border-radius:14px;background:rgba(4,15,25,.5)}.stat strong{font-size:28px;display:block}.stat small{color:#b5c7d5}.quote{padding:22px;border:1px solid rgba(32,199,255,.2);border-radius:16px;background:rgba(4,15,25,.5)}.quote span{display:block;font-size:10px;color:#7fe8ff;letter-spacing:.2em;margin-bottom:10px;text-transform:uppercase}.quote p{margin:0;font-size:18px;line-height:1.7}.contact{border-top:1px solid #092238;background:linear-gradient(90deg,rgba(2,9,16,.80),rgba(2,9,16,.70)),url("assets/asset-tracing-security.jpg") center/cover}.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px}.contact-info{display:grid;gap:16px}.contact-info div{padding:18px 20px;border-radius:14px;border:1px solid rgba(32,199,255,.25);background:rgba(4,15,25,.54)}.form{padding:20px;border:1px solid rgba(32,199,255,.2);border-radius:16px;background:rgba(3,13,22,.72)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.input,.textarea,.select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(32,199,255,.28);background:rgba(2,12,21,.8);color:#f4f8ff;margin:10px 0 0}.textarea{min-height:120px;resize:vertical}.form button{margin-top:16px;width:100%}.footer-nav{display:flex;align-items:center;gap:18px}.foot{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#74899f}.foot nav{font-size:8px;gap:18px}footer{padding:25px 0;border-top:1px solid #092238;background:#01060c}.whatsapp{position:fixed;left:20px;bottom:20px;min-height:50px;padding:0 18px;border:2px solid rgba(255,255,255,.85);border-radius:999px;background:linear-gradient(135deg,#20e879,#0ca84d);display:flex;align-items:center;gap:12px;color:#00160a;font-weight:800;z-index:88}.whatsapp:hover{transform:translateY(-3px)}.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}.reveal.show{opacity:1;transform:none}.toast{position:fixed;right:20px;top:80px;background:#061725;border:1px solid #1b6c9c;padding:10px 14px;border-radius:7px;font-size:9px;z-index:80;display:none}.toast.show{display:block}
+    @media(max-width:900px){nav{display:none}.menu{display:block}.service-grid,.about-grid,.success-grid,.contact-grid{grid-template-columns:1fr}.service-cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.foot{flex-direction:column;align-items:flex-start;gap:10px}}
+    @media(max-width:600px){.hero{background-position:center top;background-size:auto 610px}.wrap{width:min(92%,var(--max))}.hero{min-height:650px;background-position:65% center}.hero-content{min-height:0}.copy h1{font-size:clamp(42px,12vw,60px)}.copy p{font-size:15px;line-height:1.65;max-width:96%}.buttons{flex-direction:column;align-items:stretch;max-width:270px}.btn{justify-content:center;width:100%}.hero-points{position:relative;bottom:auto;padding-bottom:120px;display:grid;grid-template-columns:1fr;gap:8px;margin-top:20px}.point{max-width:270px}.service-cards,.steps,.form-row,.stats{grid-template-columns:1fr}.whatsapp{left:12px;right:auto;bottom:12px;min-height:44px;padding:0 12px;font-size:12px}.discover-links ul{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.whatsapp{transition:none}}
+  </style>
+</head>
 <body>
-<div class="zenith-motion-orbs" aria-hidden="true" style="position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0"><span style="position:absolute;left:-90px;top:30%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(32,199,255,.18),transparent 70%);animation:zenithPulse 8s ease-in-out infinite"></span><span style="position:absolute;right:-100px;top:58%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,255,.18),transparent 70%);animation:zenithPulse 10s ease-in-out infinite reverse"></span></div>
-
-
 <header>
   <div class="wrap head">
     <a class="logo" href="#home"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a>
     <button class="menu" aria-label="Menu">☰</button>
-    <nav id="nav"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="#success">Success</a><a href="#contact">Contact</a><a class="cta" href="#contact">Get Started →</a></nav>
+    <nav id="nav"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="hero-binary" id="hero-binary" aria-hidden="true"></div>
-<div class="wrap hero-content">
+  <div class="wrap hero-content">
     <div class="copy reveal">
       <span class="eyebrow">ETHICAL ZENITH HACKERS INTELLIGENCE</span>
       <h1>Professional.<br><span>Ethical.</span> Secure.</h1>
@@ -262,14 +94,14 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 
 <section class="services" id="services">
   <div class="wrap service-grid">
-    <div class="service-intro reveal"><span class="eyebrow">WHAT WE DO</span><h2>Our Services</h2><p>Comprehensive cybersecurity services to keep your business protected, secure, and one step ahead.</p><a class="btn ghost" href="#contact">View All Services →</a></div>
-    <div class="service-cards">
-      <article class="card reveal"><div class="icon">♧</div><h3>Vulnerability Assessment & Penetration Testing</h3><p>Find and fix weaknesses before attackers do.</p><span class="arrow">→</span></article>
-      <article class="card reveal"><div class="icon">⌁</div><h3>Web Application Security</h3><p>Test web apps, APIs, and infrastructure for real threats.</p><span class="arrow">→</span></article>
-      <article class="card reveal"><div class="icon">⬡</div><h3>Network & Endpoint Testing</h3><p>Secure your network, devices, and cloud systems.</p><span class="arrow">→</span></article>
-      <article class="card reveal"><div class="icon">♙</div><h3>Social Engineering & Configuration Reviews</h3><p>See how your people and settings hold up under pressure.</p><span class="arrow">→</span></article>
-      <article class="card reveal"><div class="icon">♧</div><h3>Forensics & Incident Response</h3><p>Investigate, recover, and stop future attacks.</p><span class="arrow">→</span></article>
-      <article class="card reveal"><div class="icon">⌂</div><h3>Threat Modeling & Consulting</h3><p>Plan ahead. Reduce risk. Build stronger defenses.</p><span class="arrow">→</span></article>
+    <div class="service-intro reveal"><span class="eyebrow">WHAT WE DO</span><h2>Our Services</h2><p>Comprehensive cybersecurity services to keep your business protected, secure, and one step ahead of evolving threats.</p></div>
+    <div class="service-cards reveal">
+      <article class="card"><div class="icon">♧</div><h3>Vulnerability Assessment & Penetration Testing</h3><p>Find and fix weaknesses before attackers do.</p><span class="arrow">→</span></article>
+      <article class="card"><div class="icon">⌁</div><h3>Web Application Security</h3><p>Test web apps, APIs, and infrastructure for real threats.</p><span class="arrow">→</span></article>
+      <article class="card"><div class="icon">⬡</div><h3>Network & Endpoint Testing</h3><p>Secure your network, devices, and cloud systems.</p><span class="arrow">→</span></article>
+      <article class="card"><div class="icon">♙</div><h3>Social Engineering & Configuration Reviews</h3><p>See how your people and settings hold up under pressure.</p><span class="arrow">→</span></article>
+      <article class="card"><div class="icon">♧</div><h3>Forensics & Incident Response</h3><p>Investigate, recover, and stop future attacks.</p><span class="arrow">→</span></article>
+      <article class="card"><div class="icon">⌂</div><h3>Threat Modeling & Consulting</h3><p>Plan ahead. Reduce risk. Build stronger defenses.</p><span class="arrow">→</span></article>
     </div>
   </div>
 </section>
@@ -277,8 +109,7 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 <section class="about" id="about">
   <div class="wrap about-grid">
     <div class="about-image reveal"></div>
-    <div class="about-copy reveal"><span class="eyebrow">ABOUT ZENITH</span><h2>Inside the World of<br><span>Ethical Zenith Hackers</span></h2><p>When most people hear the word “hacker,” they picture a hooded figure in a dark room breaking into bank accounts. The reality inside a professional white-hat security team could not be more different.</p><p>Ethical hackers use their skills to find weaknesses before real attackers do — with written authorization, defined scope and a strict code of conduct.</p><a class="btn ghost" href="#guide">Learn More →</a></div>
-    <div class="checks reveal"><div class="check"><b>◇</b><span><strong>Authorized Testing</strong><small>No unauthorized access.</small></span></div><div class="check"><b>▣</b><span><strong>Detailed Reporting</strong><small>Clear, actionable insights.</small></span></div><div class="check"><b>✓</b><span><strong>Remediation Guidance</strong><small>Fixes, not just findings.</small></span></div><div class="check"><b>✓</b><span><strong>Verified Results</strong><small>Retest. Confirm. Secure.</small></span></div></div>
+    <div class="about-copy reveal"><span class="eyebrow">ABOUT ZENITH</span><h2>Inside the World of<br><span>Ethical Zenith Hackers</span></h2><p>When most people hear the word “hacker,” they think of exploitation. We focus on the opposite: controlled testing, evidence-based remediation, and realistic security improvements rooted in ethics, law, and clarity.</p><div class="checks"><div class="check"><b>◇</b><span><strong>Authorized Testing</strong><small>No unauthorized access.</small></span></div><div class="check"><b>▣</b><span><strong>Trusted Guidance</strong><small>Clear, evidence-led advice.</small></span></div><div class="check"><b>✦</b><span><strong>Secure Outcomes</strong><small>Actionable, measurable improvements.</small></span></div></div></div>
   </div>
 </section>
 
@@ -298,9 +129,9 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 <section class="success" id="success">
   <div class="wrap success-grid">
     <div class="reveal"><span class="eyebrow">OUR SUCCESS</span><h2>Real Results. Safer Businesses.</h2><p>Proven outcomes from our ethical security services.</p>
-      <div class="stats"><div class="stat"><strong>500+</strong><small>Systems Assessed</small></div><div class="stat"><strong>98%</strong><small>Issues Remediated</small></div><div class="stat"><strong>100%</strong><small>Client Satisfaction</small></div><div class="stat"><strong>24/7</strong><small>Monitoring & Support</small></div></div>
+      <div class="stats"><div class="stat"><strong>500+</strong><small>Systems Assessed</small></div><div class="stat"><strong>98%</strong><small>Issues Remediated</small></div><div class="stat"><strong>24/7</strong><small>Response Ready</small></div></div>
     </div>
-    <div class="quote reveal"><span class="eyebrow">WHAT OUR CLIENTS SAY</span><p>“Zenith Hackers Intelligence gave us clarity, not just a report. Their team was professional, ethical, and incredibly thorough. We feel more secure than ever.”</p><p><b>— James R.</b><br><small>CTO, FinTech Company</small></p><div class="stars">★★★★★</div></div>
+    <div class="quote reveal"><span>WHAT OUR CLIENTS SAY</span><p>“Zenith Hackers Intelligence gave us clarity, not just a report. Their team was professional, ethical, and incredibly thorough.”</p></div>
   </div>
 </section>
 
@@ -313,104 +144,32 @@ section:not(.hero){animation:zenithFadeUp .8s both}
 </section>
 </main>
 
+<section class="discover-links" aria-label="Blog and article discovery links">
+  <div class="wrap">
+    <div class="eyebrow">BLOG & GUIDE LINKS</div>
+    <ul>
+      <li><a href="blog.html">Zenith Blog</a></li>
+      <li><a href="articles/index.html">Article Library</a></li>
+      <li><a href="articles/bicycle-ebike-asset-tracing.html">Bicycle and E-Bike Asset Tracing</a></li>
+      <li><a href="articles/crypto-recovery-after-phishing-link-evidence.html">Crypto Recovery After a Phishing Link</a></li>
+      <li><a href="articles/how-to-trace-usdt-tron-after-crypto-scam.html">Trace USDT on TRON</a></li>
+      <li><a href="articles/what-to-do-crypto-wallet-drained-by-phishing.html">What to Do If a Crypto Wallet Was Drained by Phishing</a></li>
+    </ul>
+  </div>
+</section>
+
 <footer><div class="wrap foot"><a class="logo" href="#home"><span class="shield">Z</span><span><b>ZENITH</b><small>HACKERS INTELLIGENCE</small></span></a><nav><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#guide">Guide</a><a href="asset-recovery.html">Asset Recovery</a><a href="blog.html">Blog</a><a href="#success">Success</a><a href="#contact">Contact</a></nav><span>Ethical • Legal • Secure</span></div></footer>
 
-<a class="whatsapp" href="https://wa.me/447552486027?text=Hello%20Zenith%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20security%20assessment." target="_blank" rel="noopener" aria-label="Chat with Zenith on WhatsApp"><span aria-hidden="true">💬</span><strong>WhatsApp 😎</strong><span class="wa-joke">Go on, say hi. We don’t bite! 😂</span></a>
+<a class="whatsapp" href="https://wa.me/447552486027?text=Hello%20Zenith%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20security%20assessment." target="_blank" rel="noopener" aria-label="Chat with Zenith on WhatsApp"><span aria-hidden="true">💬</span><strong>WhatsApp</strong></a>
 <div class="toast" id="toast">Welcome to Zenith Hackers Intelligence.</div>
 
 <script>
-// Decorative binary rain: generated locally, no external library or network request.
-(function(){
-  const layer=document.getElementById('hero-binary');
-  if(!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const count=window.innerWidth<600?15:27;
-  for(let i=0;i<count;i++){
-    const col=document.createElement('span');
-    col.className='binary-column';
-    col.style.left=(i*100/count)+'%';
-    col.style.animationDuration=(11+(i%8)*2.1)+'s';
-    col.style.animationDelay=(-((i*1.7)%18))+'s';
-    col.style.opacity=(0.25+((i*7)%6)/10).toFixed(2);
-    let bits='';
-    for(let j=0;j<30;j++) bits+=(j%4===0?'ZENITH':(j%2===0?'1':'0'))+' ';
-    col.textContent=bits;
-    layer.appendChild(col);
-  }
-})();
-
 const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
-  menu.addEventListener('click',()=>{const open=nav.style.display==='flex';nav.style.display=open?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='64px';nav.style.left='4%';nav.style.right='4%';nav.style.padding='16px';nav.style.background='#061423';nav.style.border='1px solid #123653';nav.style.borderRadius='8px'});
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
-  setTimeout(()=>document.querySelector('#toast').classList.add('show'),900);
-  setTimeout(()=>document.querySelector('#toast').classList.remove('show'),5200);
-
+menu.addEventListener('click',()=>{const open=nav.style.display==='flex';nav.style.display=open?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='64px';nav.style.right='20px';nav.style.padding='16px';nav.style.border='1px solid rgba(32,199,255,.2)';nav.style.borderRadius='12px';nav.style.background='rgba(2,12,21,.96)';});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+setTimeout(()=>document.querySelector('#toast').classList.add('show'),900);
+setTimeout(()=>document.querySelector('#toast').classList.remove('show'),5200);
 </script>
-
-
-<div id="live-chat" aria-hidden="true"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<button id="zenith-live-chat-launcher" type="button" aria-label="Open Zenith live chat">
-  💬 LIVE CHAT
-</button>
-
-<script id="zenith-tawk-launcher-script">
-(function () {
-  var button = document.getElementById('zenith-live-chat-launcher');
-  window.Tawk_API = window.Tawk_API || {};
-  if (!button) return;
-
-  button.addEventListener('click', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    var attempts = 0;
-    var timer = window.setInterval(function () {
-      attempts++;
-      var api = window.Tawk_API;
-      if (api && typeof api.maximize === 'function') {
-        window.clearInterval(timer);
-        api.maximize();
-      } else if (api && typeof api.toggle === 'function') {
-        window.clearInterval(timer);
-        api.toggle();
-      } else if (attempts >= 40) {
-        window.clearInterval(timer);
-        console.warn('Tawk.to chat is not ready. Check the widget property and browser blockers.');
-      }
-    }, 250);
-  });
-})();
-</script>
-  <script src="zenith-binary.js" defer></script>
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-  var s1 = document.createElement("script");
-  var s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
-  s1.charset = "UTF-8";
-  s1.setAttribute("crossorigin", "*");
-  s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<script src="zenith-chat-widget.js" defer></script>
 </body>
 </html>
