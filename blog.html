@@ -91,7 +91,7 @@
   <div class="eyebrow">Ethical • Legal • Secure</div>
   <h1>Zenith Intelligence</h1>
   <p>Cybersecurity knowledge, ethical hacking, digital forensics, threat intelligence and practical security guidance from the Zenith community.</p>
-  <div class="actions"><button class="btn primary" id="heroCreate">Create a Post</button><a class="btn" href="#latest">Explore Articles</a></div>
+  <div class="actions"><a class="btn primary" href="https://ethicalzenithhackers.xyz/#contact">Get assistance from Zenith</a><a class="btn" href="#latest">Explore Articles</a></div>
 </header>
 
 <noscript>
@@ -116,6 +116,7 @@
     <select class="select" id="category"><option value="">All categories</option><option>Ethical Hacking</option><option>Digital Forensics</option><option>Asset Tracking</option><option>Threat Intelligence</option><option>Cybersecurity</option></select>
   </div>
   <div id="posts" class="grid"><div class="empty">Loading intelligence...</div></div>
+  <div class="actions" id="pagination" style="justify-content:center;align-items:center;margin:28px 0"><button class="btn" id="prevPage" type="button" disabled>Previous</button><span class="meta" id="pageInfo" aria-live="polite">Loading articles…</span><button class="btn" id="nextPage" type="button" disabled>Next</button></div>
 </section>
 </main>
 
@@ -155,26 +156,38 @@ const { createClient } = window.supabase;
 const sb = createClient(window.ZENITH_SUPABASE_URL, window.ZENITH_SUPABASE_PUBLISHABLE_KEY);
 const $ = s => document.querySelector(s);
 let allPosts = [];
+let currentPage = 0;
+const PAGE_SIZE = 30;
+let searchRequest = null;
 
-function slugify(v){ return v.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').slice(0,90) + '-' + Math.random().toString(36).slice(2,7); }
-function escapeHtml(v=''){return v.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function slugify(v){ return v.toLowerCase().trim().replace(/[^a-z0-9\\s-]/g,'').replace(/\\s+/g,'-').replace(/-+/g,'-').slice(0,90) + '-' + Math.random().toString(36).slice(2,7); }
+function escapeHtml(v=''){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 function dateFmt(v){return new Date(v).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});}
 function renderPosts(){
-  const q=$('#search').value.toLowerCase().trim(), cat=$('#category').value;
-  const filtered=allPosts.filter(p=>(!cat||p.category===cat)&&(!q||`${p.title} ${p.excerpt} ${p.author_name} ${p.content}`.toLowerCase().includes(q)));
-  $('#posts').innerHTML=filtered.length?filtered.map(p=>`
+  $('#posts').innerHTML=allPosts.length?allPosts.map(p=>`
     <article class="card">
       ${p.cover_image?`<img class="cover" src="${escapeHtml(p.cover_image)}" alt="" loading="lazy" onerror="this.style.display='none'">`:''}
       <div class="cardbody"><span class="tag">${escapeHtml(p.category)}</span><h3>${escapeHtml(p.title)}</h3>
       <div class="meta">By ${escapeHtml(p.author_name)} · ${dateFmt(p.created_at)}</div><p class="excerpt">${escapeHtml(p.excerpt)}</p>
       <button class="btn" type="button" data-read="${escapeHtml(p.id)}">Read Article</button></div>
-    </article>`).join(''):'<div class="empty" style="grid-column:1/-1">No articles match your search.</div>';
+    </article>`).join(''):'<div class="empty" style="grid-column:1/-1">No articles match your search. Try a different term or category.</div>';
   document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>openArticle(b.dataset.read));
 }
 async function loadPosts(){
-  const {data,error}=await sb.from('posts').select('*').eq('published',true).order('created_at',{ascending:false});
-  if(error){$('#posts').innerHTML=`<div class="empty" style="grid-column:1/-1">Could not load the blog database. ${escapeHtml(error.message)}</div>`;return;}
-  allPosts=data||[]; renderPosts();
+  const search=$('#search').value.trim().replace(/[,%()]/g,' ').slice(0,100);
+  const category=$('#category').value;
+  let query=sb.from('posts').select('*',{count:'exact'}).eq('published',true).order('created_at',{ascending:false});
+  if(category) query=query.eq('category',category);
+  if(search) query=query.or(`title.ilike.%${search}%,excerpt.ilike.%${search}%,content.ilike.%${search}%`);
+  const start=currentPage*PAGE_SIZE;
+  const {data,error,count}=await query.range(start,start+PAGE_SIZE-1);
+  if(error){$('#posts').innerHTML=`<div class="empty" style="grid-column:1/-1">Could not load the blog database. ${escapeHtml(error.message)}</div>`;$('#pageInfo').textContent='Unable to load articles';$('#prevPage').disabled=true;$('#nextPage').disabled=true;return;}
+  allPosts=data||[];
+  renderPosts();
+  const total=count||0, pages=Math.max(1,Math.ceil(total/PAGE_SIZE));
+  $('#pageInfo').textContent=total?`Page ${currentPage+1} of ${pages} · ${total.toLocaleString()} articles`:'0 articles found';
+  $('#prevPage').disabled=currentPage===0;
+  $('#nextPage').disabled=currentPage+1>=pages;
 }
 async function openArticle(id){
   const p=allPosts.find(x=>x.id===id); if(!p)return;
@@ -183,6 +196,7 @@ async function openArticle(id){
     <div class="meta">By ${escapeHtml(p.author_name)} · ${dateFmt(p.created_at)}</div>
     ${p.cover_image?`<img class="cover" style="height:auto;max-height:420px;margin:20px 0" src="${escapeHtml(p.cover_image)}" alt="">`:''}
     <p class="article-content">${escapeHtml(p.content)}</p>
+    <div class="actions" style="margin:24px 0;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(73,217,255,.06)"><div><strong>Need help with a security or asset-tracing concern?</strong><p class="excerpt">Contact Zenith Hackers Intelligence to discuss your situation, available evidence, and lawful next steps. Outcomes depend on the facts; recovery is never guaranteed.</p><a class="btn primary" href="https://ethicalzenithhackers.xyz/#contact" target="_blank" rel="noopener noreferrer">Contact Zenith Hackers Intelligence</a></div></div>
     <div class="comments"><h2>Comments</h2><div id="commentsList"><div class="empty">Loading comments...</div></div>
       <h3>Leave a comment</h3>
       <form class="commentform" id="commentForm"><input class="input" name="author_name" maxlength="80" placeholder="Your name" required><textarea class="textarea" name="content" maxlength="2000" rows="4" placeholder="Comment" required></textarea><button class="btn primary" type="submit">Post Comment</button><div id="commentStatus" class="status"></div></form>
@@ -207,12 +221,18 @@ $('#postForm').onsubmit=async e=>{
   $('#postStatus').textContent='Publishing...';
   const {error}=await sb.from('posts').insert({title,slug:slugify(title),excerpt:f.get('excerpt').trim(),content:f.get('content').trim(),author_name:f.get('author_name').trim(),category:f.get('category').trim(),published:true,cover_image:f.get('cover_image').trim()||null});
   if(error){$('#postStatus').className='status err';$('#postStatus').textContent=error.message;return;}
-  $('#postStatus').className='status ok';$('#postStatus').textContent='Published successfully.';e.target.reset();await loadPosts();setTimeout(()=>$('#create').classList.remove('open'),700);
+  $('#postStatus').className='status ok';$('#postStatus').textContent='Published successfully.';e.target.reset();currentPage=0;await loadPosts();setTimeout(()=>$('#create').classList.remove('open'),700);
 };
 function openCreate(e){if(e)e.preventDefault();$('#create').classList.add('open');}
-$('#heroCreate').onclick=openCreate;$('#topCreate').onclick=openCreate;$('#closeCreate').onclick=()=>$('#create').classList.remove('open');$('#closeArticle').onclick=()=>$('#articleModal').classList.remove('open');
+if($('#heroCreate')) $('#heroCreate').onclick=openCreate;
+if($('#topCreate')) $('#topCreate').onclick=openCreate;
+$('#closeCreate').onclick=()=>$('#create').classList.remove('open');$('#closeArticle').onclick=()=>$('#articleModal').classList.remove('open');
 window.onclick=e=>{if(e.target.classList.contains('modal'))e.target.classList.remove('open')};
-$('#search').oninput=renderPosts;$('#category').onchange=renderPosts;$('#year').textContent=new Date().getFullYear();
+$('#search').oninput=()=>{currentPage=0;clearTimeout(searchRequest);searchRequest=setTimeout(loadPosts,250);};
+$('#category').onchange=()=>{currentPage=0;loadPosts();};
+$('#prevPage').onclick=()=>{if(currentPage>0){currentPage--;loadPosts();}};
+$('#nextPage').onclick=()=>{currentPage++;loadPosts();};
+$('#year').textContent=new Date().getFullYear();
 loadPosts();
 </script>
 <script src="zenith-binary.js" defer></script>
