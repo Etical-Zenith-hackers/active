@@ -176,6 +176,11 @@ setTimeout(()=>document.querySelector('#toast').classList.remove('show'),5200);
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+Tawk_API.onLoad = function () {
+  if (window.Tawk_API && typeof window.Tawk_API.showWidget === "function") {
+    window.Tawk_API.showWidget();
+  }
+};
 (function () {
   var s1 = document.createElement("script");
   var s0 = document.getElementsByTagName("script")[0];
