@@ -168,7 +168,7 @@
 (() => {
   if (window.__zenithGlobalContactInstalled) return;
   window.__zenithGlobalContactInstalled = true;
-  const inArticles = /\\/articles\\//i.test(location.pathname);
+  const inArticles = location.pathname.toLowerCase().includes("/articles/");
   const cover = (inArticles ? "../" : "") + "Zenithhackers%20covers/Cryptocurrency.png";
   const style = document.createElement("style");
   style.id = "zenith-global-contact-style";
