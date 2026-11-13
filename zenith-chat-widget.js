@@ -163,3 +163,31 @@
   }
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) window.requestAnimationFrame(animate);
 })();
+
+/* Shared article background and floating WhatsApp contact control. */
+(() => {
+  if (window.__zenithGlobalContactInstalled) return;
+  window.__zenithGlobalContactInstalled = true;
+  const inArticles = /\\/articles\\//i.test(location.pathname);
+  const cover = (inArticles ? "../" : "") + "Zenithhackers%20covers/Cryptocurrency.png";
+  const style = document.createElement("style");
+  style.id = "zenith-global-contact-style";
+  style.textContent = `
+    html,body{background-color:#020811!important;background-image:linear-gradient(rgba(2,8,17,.44),rgba(2,8,17,.66)),url("${cover}")!important;background-position:center center!important;background-size:cover!important;background-attachment:fixed!important;background-repeat:no-repeat!important}
+    #zenith-whatsapp-float{position:fixed!important;left:18px!important;bottom:18px!important;z-index:2147483003!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;min-height:50px!important;padding:0 17px!important;border:1px solid rgba(255,255,255,.75)!important;border-radius:999px!important;background:linear-gradient(135deg,#20e879,#0ca84d)!important;color:#032010!important;font:800 13px/1 Arial,sans-serif!important;text-decoration:none!important;box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 18px rgba(25,213,109,.22)!important;white-space:nowrap!important}
+    #zenith-whatsapp-float:hover{transform:translateY(-3px);filter:brightness(1.06)}
+    #zenith-whatsapp-float span{font-size:19px;line-height:1}
+    @media(max-width:600px){#zenith-whatsapp-float{left:10px!important;bottom:12px!important;min-height:44px!important;padding:0 12px!important;font-size:12px!important}}
+  `;
+  document.head.appendChild(style);
+  const existing = document.querySelector('a[href*="wa.me"]');
+  if (existing) { existing.id = existing.id || "zenith-whatsapp-float"; return; }
+  const whatsapp = document.createElement("a");
+  whatsapp.id = "zenith-whatsapp-float";
+  whatsapp.href = "https://wa.me/447552486027?text=Hello%20Zenith%20Hackers%20Intelligence%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20assessment.";
+  whatsapp.target = "_blank";
+  whatsapp.rel = "noopener noreferrer";
+  whatsapp.setAttribute("aria-label","Contact Zenith Hackers Intelligence on WhatsApp");
+  whatsapp.innerHTML = '<span aria-hidden="true">☏</span><strong>WhatsApp</strong>';
+  document.body.appendChild(whatsapp);
+})();
