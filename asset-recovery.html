@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#020811;--panel:rgba(4,18,31,.88);--line:#174361;--blue:#0798ff;--cyan:#20c7ff;--text:#f4f8ff;--muted:#b2c3d4;--max:1200px}
+:root{--bg:#020811;--panel:rgba(4,18,31,.88);--line:#174361;--blue:#20c7ff;--cyan:#0798ff;--text:#f4f8ff;--muted:#b2c3d4;--max:1200px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#020811;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
 body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 50% 10%,rgba(0,153,255,.15),transparent 32%),#020811}
 a{text-decoration:none;color:inherit}.wrap{width:min(94%,1280px);margin:auto}
@@ -81,6 +81,11 @@ section{scroll-margin-top:78px}
 @media(max-width:850px){.side-image{min-height:280px}.visual-break{min-height:380px}.box:hover{transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
+
+.asset-article-link{display:inline-flex;align-items:center;gap:8px;color:#72eaff;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(32,199,255,.38);transition:color .2s,border-color .2s}
+.asset-article-link:hover,.asset-article-link:focus-visible{color:#fff;border-color:#fff;text-decoration:underline;text-underline-offset:4px}
+.asset-article-link span{font-size:.85em;color:#20c7ff}
+
 </style>
 
 
@@ -118,16 +123,16 @@ section{scroll-margin-top:78px}
 <section class="hero"><div class="wrap hero-content"><span class="eyebrow">ASSET TRACING • INVESTIGATION • RECOVERY SUPPORT</span><h1>Track What Was Lost.<br><span>Find the Right Trail.</span></h1><p>Zenith can help investigate commonly lost or stolen assets using lawful, authorized tracing methods and available records. In suitable cases, this may support recovery efforts — but recovery is never guaranteed.</p><div class="note">ETHICAL • LEGAL • AUTHORIZED — Every investigation must have a lawful basis and defined scope.</div></div></section>
 <section class="intro"><div class="wrap intro-grid"><div><span class="eyebrow">WHAT WE CAN TRACE</span><h2>Top 10 commonly lost or stolen assets</h2><p>The table below shows examples of assets that may leave useful digital, registration, transaction, ownership, or tracking records. Which methods are available depends on the asset, jurisdiction, documentation, provider, and the authority available to Zenith.</p><p>For financial and digital assets, analysis may identify transaction paths or service endpoints. For physical assets, records such as serial numbers, registration details, telematics, or approved tracking services may provide investigative leads.</p></div><div class="side-image"></div></div></section>
 <section class="assets"><div class="wrap"><span class="eyebrow">TOP 10</span><h2>Common tracing methods</h2><p class="lead">These are investigative avenues, not promises of recovery. Zenith will only use methods that are lawful and appropriately authorized.</p><div class="table-wrap"><table><thead><tr><th>#</th><th>Asset</th><th>Common tracing methods</th></tr></thead><tbody>
-<tr><td>01</td><td><span class="asset-icon">₿</span>Cryptocurrency</td><td>Blockchain transactions, wallet addresses, transaction hashes, exchange/service endpoints.</td></tr>
-<tr><td>02</td><td><span class="asset-icon">📱</span>Mobile phones</td><td>IMEI/serial number, Find My/Find My Device, carrier records, account activity.</td></tr>
-<tr><td>03</td><td><span class="asset-icon">🚗</span>Vehicles</td><td>Registration/VIN, GPS/telematics, number plate, recovery databases.</td></tr>
-<tr><td>04</td><td><span class="asset-icon">💻</span>Laptops & computers</td><td>Serial number, device-management systems, account activity, tracking software.</td></tr>
-<tr><td>05</td><td><span class="asset-icon">📦</span>Packages & shipments</td><td>Tracking numbers, carrier records, delivery scans, proof of delivery.</td></tr>
-<tr><td>06</td><td><span class="asset-icon">🚲</span>Bicycles & e-bikes</td><td>Serial numbers, registration databases, GPS/Bluetooth trackers, identifying marks.</td></tr>
-<tr><td>07</td><td><span class="asset-icon">🎧</span>Electronics</td><td>Serial numbers, IMEI/device identifiers, registered accounts and ownership records.</td></tr>
-<tr><td>08</td><td><span class="asset-icon">🛠️</span>Tools & business equipment</td><td>Serial numbers, asset registers, GPS/Bluetooth tags, ownership markings.</td></tr>
-<tr><td>09</td><td><span class="asset-icon">🏗️</span>Machinery & commercial equipment</td><td>VIN/serial numbers, telematics, asset-management records and ownership documentation.</td></tr>
-<tr><td>10</td><td><span class="asset-icon">💳</span>Digital/financial assets</td><td>Transaction records, payment references, bank/exchange records and blockchain analysis where applicable.</td></tr>
+<tr><td>01</td><td><span class="asset-icon">₿</span><a class="asset-article-link" href="articles/cryptocurrency-asset-tracing-blockchain-analysis.html">Cryptocurrency <span aria-hidden="true">↗</span></a></td><td>Blockchain transactions, wallet addresses, transaction hashes, exchange/service endpoints.</td></tr>
+<tr><td>02</td><td><span class="asset-icon">📱</span><a class="asset-article-link" href="articles/mobile-phone-asset-tracing-imei-accounts.html">Mobile phones <span aria-hidden="true">↗</span></a></td><td>IMEI/serial number, Find My/Find My Device, carrier records, account activity.</td></tr>
+<tr><td>03</td><td><span class="asset-icon">🚗</span><a class="asset-article-link" href="articles/vehicle-asset-tracing-vin-registration-gps.html">Vehicles <span aria-hidden="true">↗</span></a></td><td>Registration/VIN, GPS/telematics, number plate, recovery databases.</td></tr>
+<tr><td>04</td><td><span class="asset-icon">💻</span><a class="asset-article-link" href="articles/laptop-computer-asset-tracing.html">Laptops & computers <span aria-hidden="true">↗</span></a></td><td>Serial number, device-management systems, account activity, tracking software.</td></tr>
+<tr><td>05</td><td><span class="asset-icon">📦</span><a class="asset-article-link" href="articles/package-shipment-tracing-tracking-number.html">Packages & shipments <span aria-hidden="true">↗</span></a></td><td>Tracking numbers, carrier records, delivery scans, proof of delivery.</td></tr>
+<tr><td>06</td><td><span class="asset-icon">🚲</span><a class="asset-article-link" href="articles/bicycle-ebike-asset-tracing.html">Bicycles & e-bikes <span aria-hidden="true">↗</span></a></td><td>Serial numbers, registration databases, GPS/Bluetooth trackers, identifying marks.</td></tr>
+<tr><td>07</td><td><span class="asset-icon">🎧</span><a class="asset-article-link" href="articles/electronics-asset-tracing-serial-numbers.html">Electronics <span aria-hidden="true">↗</span></a></td><td>Serial numbers, IMEI/device identifiers, registered accounts and ownership records.</td></tr>
+<tr><td>08</td><td><span class="asset-icon">🛠️</span><a class="asset-article-link" href="articles/tools-business-equipment-asset-tracing.html">Tools & business equipment <span aria-hidden="true">↗</span></a></td><td>Serial numbers, asset registers, GPS/Bluetooth tags, ownership markings.</td></tr>
+<tr><td>09</td><td><span class="asset-icon">🏗️</span><a class="asset-article-link" href="articles/machinery-commercial-equipment-asset-tracing.html">Machinery & commercial equipment <span aria-hidden="true">↗</span></a></td><td>VIN/serial numbers, telematics, asset-management records and ownership documentation.</td></tr>
+<tr><td>10</td><td><span class="asset-icon">💳</span><a class="asset-article-link" href="articles/digital-financial-asset-tracing.html">Digital/financial assets <span aria-hidden="true">↗</span></a></td><td>Transaction records, payment references, bank/exchange records and blockchain analysis where applicable.</td></tr>
 </tbody></table></div></div></section>
 <section class="legal"><div class="wrap legal-grid"><div class="box"><h3>What Zenith may need</h3><ul><li>Proof of ownership or a lawful connection to the asset.</li><li>Serial number, VIN, IMEI, wallet address, transaction hash, tracking number, or other available identifier.</li><li>Relevant dates, locations, account details, and supporting records.</li><li>Authorization to conduct the investigation and contact appropriate providers or authorities where required.</li></ul></div><div class="box"><h3>What “possibly recover” means</h3><p>Tracing can produce a lead, identify a transaction path, locate a registered record, or establish evidence that assists a lawful recovery process. Some assets cannot be located or recovered, records may be unavailable, and third-party cooperation or legal process may be required.</p><p><strong>No recovery result is guaranteed.</strong> Zenith should communicate findings, limitations, and next steps based on the evidence available.</p></div></div></section>
 <section class="visual-break" aria-label="Zenith investigation visual">
@@ -138,7 +143,7 @@ section{scroll-margin-top:78px}
   </div>
 </section>
 <section class="contact"><div class="wrap"><span class="eyebrow">START AN AUTHORIZED CASE</span><h2>Have a lost or stolen asset to investigate?</h2><p class="lead">Prepare the identifiers and ownership documentation you have, then contact Zenith to discuss whether an authorized tracing investigation is appropriate.</p><div class="buttons"><a class="btn primary" href="index.html#contact">Contact Zenith →</a><a class="btn ghost" href="https://wa.me/447552486027" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
-</main><footer><div class="wrap foot"><span>© 2025 Zenith Hackers Intelligence. Ethical • Legal • Secure.</span><a href="index.html">Return to Zenith Home →</a></div></footer>
+</main><footer><div class="wrap foot"><span>© 2026 GreyHat Zenith Hackers Intelligence. Professional • Ethical • Legal • Secure.</span><a href="index.html">Return to Zenith Home →</a></div></footer>
 
 <a class="whatsapp" href="https://wa.me/447552486027?text=Hello%20Zenith%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20security%20matter." target="_blank" rel="noopener" aria-label="WhatsApp"><span aria-hidden="true" style="font-size:19px;line-height:1">◉</span><span>WhatsApp</span></a>
 
