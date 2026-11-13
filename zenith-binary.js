@@ -81,3 +81,15 @@
   }
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) window.requestAnimationFrame(animate);
 })();
+
+/* Ensure pages using the shared Zenith site script also receive the floating chat/contact controls. */
+(() => {
+  if (window.__zenithGlobalChatLoader) return;
+  window.__zenithGlobalChatLoader = true;
+  if (document.querySelector('script[src*="zenith-chat-widget.js"]')) return;
+  const inArticles = /\\/articles\\//i.test(location.pathname);
+  const script = document.createElement("script");
+  script.src = (inArticles ? "../" : "") + "zenith-chat-widget.js";
+  script.defer = true;
+  document.body.appendChild(script);
+})();
