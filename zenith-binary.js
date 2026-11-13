@@ -1,45 +1,64 @@
-/* Zenith Binary Flow: decorative background only; no page content or controls are modified. */
+/* Zenith TOP 10 floating asset-tracing menu. The former binary animation has been removed. */
 (() => {
   "use strict";
-  if (window.__zenithBinaryFlowLoaded) return;
-  window.__zenithBinaryFlowLoaded = true;
-  const reduced = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  if (window.__zenithTop10AssetsLoaded) return;
+  window.__zenithTop10AssetsLoaded = true;
+  const items = [
+    ["₿","Cryptocurrency","Blockchain transactions, wallet addresses, transaction hashes, exchange/service endpoints.","cryptocurrency-asset-tracing-blockchain-analysis.html"],
+    ["📱","Mobile phones","IMEI/serial number, Find My/Find My Device, carrier records, account activity.","mobile-phone-asset-tracing-imei-accounts.html"],
+    ["🚗","Vehicles","Registration/VIN, GPS/telematics, number plate, recovery databases.","vehicle-asset-tracing-vin-registration-gps.html"],
+    ["💻","Laptops & computers","Serial number, device-management systems, account activity, tracking software.","laptop-computer-asset-tracing.html"],
+    ["📦","Packages & shipments","Tracking numbers, carrier records, delivery scans, proof of delivery.","package-shipment-tracing-tracking-number.html"],
+    ["🚲","Bicycles & e-bikes","Serial numbers, registration databases, GPS/Bluetooth trackers, identifying marks.","bicycle-ebike-asset-tracing.html"],
+    ["🎧","Electronics","Serial numbers, IMEI/device identifiers, registered accounts and ownership records.","electronics-asset-tracing-serial-numbers.html"],
+    ["🛠️","Tools & business equipment","Serial numbers, asset registers, GPS/Bluetooth tags, ownership markings.","tools-business-equipment-asset-tracing.html"],
+    ["🏗️","Machinery & commercial equipment","VIN/serial numbers, telematics, asset-management records and ownership documentation.","machinery-commercial-equipment-asset-tracing.html"],
+    ["💳","Digital/financial assets","Transaction records, payment references, bank/exchange records and blockchain analysis where applicable.","digital-financial-asset-tracing.html"]
+  ];
+  const prefix = location.pathname.toLowerCase().includes("/articles/") ? "" : "articles/";
   const style = document.createElement("style");
-  style.textContent = "body{isolation:isolate}#zenith-binary-field{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden;opacity:.62;contain:strict}@media(max-width:640px){#zenith-binary-field{opacity:.48}}";
+  style.id = "zenith-top10-assets-style";
+  style.textContent = [
+    "#zenith-top10-root{position:fixed;top:84px;right:18px;z-index:2147483000;font-family:Inter,Arial,sans-serif;color:#f4f8ff}",
+    "#zenith-top10-toggle{display:flex;align-items:center;gap:8px;border:1px solid rgba(91,216,255,.65);border-radius:999px;padding:11px 16px;background:linear-gradient(115deg,#062c48,#153d64 55%,#31205f);color:#fff;font-weight:850;font-size:13px;letter-spacing:.08em;box-shadow:0 8px 26px rgba(0,0,0,.4),0 0 18px rgba(0,170,255,.25);cursor:pointer}",
+    "#zenith-top10-toggle:hover{filter:brightness(1.15)}",
+    "#zenith-top10-panel{display:none;position:absolute;right:0;top:48px;width:min(390px,calc(100vw - 28px));max-height:min(76vh,680px);overflow:auto;border:1px solid rgba(91,216,255,.42);border-radius:16px;background:rgba(3,13,26,.97);box-shadow:0 22px 65px rgba(0,0,0,.62),0 0 25px rgba(0,150,255,.15);backdrop-filter:blur(18px)}",
+    "#zenith-top10-panel.zenith-open{display:block}",
+    "#zenith-top10-head{position:sticky;top:0;z-index:1;padding:15px 16px 12px;background:rgba(4,24,43,.98);border-bottom:1px solid rgba(91,216,255,.22)}",
+    "#zenith-top10-head strong{display:block;font-size:15px;letter-spacing:.06em}",
+    "#zenith-top10-head small{display:block;margin-top:4px;color:#a9c7db;font-size:11px;line-height:1.45}",
+    "#zenith-top10-list{list-style:none;margin:0;padding:8px;display:grid;gap:5px}",
+    "#zenith-top10-list li{margin:0;padding:0;border:0;background:transparent}",
+    "#zenith-top10-list a{display:grid;grid-template-columns:27px 1fr;gap:9px;padding:9px;border-radius:10px;color:#f2f8ff;text-decoration:none}",
+    "#zenith-top10-list a:hover{background:rgba(20,133,190,.2)}",
+    "#zenith-top10-list .zenith-number{color:#69dcff;font-size:11px;font-weight:900;padding-top:2px}",
+    "#zenith-top10-list b{display:block;font-size:12px;line-height:1.35}",
+    "#zenith-top10-list em{display:block;margin-top:3px;color:#b8cbd9;font-size:10.5px;line-height:1.45;font-style:normal}",
+    "#zenith-top10-note{padding:10px 16px 14px;color:#9fb7c9;font-size:10px;line-height:1.5;border-top:1px solid rgba(91,216,255,.18)}",
+    "@media(max-width:600px){#zenith-top10-root{top:76px;right:9px}#zenith-top10-toggle{padding:10px 13px;font-size:12px}#zenith-top10-panel{top:45px;max-height:72vh}}"
+  ].join("");
   document.head.appendChild(style);
-  const canvas = document.createElement("canvas");
-  canvas.id = "zenith-binary-field";
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.setAttribute("role", "presentation");
-  document.body.prepend(canvas);
-  const ctx = canvas.getContext("2d", {alpha:true});
-  if (!ctx) return;
-  let w=0,h=0,dpr=1,last=0,streams=[];
-  const angles=[-90,90,-55,55,-35,35,145,-145,180,0],digits="010101001101011010010101101001";
-  const rand=(a,b)=>Math.random()*(b-a)+a;
-  function makeStream(spawnAnywhere){
-    const angle=angles[Math.floor(Math.random()*angles.length)]*Math.PI/180,dx=Math.cos(angle),dy=Math.sin(angle),count=Math.floor(rand(10,25));
-    const label=Math.random()<.14,text=label?"ZENITH"+Array.from({length:count-6},()=>digits[Math.floor(Math.random()*digits.length)]).join(""):Array.from({length:count},()=>digits[Math.floor(Math.random()*digits.length)]).join("");
-    let x=rand(0,Math.max(w,1)),y=rand(0,Math.max(h,1));
-    if(!spawnAnywhere){if(dx>.35)x=-count*18;else if(dx<-.35)x=w+count*18;if(dy>.35)y=-count*18;else if(dy<-.35)y=h+count*18;}
-    return{x,y,dx,dy,angle,speed:rand(20,92),text,size:rand(12,20),spacing:rand(13,21),hue:[185,265,125,325,45,210,285][Math.floor(Math.random()*7)],alpha:rand(.35,.9),bold:Math.random()<.25,glow:rand(2,7)};
-  }
-  function resize(){
-    dpr=Math.min(window.devicePixelRatio||1,1.35);w=window.innerWidth;h=window.innerHeight;
-    canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);
-    streams=Array.from({length:w<640?42:w<1100?66:92},()=>makeStream(true));
-    if(reduced){ctx.clearRect(0,0,w,h);streams.slice(0,28).forEach(s=>draw(s,.58));}
-  }
-  function draw(s,fade=1){
-    ctx.save();ctx.font=(s.bold?"700 ":"500 ")+s.size+"px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.shadowBlur=s.glow;ctx.shadowColor="hsla("+s.hue+",100%,65%,.8)";
-    for(let i=0;i<s.text.length;i++){const x=s.x-i*s.spacing*s.dx,y=s.y-i*s.spacing*s.dy,trail=1-i/Math.max(s.text.length,1);ctx.globalAlpha=s.alpha*trail*fade;ctx.fillStyle="hsl("+s.hue+",100%,"+(i===0?"78%":"62%")+")";ctx.save();ctx.translate(x,y);ctx.rotate(s.angle);ctx.fillText(s.text[i],0,0);ctx.restore();}
-    ctx.restore();
-  }
-  function animate(now){
-    if(reduced)return;if(document.visibilityState==="hidden"){last=now;requestAnimationFrame(animate);return;}
-    const dt=Math.min((now-(last||now))/1000,.04);last=now;ctx.clearRect(0,0,w,h);
-    streams.forEach((s,i)=>{s.x+=s.dx*s.speed*dt;s.y+=s.dy*s.speed*dt;draw(s);const m=s.text.length*s.spacing+80;if(s.x< -m||s.x>w+m||s.y< -m||s.y>h+m)streams[i]=makeStream(false);});
-    requestAnimationFrame(animate);
-  }
-  window.addEventListener("resize",resize,{passive:true});resize();if(!reduced)requestAnimationFrame(animate);
+  const root = document.createElement("div");
+  root.id = "zenith-top10-root";
+  root.innerHTML = '<button id="zenith-top10-toggle" type="button" aria-expanded="false" aria-controls="zenith-top10-panel">☰ TOP 10 <span aria-hidden="true">▾</span></button><section id="zenith-top10-panel" aria-label="Top 10 common asset tracing methods"><div id="zenith-top10-head"><strong>TOP 10 · COMMON TRACING METHODS</strong><small>Investigative avenues, not promises of recovery.</small></div><ol id="zenith-top10-list"></ol><div id="zenith-top10-note">Zenith will only use methods that are lawful and appropriately authorized. Tracing does not guarantee recovery.</div></section>';
+  document.body.appendChild(root);
+  const list = root.querySelector("#zenith-top10-list");
+  items.forEach((item, i) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = prefix + item[3];
+    a.innerHTML = '<span class="zenith-number">' + String(i + 1).padStart(2, "0") + '</span><span><b>' + item[0] + ' ' + item[1] + '</b><em>' + item[2] + '</em></span>';
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+  const toggle = root.querySelector("#zenith-top10-toggle");
+  const panel = root.querySelector("#zenith-top10-panel");
+  function close() { panel.classList.remove("zenith-open"); toggle.setAttribute("aria-expanded", "false"); toggle.lastElementChild.textContent = "▾"; }
+  toggle.addEventListener("click", () => {
+    const open = panel.classList.toggle("zenith-open");
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.lastElementChild.textContent = open ? "▴" : "▾";
+  });
+  document.addEventListener("click", event => { if (!root.contains(event.target)) close(); });
+  document.addEventListener("keydown", event => { if (event.key === "Escape") close(); });
 })();
