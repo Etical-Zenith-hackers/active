@@ -87,7 +87,7 @@
   if (window.__zenithGlobalChatLoader) return;
   window.__zenithGlobalChatLoader = true;
   if (document.querySelector('script[src*="zenith-chat-widget.js"]')) return;
-  const inArticles = /\\/articles\\//i.test(location.pathname);
+  const inArticles = location.pathname.toLowerCase().includes("/articles/");
   const script = document.createElement("script");
   script.src = (inArticles ? "../" : "") + "zenith-chat-widget.js";
   script.defer = true;
