@@ -76,7 +76,7 @@ async function load(){
   if(error||!data){document.title='Article not found | Zenith Hackers Intelligence';document.querySelector('#article').innerHTML='<div class="error">Article not found.</div>';return;}
   document.title=data.title+' | Zenith Hackers Intelligence';
   document.querySelector('meta[name="description"]').setAttribute('content',data.excerpt||'Cybersecurity and security intelligence from Zenith Hackers Intelligence.');
-  const canonicalUrl=new URL(location.pathname,location.origin);canonicalUrl.searchParams.set('slug',data.slug);
+  const canonicalUrl=new URL(location.pathname,'https://ethicalzenithhackers.xyz');canonicalUrl.searchParams.set('slug',data.slug);
   document.querySelector('link[rel="canonical"]').setAttribute('href',canonicalUrl.href);
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',data.title);
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',data.excerpt||'Cybersecurity and security intelligence from Zenith Hackers Intelligence.');
