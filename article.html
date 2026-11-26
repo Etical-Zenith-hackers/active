@@ -6,7 +6,7 @@
   <title>Zenith Intelligence Article</title>
   <meta name="description" content="Cybersecurity, digital forensics, asset tracing and security intelligence from Zenith Hackers Intelligence.">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://ethicalzenithhackers.xyz/article.html">
+  
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Zenith Hackers Intelligence">
   <meta property="og:title" content="Zenith Intelligence Article">
@@ -77,7 +77,7 @@ async function load(){
   document.title=data.title+' | Zenith Hackers Intelligence';
   document.querySelector('meta[name="description"]').setAttribute('content',data.excerpt||'Cybersecurity and security intelligence from Zenith Hackers Intelligence.');
   const canonicalUrl=new URL(location.pathname,'https://ethicalzenithhackers.xyz');canonicalUrl.searchParams.set('slug',data.slug);
-  document.querySelector('link[rel="canonical"]').setAttribute('href',canonicalUrl.href);
+  const canonical=document.querySelector('link[rel="canonical"]')||document.createElement('link');canonical.rel='canonical';canonical.href=canonicalUrl.href;if(!canonical.isConnected)document.head.appendChild(canonical);
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',data.title);
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',data.excerpt||'Cybersecurity and security intelligence from Zenith Hackers Intelligence.');
   document.querySelector('meta[property="og:url"]')?.setAttribute('content',canonicalUrl.href);
