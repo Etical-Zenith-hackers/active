@@ -6,6 +6,20 @@
   <title>Zenith Intelligence Article</title>
   <meta name="description" content="Cybersecurity, digital forensics, asset tracing and security intelligence from Zenith Hackers Intelligence.">
   <meta name="robots" content="index,follow,max-image-preview:large">
+  <script>
+  (function () {
+    const slug = new URLSearchParams(location.search).get('slug');
+    if (!slug) return;
+    const canonicalUrl = new URL(location.pathname, location.origin);
+    canonicalUrl.searchParams.set('slug', slug);
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = canonicalUrl.href;
+    document.head.appendChild(canonical);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalUrl.href);
+  })();
+  </script>
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Zenith Hackers Intelligence">
