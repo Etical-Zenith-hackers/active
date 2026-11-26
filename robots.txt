@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ethicalzenithhackers.xyz/sitemap.xml
+Sitemap: https://ethicalzenithhackers.xyz/sitemap-1.xml
+Sitemap: https://ethicalzenithhackers.xyz/sitemap-2.xml
+Sitemap: https://ethicalzenithhackers.xyz/sitemap-3.xml
+Sitemap: https://ethicalzenithhackers.xyz/sitemap-4.xml
