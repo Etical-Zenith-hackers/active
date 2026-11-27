@@ -6,6 +6,7 @@ on:
     paths:
       - 'articles/**'
       - 'sitemap.xml'
+      - 'sitemap-*.xml'
       - 'zenithindexnow20261021a84f2c7b91d0e6.txt'
       - '.github/workflows/indexnow.yml'
   workflow_dispatch:
@@ -33,34 +34,58 @@ jobs:
           sitemap_url = f"https://{host}/sitemap.xml"
           ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
-          def parse_urls(xml):
-              root = ET.fromstring(xml)
-              return [node.text.strip() for node in root.findall("sm:url/sm:loc", ns)
-                      if node.text and node.text.strip().startswith(f"https://{host}/")]
+          def load_urls(read):
+              """Read sitemap.xml, following a sitemap index to its child sitemaps."""
+              found = []
+              def walk(url, depth=0):
+                  root = ET.fromstring(read(url))
+                  if root.tag.endswith("}sitemapindex"):
+                      if depth >= 3:
+                          raise ValueError("Sitemap index is nested too deeply.")
+                      for node in root.findall("sm:sitemap/sm:loc", ns):
+                          child = (node.text or "").strip()
+                          if child.startswith(f"https://{host}/"):
+                              walk(child, depth + 1)
+                  else:
+                      for node in root.findall("sm:url/sm:loc", ns):
+                          loc = (node.text or "").strip()
+                          if loc.startswith(f"https://{host}/"):
+                              found.append(loc)
+              walk(sitemap_url)
+              return list(dict.fromkeys(found))
 
-          with open("sitemap.xml", "rb") as f:
-              expected = parse_urls(f.read())
+          def read_repo(url):
+              with open(url[len(f"https://{host}/"):], "rb") as f:
+                  return f.read()
+
+          def read_live(url):
+              req = urllib.request.Request(url, headers={"Cache-Control": "no-cache"})
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  return response.read()
+
+          expected = load_urls(read_repo)
           if not expected:
               raise SystemExit("Repository sitemap contains no URLs for the configured domain.")
 
           # GitHub Pages deployment can lag behind the push-triggered workflow.
-          # Retry until the live sitemap includes at least the current repository URL count.
+          # Retry until the live sitemaps include every URL in the repository sitemaps.
           urls = []
+          missing = set(expected)
           for attempt in range(1, 9):
               try:
-                  req = urllib.request.Request(sitemap_url, headers={"Cache-Control": "no-cache"})
-                  with urllib.request.urlopen(req, timeout=30) as response:
-                      live_xml = response.read()
-                  urls = parse_urls(live_xml)
-                  print(f"Live sitemap check {attempt}: {len(urls)} URLs; repository sitemap has {len(expected)}.")
-                  if len(urls) >= len(expected):
+                  urls = load_urls(read_live)
+                  missing = set(expected) - set(urls)
+                  print(f"Live sitemap check {attempt}: {len(urls)} URLs; repository has {len(expected)}.")
+                  if not missing:
                       break
               except Exception as exc:
                   print(f"Live sitemap check {attempt} failed: {exc}")
               time.sleep(15)
 
-          if len(urls) < len(expected):
-              raise SystemExit(f"Live sitemap is stale or incomplete: found {len(urls)} URLs, expected at least {len(expected)}.")
+          if missing:
+              raise SystemExit(f"Live sitemap is stale or incomplete: {len(missing)} URLs missing.")
+          if len(urls) > 10000:
+              raise SystemExit("More than 10,000 URLs; IndexNow requires splitting into batches.")
 
           payload = json.dumps({
               "host": host,
