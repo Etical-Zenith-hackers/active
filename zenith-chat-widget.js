@@ -1,4 +1,4 @@
-/* Original Tawk.to live chat: floating bottom-centre on every page using this shared script. */
+/* Original Tawk.to live chat. Loads once on every page that includes this shared file. */
 (() => {
   "use strict";
   if (window.__zenithOriginalTawkLoaded) return;
@@ -7,10 +7,10 @@
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = window.Tawk_LoadStart || new Date();
 
-  // Tawk.to offers left/right anchors; offset the bottom-left anchor to centre
-  // the original launcher in the current viewport on desktop and mobile.
-  const launcherWidth = 60;
-  const centreOffset = Math.max(0, Math.round((window.innerWidth - launcherWidth) / 2));
+  // Tawk supports bottom-left/right anchors. Offset the original launcher
+  // from the bottom-left to centre it horizontally on each page load.
+  const bubbleWidth = 60;
+  const centreOffset = Math.max(0, Math.round((window.innerWidth - bubbleWidth) / 2));
   window.Tawk_API.customStyle = {
     visibility: {
       desktop: { position: "bl", xOffset: centreOffset, yOffset: 16 },
@@ -18,7 +18,7 @@
     }
   };
   window.Tawk_API.onLoad = function () {
-    if (window.Tawk_API && typeof window.Tawk_API.showWidget === "function") {
+    if (typeof window.Tawk_API.showWidget === "function") {
       window.Tawk_API.showWidget();
     }
   };
@@ -131,8 +131,10 @@
     @media(max-width:600px){#zenith-whatsapp-float{left:10px!important;bottom:12px!important;min-height:44px!important;padding:0 12px!important;font-size:12px!important}}
   `;
   document.head.appendChild(style);
-  const existing = document.querySelector('a[href*="wa.me"]');
-  if (existing) { existing.id = existing.id || "zenith-whatsapp-float"; return; }
+  // Reuse only the dedicated floating WhatsApp control. Do not turn
+  // ordinary in-page WhatsApp links into a second floating button.
+  const existing = document.querySelector("#zenith-whatsapp-float, a.whatsapp");
+  if (existing) { existing.id = "zenith-whatsapp-float"; return; }
   const whatsapp = document.createElement("a");
   whatsapp.id = "zenith-whatsapp-float";
   whatsapp.href = "https://wa.me/447552486027?text=Hello%20Zenith%20Hackers%20Intelligence%2C%20I%27d%20like%20to%20discuss%20an%20authorized%20assessment.";
