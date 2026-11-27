@@ -1,3 +1,29 @@
+/* Remove the retired Zenith AI chat panel/launcher without touching Tawk.to or WhatsApp. */
+(function () {
+  "use strict";
+  if (window.__zenithAiChatSuppressionInstalled) return;
+  window.__zenithAiChatSuppressionInstalled = true;
+  const selectors = [
+    "#zenith-ai-launcher",
+    "#zenith-ai-panel",
+    "#zenith-chat-launcher",
+    "#zenith-chat-panel",
+    "[data-zenith-ai-launcher='true']"
+  ];
+  const removeRetiredChat = () => {
+    document.querySelectorAll(selectors.join(",")).forEach(node => node.remove());
+    document.querySelectorAll("iframe[src*='chatbase.co'], iframe[title*='Zenith AI']").forEach(node => node.remove());
+  };
+  const style = document.createElement("style");
+  style.id = "zenith-ai-chat-retired";
+  style.textContent = selectors.join(",") + "{display:none!important;visibility:hidden!important;pointer-events:none!important}";
+  (document.head || document.documentElement).appendChild(style);
+  removeRetiredChat();
+  const observer = new MutationObserver(removeRetiredChat);
+  observer.observe(document.documentElement, {childList:true,subtree:true});
+  window.addEventListener("load", removeRetiredChat, {once:true});
+})();
+
 /* Floating TOP 10 asset tracing menu; excluded from Asset Recovery. */
 (() => {
   "use strict";
