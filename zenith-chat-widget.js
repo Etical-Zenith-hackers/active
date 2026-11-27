@@ -1,3 +1,36 @@
+/* Original Tawk.to live chat: floating bottom-centre on every page using this shared script. */
+(() => {
+  "use strict";
+  if (window.__zenithOriginalTawkLoaded) return;
+  window.__zenithOriginalTawkLoaded = true;
+
+  window.Tawk_API = window.Tawk_API || {};
+  window.Tawk_LoadStart = window.Tawk_LoadStart || new Date();
+
+  // Tawk.to offers left/right anchors; offset the bottom-left anchor to centre
+  // the original launcher in the current viewport on desktop and mobile.
+  const launcherWidth = 60;
+  const centreOffset = Math.max(0, Math.round((window.innerWidth - launcherWidth) / 2));
+  window.Tawk_API.customStyle = {
+    visibility: {
+      desktop: { position: "bl", xOffset: centreOffset, yOffset: 16 },
+      mobile: { position: "bl", xOffset: centreOffset, yOffset: 12 }
+    }
+  };
+  window.Tawk_API.onLoad = function () {
+    if (window.Tawk_API && typeof window.Tawk_API.showWidget === "function") {
+      window.Tawk_API.showWidget();
+    }
+  };
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
+  script.charset = "UTF-8";
+  script.setAttribute("crossorigin", "*");
+  document.head.appendChild(script);
+})();
+
 /* Floating TOP 10 asset tracing menu; excluded from Asset Recovery. */
 (() => {
   "use strict";
