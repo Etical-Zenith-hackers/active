@@ -1,34 +1,33 @@
-/* Original Tawk.to live chat. Loads once on every page that includes this shared file. */
+/* Original Tawk.to website widget — standard embed, loaded once site-wide. */
 (() => {
   "use strict";
   if (window.__zenithOriginalTawkLoaded) return;
   window.__zenithOriginalTawkLoaded = true;
 
+  // Configure visibility before loading Tawk's embed script.
   window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_LoadStart = window.Tawk_LoadStart || new Date();
+  window.Tawk_LoadStart = new Date();
 
-  // Tawk supports bottom-left/right anchors. Offset the original launcher
-  // from the bottom-left to centre it horizontally on each page load.
-  const bubbleWidth = 60;
-  const centreOffset = Math.max(0, Math.round((window.innerWidth - bubbleWidth) / 2));
+  const centreOffset = Math.max(0, Math.round((window.innerWidth - 60) / 2));
   window.Tawk_API.customStyle = {
+    zIndex: 2147483005,
     visibility: {
       desktop: { position: "bl", xOffset: centreOffset, yOffset: 16 },
       mobile: { position: "bl", xOffset: centreOffset, yOffset: 12 }
     }
   };
-  window.Tawk_API.onLoad = function () {
-    if (typeof window.Tawk_API.showWidget === "function") {
-      window.Tawk_API.showWidget();
-    }
-  };
 
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
-  script.charset = "UTF-8";
-  script.setAttribute("crossorigin", "*");
-  document.head.appendChild(script);
+  const tawkScript = document.createElement("script");
+  tawkScript.async = true;
+  tawkScript.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
+  tawkScript.charset = "UTF-8";
+  tawkScript.setAttribute("crossorigin", "*");
+  const firstScript = document.getElementsByTagName("script")[0];
+  if (firstScript && firstScript.parentNode) {
+    firstScript.parentNode.insertBefore(tawkScript, firstScript);
+  } else {
+    document.head.appendChild(tawkScript);
+  }
 })();
 
 /* Floating TOP 10 asset tracing menu; excluded from Asset Recovery. */
