@@ -1,33 +1,30 @@
-/* Original Tawk.to website widget — standard embed, loaded once site-wide. */
+/* Original Tawk.to live chat — official embed pattern, loaded once site-wide. */
 (() => {
   "use strict";
   if (window.__zenithOriginalTawkLoaded) return;
   window.__zenithOriginalTawkLoaded = true;
 
-  // Configure visibility before loading Tawk's embed script.
+  // Tawk requires these settings to exist before its embed script loads.
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
-
-  const centreOffset = Math.max(0, Math.round((window.innerWidth - 60) / 2));
+  const offset = Math.max(0, Math.round((window.innerWidth - 60) / 2));
   window.Tawk_API.customStyle = {
-    zIndex: 2147483005,
+    zIndex: 2147483647,
     visibility: {
-      desktop: { position: "bl", xOffset: centreOffset, yOffset: 16 },
-      mobile: { position: "bl", xOffset: centreOffset, yOffset: 12 }
+      desktop: { position: "bl", xOffset: offset, yOffset: 16 },
+      mobile: { position: "bl", xOffset: offset, yOffset: 12 }
     }
   };
 
-  const tawkScript = document.createElement("script");
-  tawkScript.async = true;
-  tawkScript.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
-  tawkScript.charset = "UTF-8";
-  tawkScript.setAttribute("crossorigin", "*");
-  const firstScript = document.getElementsByTagName("script")[0];
-  if (firstScript && firstScript.parentNode) {
-    firstScript.parentNode.insertBefore(tawkScript, firstScript);
-  } else {
-    document.head.appendChild(tawkScript);
-  }
+  // Standard Tawk.to embed loader for the configured property/widget.
+  const s1 = document.createElement("script");
+  const s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
+  s1.charset = "UTF-8";
+  s1.setAttribute("crossorigin", "*");
+  if (s0 && s0.parentNode) s0.parentNode.insertBefore(s1, s0);
+  else (document.head || document.documentElement).appendChild(s1);
 })();
 
 /* Floating TOP 10 asset tracing menu; excluded from Asset Recovery. */
