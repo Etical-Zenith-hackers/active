@@ -1,5 +1,11 @@
 /* Tawk.to official installation snippet supplied by the site owner. */
 var Tawk_API = window.Tawk_API || {};
+/* Tawk.to position: bottom centre on desktop and mobile. Must be set before the embed script loads. */
+Tawk_API.customStyle = (function () {
+  var x = Math.max(0, Math.round(document.documentElement.clientWidth / 2) - 30); /* 30 = half the 60px bubble */
+  var place = { position: "bl", xOffset: x, yOffset: 20 };
+  return { visibility: { desktop: place, mobile: place } };
+})();
 var Tawk_LoadStart = new Date();
 (function () {
   var s1 = document.createElement("script");
