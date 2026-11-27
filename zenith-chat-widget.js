@@ -1,30 +1,18 @@
-/* Original Tawk.to live chat — official embed pattern, loaded once site-wide. */
-(() => {
-  "use strict";
-  if (window.__zenithOriginalTawkLoaded) return;
-  window.__zenithOriginalTawkLoaded = true;
-
-  // Tawk requires these settings to exist before its embed script loads.
-  window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_LoadStart = new Date();
-  const offset = Math.max(0, Math.round((window.innerWidth - 60) / 2));
-  window.Tawk_API.customStyle = {
-    zIndex: 2147483647,
-    visibility: {
-      desktop: { position: "bl", xOffset: offset, yOffset: 16 },
-      mobile: { position: "bl", xOffset: offset, yOffset: 12 }
-    }
-  };
-
-  // Standard Tawk.to embed loader for the configured property/widget.
-  const s1 = document.createElement("script");
-  const s0 = document.getElementsByTagName("script")[0];
+/* Tawk.to official installation snippet supplied by the site owner. */
+var Tawk_API = window.Tawk_API || {};
+var Tawk_LoadStart = new Date();
+(function () {
+  var s1 = document.createElement("script");
+  var s0 = document.getElementsByTagName("script")[0];
   s1.async = true;
   s1.src = "https://embed.tawk.to/6acd86f402133834cfb82045/default";
   s1.charset = "UTF-8";
   s1.setAttribute("crossorigin", "*");
-  if (s0 && s0.parentNode) s0.parentNode.insertBefore(s1, s0);
-  else (document.head || document.documentElement).appendChild(s1);
+  if (s0 && s0.parentNode) {
+    s0.parentNode.insertBefore(s1, s0);
+  } else {
+    (document.head || document.documentElement).appendChild(s1);
+  }
 })();
 
 /* Floating TOP 10 asset tracing menu; excluded from Asset Recovery. */
