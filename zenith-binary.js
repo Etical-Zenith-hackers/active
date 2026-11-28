@@ -80,12 +80,15 @@
   const toggle = root.querySelector("#zenith-top10-toggle");
   const panel = root.querySelector("#zenith-top10-panel");
   let minimized = false;
-  toggle.addEventListener("click", () => {
-    minimized = !minimized;
+  function setTop10Minimized(nextState) {
+    minimized = Boolean(nextState);
     panel.classList.toggle("zenith-minimized", minimized);
     toggle.setAttribute("aria-expanded", String(!minimized));
     toggle.lastElementChild.textContent = minimized ? "▾" : "▴";
-  });
+  }
+  toggle.addEventListener("click", () => setTop10Minimized(!minimized));
+  // Tawk.to incoming agent/system messages collapse this panel automatically.
+  window.addEventListener("zenith:incoming-tawk-message", () => setTop10Minimized(true));
   let direction = 1;
   let previous = 0;
   let pauseUntil = 0;
