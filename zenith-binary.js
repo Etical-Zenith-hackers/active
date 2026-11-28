@@ -86,9 +86,17 @@
     toggle.setAttribute("aria-expanded", String(!minimized));
     toggle.lastElementChild.textContent = minimized ? "▾" : "▴";
   }
-  toggle.addEventListener("click", () => setTop10Minimized(!minimized));
-  // Tawk.to incoming agent/system messages collapse this panel automatically.
-  window.addEventListener("zenith:incoming-tawk-message", () => setTop10Minimized(true));
+  toggle.addEventListener("click", () => {
+    const openingTop10 = minimized;
+    setTop10Minimized(!minimized);
+    // Opening Top 10 yields the screen to the asset panel by minimizing Tawk.
+    if (openingTop10 && window.Tawk_API && typeof window.Tawk_API.minimize === "function") {
+      window.Tawk_API.minimize();
+    }
+  });
+  // Keep the two panels mutually exclusive as visitors open or close Tawk.
+  window.addEventListener("zenith:tawk-maximized", () => setTop10Minimized(true));
+  window.addEventListener("zenith:tawk-minimized", () => setTop10Minimized(false));
   let direction = 1;
   let previous = 0;
   let pauseUntil = 0;
