@@ -5,6 +5,17 @@ var x=Math.max(0,Math.round(document.documentElement.clientWidth/2)-30); /* 30 =
 var place={position:'bl',xOffset:x,yOffset:20};
 return {visibility:{desktop:place,mobile:place}};
 })();
+
+/* When a visitor receives an agent reply or an automated Tawk.to message,
+   collapse the Top 10 Assets panel and bring Customer Support forward. */
+function zenithHandleIncomingTawkMessage() {
+  window.dispatchEvent(new CustomEvent("zenith:incoming-tawk-message"));
+  if (typeof Tawk_API.maximize === "function") {
+    Tawk_API.maximize();
+  }
+}
+Tawk_API.onChatMessageAgent = zenithHandleIncomingTawkMessage;
+Tawk_API.onChatMessageSystem = zenithHandleIncomingTawkMessage;
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
