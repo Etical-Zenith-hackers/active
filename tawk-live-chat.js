@@ -6,14 +6,19 @@ var place={position:'bl',xOffset:x,yOffset:20};
 return {visibility:{desktop:place,mobile:place}};
 })();
 
-/* When a visitor receives an agent reply or an automated Tawk.to message,
-   collapse the Top 10 Assets panel and bring Customer Support forward. */
-function zenithHandleIncomingTawkMessage() {
-  window.dispatchEvent(new CustomEvent("zenith:incoming-tawk-message"));
-  if (typeof Tawk_API.maximize === "function") {
-    Tawk_API.maximize();
-  }
+/* Keep Tawk Customer Support and the Top 10 Assets panel mutually exclusive. */
+function zenithHandleTawkMaximized() {
+  window.dispatchEvent(new CustomEvent("zenith:tawk-maximized"));
 }
+function zenithHandleTawkMinimized() {
+  window.dispatchEvent(new CustomEvent("zenith:tawk-minimized"));
+}
+function zenithHandleIncomingTawkMessage() {
+  if (typeof Tawk_API.maximize === "function") Tawk_API.maximize();
+  else zenithHandleTawkMaximized();
+}
+Tawk_API.onChatMaximized = zenithHandleTawkMaximized;
+Tawk_API.onChatMinimized = zenithHandleTawkMinimized;
 Tawk_API.onChatMessageAgent = zenithHandleIncomingTawkMessage;
 Tawk_API.onChatMessageSystem = zenithHandleIncomingTawkMessage;
 (function(){
